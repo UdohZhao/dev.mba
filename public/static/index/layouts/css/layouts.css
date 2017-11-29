@@ -33,7 +33,7 @@ body{
 .header-index-search .search_btn i{color: #fff;font-size: 22px;position: absolute;left: 30%;top:25%;}
 
 .header-nav-box{width: 100%;background-color: #1787e0;}
-.header-nav-box .nav-box{width: 1180px;height: 80px;margin: 0 auto;}
+.header-nav-box .nav-box{width: 1250px;height: 80px;margin: 0 auto;}
 .header-nav-box .nav-box .nav-box-list{float: left;color: #fff;}
 div.br,div.br1{display: block;height: 60px;border-right: 1px solid #fff;line-height: 80px;font-size: 0;width: 0;
 	float: left;margin: 10px 60px;}
@@ -43,6 +43,7 @@ div.br1{margin:10px 100px;}
 .header-nav-box .nav-box .nav-box-list ul li{float: left;padding: 10px 0 0 20px; }
 .header-nav-box .nav-box  .nav-box-last ul li{padding: 10px 0 0 10px; width: 20%;}
 .header-nav-box .nav-box .nav-box-list ul li a{color: #fff;font-size: 14px;}
+
 
 
 
