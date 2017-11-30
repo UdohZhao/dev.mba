@@ -4,6 +4,6 @@
 .left_aside{width: 870px;padding: 10px;border:1px solid #e3e3e3;margin-top: 20px;}
 .item_bd{margin: 10px 0;}
 .item_list{margin: 10px 0;border-bottom: 1px dashed #ddd;overflow: hidden;padding-bottom: 10px;}
-.item_list .item_list_img img{width: 160px;height:165px;}
+.item_list .item_list_img img{width: 140px;height:160px;}
 .item_list .item_list_con{width: 78%;margin-left: 20px;}
 .item_list_con_time{color: #999;}
