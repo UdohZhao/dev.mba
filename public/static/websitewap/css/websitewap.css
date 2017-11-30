@@ -1,0 +1,6 @@
+.main_topnav{width: 100%;height: 32px;background-color: #f8f8f8;line-height: 32px;box-shadow: 1px 2px 1px #ccc;}
+.main_topnav .mainwd{width: 1250px;margin: 0 auto;min-width: 1250px;}
+.left_aside{width: 870px;padding: 10px;border:1px solid #e3e3e3;margin-top: 20px;}
+.article_bd{padding:15px;font-size: 16px;color: #333;}
+.article_bd h1{text-align: center;}
+.article_bd .title-box{margin: 20px 0;color: #999;font-size: 12px;}
