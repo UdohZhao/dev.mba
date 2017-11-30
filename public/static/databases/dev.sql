@@ -23,6 +23,7 @@ CREATE TABLE `permissions`(
 CREATE TABLE `programa`(
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '栏目表主键id',
   `pid` INT(11) UNSIGNED NOT NULL COMMENT '父级id，0为顶级',
+  `cname` VARCHAR(25) NOT NULL COMMENT '名称',
   `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
   `type` TINYINT(2) UNSIGNED NOT NULL COMMENT '0>招生，1>院校，2>考试，3>热点关注，4>招考公告，5>活动预告，6>院校推荐',
   PRIMARY KEY (`id`)
@@ -89,6 +90,16 @@ CREATE TABLE `ad_images`(
   `img_link` VARCHAR(255) NOT NULL COMMENT '链接地址',
   `sort` TINYINT(3) UNSIGNED NOT NULL COMMENT '排序，数字越小越靠前',
   `type` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>院校发布上方，1>考试资讯上方}',
+  `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# 院校推荐广告表
+CREATE TABLE `ad_academy`(
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '院校推荐广告表主键id',
+  `img_path` VARCHAR(255) NOT NULL COMMENT '图片路径',
+  `img_link` VARCHAR(255) NOT NULL COMMENT '链接地址',
+  `type` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>展示，1>隐藏}',
   `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
