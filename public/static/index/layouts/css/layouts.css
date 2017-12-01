@@ -16,20 +16,23 @@ body{
 .textCon{text-align: center;}
 .colorFFF{color: #fff;}
 .fs14{font-size: 14px;}
+.pad0{padding: 0;}
 .h10{display: block;width: 100%;height: 10px;clear: both;font-size: 0;}
 		/***************头部样式开始  start  *********************/
-.header,.footer{min-width: 1250px;}
+.header,.footer{min-width: 1220px;}
 .top-nav-wrapper{width: 100%;background-color: #F7F9FA;height: 40px;line-height: 40px;bottom-bottom:1px solid #ddd; }
 .top-nav-wrapper:after{content: '';display:block;clear: both;}
-.top-nav-wrapper .top-nav-index{width: 1250px;margin: 0 auto;}
-.top-nav-wrapper .top-nav-index .top-list{width: 32%;float: left;}
+.top-nav-wrapper .top-nav-index{width: 1220px;margin: 0 auto;}
+.top-nav-wrapper .top-nav-index .top-list{width: 40%;float: left;}
 .top-nav-wrapper .top-nav-index .top-list_left{width: 60%;}
+.top-nav-wrapper .top-nav-index .top-list_left a:nth-child(1){margin:0;}
+.header-index-img{width: 350px;padding-right:15px; }
+img{width: 100%;height: 100%;}
 .top-nav-wrapper .top-nav-index .top-list a{margin-left:20px; }
-.header-wrapper .header-index{width: 1250px;height: 100px;margin: 0 auto;overflow: hidden;zoom:1; }
-.header-wrapper .header-index .header-index-ad{width: 430px;height: 100px;padding:10px 0;margin-left: 20px;overflow: hidden;}
-.header-wrapper .header-index .header-index-ad img{width: 100%;height: 100%;}
+.header-wrapper .header-index{width: 1220px;height: 100px;margin: 0 auto;overflow: hidden;zoom:1; }
+.header-wrapper .header-index .header-index-ad{width: 490px;height: 100px;padding:10px 0;}
 .header-wrapper .header-index .header-index-search{width:360px;margin-left: 20px;height: 100px;line-height: 100px; }
-.header-index-search input{width: 300px;height: 40px;border: 1px solid #1787e0;line-height: 40px;padding:0 8px;vertical-align: middle;}
+.header-index-search input{width: 305px;height: 40px;border: 1px solid #1787e0;line-height: 40px;padding:0 8px;vertical-align: middle;}
 .header-index-search .search_btn{width: 56px;height: 40px;border: none;background-color: #1787e0;
 	cursor: pointer;vertical-align: middle;margin-left: -5px;position: relative;}
 .header-index-search .search_btn i{color: #fff;font-size: 22px;position: absolute;left: 30%;top:25%;}
@@ -38,13 +41,15 @@ body{
 .header-nav-box .nav-box{width: 1220px;min-height: 106px;margin: 0 auto;}
 
 .nav-box li{float: left;color: #fff;}
+
 .nav-box li a{color: #fff;}
 .nav-box .nav-title{float: left;line-height: 106px;margin-right: 25px;font-size: 16px;font-weight: bold;}
 .nav-box .nav-td{float: left;margin-top: 12px;padding-right: 30px;border-right: 2px solid #459ce3;font-size: 14px;}
 .nav-box .nav-second .nav-td{width: 230px;}
-.nav-box .nav-third .nav-td{width: 460px;height: 56px;}
-.nav-box .nav-fourth .nav-td{width: 200px;}
-.nav-td li{height: 28px;line-height: 28px;margin-right: 10px;padding: 0;border-bottom: 0;}
+.nav-box .nav-third .nav-td{width: 460px;}
+.nav-box .nav-fourth .nav-td{width: 236px;}
+.nav-td li{height: 28px;line-height: 28px;margin-left: 10px;padding: 0;border-bottom: 0;}
+.nav-fourth li{width: 49px;text-align: right;}
 .nav-second .nav-title,.nav-third .nav-title,.nav-fourth .nav-title{margin-left: 20px;}
 .nav-fourth .nav-td{border-right: 0;padding-right: 0;}
 		/***************头部样式开始  end  *********************/
