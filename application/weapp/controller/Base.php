@@ -1,5 +1,5 @@
 <?php
-namespace app\index\controller;
+namespace app\weapp\controller;
 use think\Controller;
 /**
  * index模块基础控制器Base

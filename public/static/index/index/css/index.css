@@ -1,10 +1,12 @@
-
+body{
+	font-family: 'Microsoft YaHei';
+}
 .left_aside{width: 870px;}
-
 .h10{display: block;width: 100%;height: 10px;font-size: 0;clear: both;}
 .h20{display: block;width: 100%;height: 20px;font-size: 0;clear: both;}
 .h290{height: 290px;}
 .oneBox{margin-top: 20px;}
+.pad0{padding: 0;}
 .oneBox .oneBox_left{width: 350px;height: 264px;}
 .oneBox .oneBox_center{width: 520px;}
 .first{width: 100%;height: 264px;}
@@ -14,7 +16,8 @@
 .weui-panel__bd .weui-media-box{padding-bottom:4px;}
 .weui-panel__bd .weui-media-box .weui-media-box__title{font-weight: bold;}
 .oneBox_body_list{width: 100%;height: 39px;line-height: 39px;font-size: 16px;overflow: hidden;}
-
+.oneBox_body_list_title{font-weight: bold;font-size: 22px;width: auto;text-align: center;line-height: 35px;}
+.oneBox_body .pad0 .weui-media-box__desc{line-height: 1.6;text-indent: 20px;padding: 5px 20px;}
 /*列表项前的小点*/
 .yd{text-align: left;float: left;font-size: 32px;line-height: 39px;height: 39px;width: 15px;}
 .oneBox_top_ad{height: 52px;width: 290px;}
@@ -38,7 +41,7 @@
 
 
 .third_header{width: 100%;height: 48px;border-bottom: 1px solid  #e5e5e5;}
-.third_header h3{float: left;display: inline-block;padding: 9px 0;font-size: 24px;font-weight: 400;
+.third_header h3{float: left;display: inline-block;padding: 9px 0 11px;font-size: 24px;font-weight: 400;
 	border-bottom: 3px solid #1787e0;margin: 0;}
 .third_header .third_header_aside{height: 48px;float: right;width: 600px;margin: 0 auto;background-color: #f5f5f5;text-align: center;}
 .third_header .third_header_aside ul li{display: inline-block;float: left;width: 200px;height: 24px;
@@ -51,3 +54,8 @@
 	white-space: nowrap;word-wrap: normal;text-indent: 10px;}
 .oneBox_body_list_access .weui-media-box__desc{font-size: 16px;color: #333;line-height: 26px;}
 .oneBox_body_list_access .weui-media-box{padding:7px 15px;}
+
+.third_header_aside_banner{width: 600px;height: 48px;float: right;}
+.third_header_aside_banner .carousel-control{width: 20px;line-height: 48px;}
+.third_header_aside_banner .carousel-control.left{background-color: #B7B8B8;}
+.third_header_aside_banner .carousel-control.right{background-color: #B7B8B8;}

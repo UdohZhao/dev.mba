@@ -23,22 +23,84 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
 
     <!-- 当前页面css -->
-    {css href="/static/index/layouts/css/layouts.css" /}
+    {css href="/static/weapp/layouts/css/layouts.css" /}
 
   </head>
   <body>    
     <!-- 头部开始 -->
-<div class="weui-flex">
-  <div class="weui-flex__item">
-      <img src="/static/images/app_logo.png">
+  <div class="header">
+    <div class="weui-flex">
+      <div class="weui-flex__item">
+          <img src="/static/images/app_logo.png">
+      </div>
+      <div class="weui-flex__item">
+          <p>重庆MBA院校信息发布和咨询平台</p>
+      </div>
+    </div>
+    <div class="weui-flex">
+      <div class="weui-tab weui-tab_nav">
+        <div class="weui-navbar">
+          <a class="weui-navbar__item weui-bar__item--on" href="#tab2">
+            招生
+          </a>
+          <a class="weui-navbar__item" href="#tab3">
+            院校
+          </a>
+          <a class="weui-navbar__item" href="#tab4">
+            考试
+          </a>
+        </div>
+        <div class="weui-tab__bd">
+          <div id="tab2" class="weui-tab__bd-item weui-tab__bd-item--active">
+            <div class="navMenu">
+              <ul>
+                <li><a href="#">招生咨询</a></li>
+                <li><a href="#">考试咨询</a></li>
+                <li><a href="#">热点公告</a></li>
+                <li><a href="#">招考公告</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="tab3" class="weui-tab__bd-item">
+            <div class="navMenu">
+              <ul>
+                <li><a href="#">重庆大学</a></li>
+                <li><a href="#">重庆工商大学</a></li>
+                <li><a href="#">重庆师范大学</a></li>
+                <li><a href="#">西南大学</a></li>
+                <li><a href="#">重庆理工大学</a></li>
+                <li><a href="#">西南大学</a></li>
+                <li><a href="#">西南大学</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="tab4" class="weui-tab__bd-item">
+            <div class="navMenu">
+              <ul>
+                <li><a href="#">初试</a></li>
+                <li><a href="#">复试</a></li>
+                <li><a href="#">英语</a></li>
+                <li><a href="#">数学</a></li>
+                <li><a href="#">逻辑</a></li>
+                <li><a href="#">写作</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weui-flex">
+      <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="/static/images/banner.png" alt=""></div>
+          <div class="swiper-slide"><img src="/static/images/banner.png" alt=""></div>
+          <div class="swiper-slide"><img src="/static/images/banner.png" alt=""></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="weui-flex__item">
-      <p>重庆MBA院校信息发布和咨询平台</p>
-  </div>
-</div>
 
 
 
 
-<!-- header/fooyer js -->
-    {js href="/static/index/layouts/js/layouts.js" /}
+

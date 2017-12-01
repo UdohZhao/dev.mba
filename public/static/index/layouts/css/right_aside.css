@@ -1,7 +1,8 @@
 .right_aside{width: 340px;}
+.pad0{padding: 0;}
 .h10{display: block;width: 100%;height: 10px;font-size: 0;clear: both;}
 .h16{display: block;width: 100%;height: 16px;font-size: 0;clear: both;}
-.h20{display: block;width: 100%;height: 20px;font-size: 0;clear: both;}
+.h24{display: block;width: 100%;height: 24px;font-size: 0;clear: both;}
 .h290{height: 290px;}
 .oneBox{margin-top: 20px;}
 .first{width: 100%;height: 264px;}
@@ -12,7 +13,7 @@
 .weui-panel__bd .weui-media-box .weui-media-box__title{font-weight: bold;}
 .oneBox_body_list{width: 100%;height: 39px;line-height: 39px;font-size: 16px;overflow: hidden;}
 /*列表项前的小点*/
-.yd{text-align: left;float: left;font-size: 32px;line-height: 39px;height: 39px;width: 15px;}
+.yd{text-align: left;float: left;font-size: 32px;line-height: 39px;height: 39px;width: 15px;color: #9a8f8f;}
 .oneBox_top_ad{height: 52px;width: 290px;}
 .oneBox_top_ad img{width: 100%;height: 100%;}
 .oneBox_title_img{padding:10px 0;position: relative;}
@@ -24,3 +25,4 @@
 .second_QR_hd{background:url(/static/images/phone_left.png)no-repeat;color: #fff;width: 76px;height: 155px;
 	text-align: center;margin: 0 auto;}
 .second_QR_hd span{color: #fff;text-align: center;font-weight: bold;font-size: 16px;display: inline-block;padding: 3px 23px;}
+.second_phone_img{margin-left:30px; }
