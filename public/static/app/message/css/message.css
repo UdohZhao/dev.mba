@@ -1,0 +1,7 @@
+.container{margin: 0;padding: 0;background-color: #f5f5f5;}
+.container .weui-search-bar{margin: .5rem 0;}
+.message .weui-media-box__hd{margin-left: .8rem;margin-right: 0;}
+.message .weui-media-box__title{white-space: normal;}
+.message  p.weui-media-box__desc{margin: 0;}
+.message  p.weui-media-box__desc span{margin-right: .25rem;}
+.message .weui-panel__ft{text-align: center;}
