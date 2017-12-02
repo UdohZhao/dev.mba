@@ -1,6 +1,6 @@
 <?php
 namespace app\index\controller;
-class Websitewap extends Base
+class Message extends Base
 {
     /**
      * 构造方法
@@ -13,12 +13,12 @@ class Websitewap extends Base
      /**
      * 默认方法
      */
-    public function Websitewap()
+    public function Message()
     {
         // Get
         if ($this->request->isGet()) {
             // 渲染模板输出
-            return $this->fetch('websitewap');
+            return $this->fetch('message');
         }
     }
 }
