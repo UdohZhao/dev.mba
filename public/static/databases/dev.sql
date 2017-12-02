@@ -36,6 +36,7 @@ CREATE TABLE `programa_article`(
   `pid` INT(11) UNSIGNED NOT NULL COMMENT '关联栏目表主键id',
   `title` VARCHAR(255) NOT NULL COMMENT '标题',
   `tips` VARCHAR(255) NOT NULL COMMENT '小贴士',
+  `cover_path` VARCHAR(255) NOT NULL COMMENT '封面图片路径',
   `search_keywords` VARCHAR(255) NOT NULL COMMENT '搜索关键词',
   `content` VARCHAR(30000) NOT NULL COMMENT '内容',
   `type` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>正常，1>置顶}',
@@ -97,6 +98,16 @@ CREATE TABLE `ad_images`(
 # 院校推荐广告表
 CREATE TABLE `ad_academy`(
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '院校推荐广告表主键id',
+  `img_path` VARCHAR(255) NOT NULL COMMENT '图片路径',
+  `img_link` VARCHAR(255) NOT NULL COMMENT '链接地址',
+  `type` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>展示，1>隐藏}',
+  `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# 顶部广告表
+CREATE TABLE `ad_top`(
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '顶部广告表主键id',
   `img_path` VARCHAR(255) NOT NULL COMMENT '图片路径',
   `img_link` VARCHAR(255) NOT NULL COMMENT '链接地址',
   `type` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>展示，1>隐藏}',
