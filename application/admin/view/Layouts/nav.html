@@ -12,7 +12,7 @@
       </button>
       <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
         <img class="navbar-brand-logo" src="/static/assets/images/logo.png" title="Remark">
-        <span class="navbar-brand-text"> Remark</span>
+        <span class="navbar-brand-text"> {$Think.config.admin_title}</span>
       </div>
       <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
       data-toggle="collapse">
@@ -44,7 +44,7 @@
 
         <!-- Navbar Toolbar Right -->
         <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
             data-animation="scale-up" role="button">
               <span class="avatar avatar-online">
@@ -59,6 +59,21 @@
               <li class="divider" role="presentation"></li>
               <li role="presentation">
                 <a href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> 退出</a>
+              </li>
+            </ul>
+          </li> -->
+          <li class="dropdown">
+            <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+            data-animation="scale-up" role="button">
+              <h4>欢迎回来：{$Think.session.adminUser.username}</h4>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <!-- <li role="presentation">
+                <a href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> 个人资料</a>
+              </li>
+              <li class="divider" role="presentation"></li> -->
+              <li role="presentation">
+                <a href="/admin/Index/logout" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> 退出</a>
               </li>
             </ul>
           </li>

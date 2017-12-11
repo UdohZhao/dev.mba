@@ -1,0 +1,79 @@
+{include file="layouts/header" /}
+{include file="layouts/nav" /}
+{include file="layouts/menu" /}
+
+<!-- Page -->
+<div class="page animsition">
+  <div class="page-header">
+    <h1 class="page-title"># 栏目管理</h1>
+  </div>
+  <div class="page-content">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">@ 栏目列表</h3>
+      </div>
+      <form action="/admin/Programa/index?pid={$pid}" method="post">
+        <div class="input-group" style="width: 300px;float: right;margin-right: 30px;">
+          <input type="text" class="form-control" name="search" placeholder="请输入搜索关键字">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+      <div class="panel-body">
+        {if condition="(!$data->isEmpty())"}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>名称</th>
+              <th>位置</th>
+              <th>时间</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foreach name="data" item="v" key="k" }
+            <tr>
+               <td></td>
+               <td>{$v.cname}</td>
+               <td>
+                 {eq name="$v.type" value="0"}<span class="text-info">{招生}</span>{/eq}
+                 {eq name="$v.type" value="1"}<span class="text-info">{院校}</span>{/eq}
+                 {eq name="$v.type" value="2"}<span class="text-info">{考试}</span>{/eq}
+                 {eq name="$v.type" value="3"}<span class="text-info">{热点关注}</span>{/eq}
+                 {eq name="$v.type" value="4"}<span class="text-info">{招考公告}</span>{/eq}
+                 {eq name="$v.type" value="5"}<span class="text-info">{活动预告}</span>{/eq}
+                 {eq name="$v.type" value="6"}<span class="text-info">{院校推荐}</span>{/eq}
+               </td>
+               <td>{$v.ctime|date="Y-m-d H:i",###}</td>
+               <td>
+                  <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},{$v.pid});">编辑</button>
+                  <button type="button" class="btn btn-default btn-xs" onclick="del({$v.id});">删除</button>
+                  <button type="button" class="btn btn-primary btn-xs" onclick="son({$v.id});">添加子级</button>
+                  <button type="button" class="btn btn-primary btn-xs" onclick="sonList({$v.id});">子级列表</button>
+                  <button type="button" class="btn btn-primary btn-xs" onclick="issue({$v.id},{$v.type});">发布文章</button>
+                  <button type="button" class="btn btn-primary btn-xs" onclick="aList({$v.id});">文章列表</button>
+               </td>
+            </tr>
+            {/foreach}
+          </tbody>
+        </table>
+        {else /}
+        <blockquote>
+          <p>暂无数据</p>
+        </blockquote>
+        {/if}
+        <div style="float: right;">
+          {$data->render()}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page -->
+
+{include file="layouts/footer" /}
+
+<!-- 引入当前页面js -->
+{js href="/static/admin/programa/js/index.js"}

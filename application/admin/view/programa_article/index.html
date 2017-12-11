@@ -1,0 +1,121 @@
+{include file="layouts/header" /}
+{include file="layouts/nav" /}
+{include file="layouts/menu" /}
+
+{css href="/static/bootstrap-fileinput/css/fileinput.css" /}
+
+<!-- Page -->
+<div class="page animsition">
+  <div class="page-header">
+    <h1 class="page-title"># 栏目管理</h1>
+  </div>
+  <div class="page-content">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">@ 栏目文章列表 -> {$data.pData.cname}</h3>
+      </div>
+      <form action="/admin/ProgramaArticle/index?pid={$pid}" method="post">
+        <div class="input-group" style="width: 300px;float: right;margin-right: 30px;">
+          <input type="text" class="form-control" name="search" placeholder="请输入搜索关键字">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+      <div class="panel-body">
+        {if condition="(!$data.sData->isEmpty())"}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>时间</th>
+              <th>封面图片</th>
+              <th>标题</th>
+              <th>小贴士</th>
+              <th>搜索关键词</th>
+              <th>文章类型</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foreach name="data.sData" item="v" key="k" }
+            <tr>
+               <td>
+                 {if condition="($v.status == 0)"}
+                  <span class="text-success">{展示}</span>
+                 {else /}
+                  <span class="text-danger">{隐藏}</span>
+                 {/if}
+               </td>
+               <td>{$v.ctime|date="Y-m-d H:i",###}</td>
+               <td><img src="{$v.cover_path}" style="width: 90px; height: 90px;"></td>
+               <td>{$v.title}</td>
+               <td>{$v.tips}</td>
+               <td>{$v.search_keywords}</td>
+               <td>
+                 {if condition="($v.atype == 0)"}
+                  <span class="text-info">{正常}</span>
+                 {else /}
+                  <span class="text-danger">{置顶}</span>
+                 {/if}
+               </td>
+               <td>
+                  {if condition="($v.status == 0)"}
+                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},1);">隐藏</button>
+                  {else /}
+                    <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},{$pid});">编辑</button>
+                    <button type="button" class="btn btn-default btn-xs" onclick="del({$v.id});">删除</button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="updateCover({$v.id});">更新封面</button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},0);">展示</button>
+                    {if condition="($v.atype == 0)"}
+                      <button type="button" class="btn btn-primary btn-xs" onclick="tops({$v.id},1);">置顶</button>
+                    {else /}
+                      <button type="button" class="btn btn-primary btn-xs" onclick="tops({$v.id},0);">正常</button>
+                    {/if}
+                  {/if}
+               </td>
+            </tr>
+            {/foreach}
+          </tbody>
+        </table>
+        {else /}
+        <blockquote>
+          <p>暂无数据</p>
+        </blockquote>
+        {/if}
+        <div style="float: right;">
+          {$data.sData->render()}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page -->
+
+<div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button style="float: right;" type="button" class="btn btn-success" onclick="accomplish();">完成</button>
+        <h4 class="modal-title"># 文件上传</h4>
+      </div>
+      <div class="modal-body">
+        <div class="file-loading">
+            <input id="kv-explorer" type="file" name="image" multiple>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{include file="layouts/footer" /}
+
+<!-- 引入bootstrap-fileinput -->
+{js href="/static/bootstrap-fileinput/js/fileinput.js" /}
+{js href="/static/bootstrap-fileinput/js/locales/zh.js" /}
+{js href="/static/bootstrap-fileinput/themes/fa/theme.js" /}
+
+
+<!-- 引入当前页面js -->
+{js href="/static/admin/programa_article/js/index.js" /}

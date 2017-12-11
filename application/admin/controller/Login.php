@@ -8,6 +8,7 @@ use think\captcha\Captcha;
 class Login extends Controller
 {
     public $cdb;
+    public $audb;
     /**
      * 构造方法
      */
@@ -20,8 +21,10 @@ class Login extends Controller
       }
       // 实例化验证码类
       $this->cdb = new Captcha();
+      // 实例化用户model
+      $this->audb = model('AdminUser');
       // 已登录
-      if (isset($_SESSION['au']))
+      if (session('?adminUser'))
       {
         header('Location:/admin/Index/index');
         die;
@@ -42,8 +45,35 @@ class Login extends Controller
       // Ajax
       if ($this->request->isAjax())
       {
-        return input('post.');
+        // 获取提交数据
+        $data = $this->getData();
+        $username = $data['username'];
+        $password = $data['password'];
+        $res = $this->audb->selects('*', "WHERE username = '$username' AND password = '$password'", '', '');
+        // if
+        if (!$res)
+        {
+          return ajaxReturn(Rs(1,'用户名或者密码错误！',''));
+        }
+        if ($res[0]['status'] == 1)
+        {
+          return ajaxReturn(Rs(2,'改用户已被冻结，暂时无法登录，请联系网站管理员！',''));
+        }
+        // 用户信息存入session
+        session('adminUser',$res[0]);
+        return ajaxReturn(Rs(0,'',''));
       }
+    }
+
+    /**
+     * 获取数据
+     */
+    private function getData()
+    {
+      // post
+      $data['username'] = input('post.username');
+      $data['password'] = enPassword(input('post.password'));
+      return $data;
     }
 
     /**

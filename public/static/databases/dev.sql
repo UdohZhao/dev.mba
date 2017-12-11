@@ -39,9 +39,10 @@ CREATE TABLE `programa_article`(
   `cover_path` VARCHAR(255) NOT NULL COMMENT '封面图片路径',
   `search_keywords` VARCHAR(255) NOT NULL COMMENT '搜索关键词',
   `content` VARCHAR(30000) NOT NULL COMMENT '内容',
-  `type` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>正常，1>置顶}',
+  `atype` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>正常，1>置顶}',
   `status` TINYINT(1) UNSIGNED NOT NULL COMMENT '状态{0>展示，1>隐藏}',
   `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
+  `type` TINYINT(2) UNSIGNED NOT NULL COMMENT '0>招生，1>院校，2>考试，3>热点关注，4>招考公告，5>活动预告，6>院校推荐',
   PRIMARY KEY (`id`),
   KEY (`auid`),
   KEY (`pid`)

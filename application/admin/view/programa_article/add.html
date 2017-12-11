@@ -1,0 +1,63 @@
+{include file="layouts/header" /}
+{include file="layouts/nav" /}
+{include file="layouts/menu" /}
+
+<!-- Page -->
+<div class="page animsition">
+  <div class="page-header">
+    <h1 class="page-title"># 栏目管理</h1>
+  </div>
+  <div class="page-content">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">@ 发布栏目文章 -> {$data.pData.cname}</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal" id="ProgramaArticleForm" action="/admin/ProgramaArticle/add?id={$id}&pid={$pid}&type={$type}">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">标题</label>
+            <div class="col-sm-10">
+            <!-- 加载编辑器的容器 -->
+            <script id="title" name="title" type="text/plain" style="height: 100px;">{if condition="($data.sData)"}{$data.sData.title}{/if}</script>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">小贴士</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="tips" placeholder="请输入文章小贴士" {if condition="($data.sData)"}value="{$data.sData.tips}"{/if} >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">搜索关键词</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="search_keywords" placeholder="请输入文章搜索关键词，多个关键词用空位分隔。例如：AAA BBB CCC" {if condition="($data.sData)"}value="{$data.sData.search_keywords}"{/if} >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">内容</label>
+            <div class="col-sm-10">
+            <!-- 加载编辑器的容器 -->
+            <script id="content" name="content" type="text/plain" style="height: 300px;">{if condition="($data.sData)"}{$data.sData.content}{/if}</script>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary">提 交</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page -->
+
+{include file="layouts/footer" /}
+
+<!-- 配置文件 -->
+<script type="text/javascript" src="/static/UEditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/static/UEditor/ueditor.all.js"></script>
+
+<!-- 引入当前页面js -->
+{js href="/static/admin/programa_article/js/add.js"}

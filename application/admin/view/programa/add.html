@@ -1,0 +1,121 @@
+{include file="layouts/header" /}
+{include file="layouts/nav" /}
+{include file="layouts/menu" /}
+
+<!-- Page -->
+<div class="page animsition">
+  <div class="page-header">
+    <h1 class="page-title"># 栏目管理</h1>
+  </div>
+  <div class="page-content">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">@ 添加栏目</h3>
+      </div>
+      <div class="panel-body">
+      {if condition="($pid)"}
+      <form class="form-horizontal" id="programaForm" action="/admin/Programa/add?id={$id}&pid={$pid}" method="post">
+        <input type="hidden" id="id" value="{$id}">
+        <input type="hidden" id="pid" value="{$pid}">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">父级名称</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="请输入栏目名称" value="{$data.cname}" disabled="disabled">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">子级名称</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="cname" placeholder="请输入栏目子名称" {if condition="(isset($data.son))"}value="{$data.son.cname}"{/if}>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">位置</label>
+          <div class="col-sm-10">
+            <label class="radio-inline">
+              <input type="radio" name="type" value="0" {if condition="($data && $data.type == 0)"}checked="checked"{else /}disabled="disabled"{/if}> 招生
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="1" {if condition="($data && $data.type == 1)"}checked="checked"{else /}disabled="disabled"{/if}> 院校
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="2" {if condition="($data && $data.type == 2)"}checked="checked"{else /}disabled="disabled"{/if}> 考试
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="3" {if condition="($data && $data.type == 3)"}checked="checked"{else /}disabled="disabled"{/if}> 热点关注
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="4" {if condition="($data && $data.type == 4)"}checked="checked"{else /}disabled="disabled"{/if}> 招考公告
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="5" {if condition="($data && $data.type == 5)"}checked="checked"{else /}disabled="disabled"{/if}> 活动预告
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="6" {if condition="($data && $data.type == 6)"}checked="checked"{else /}disabled="disabled"{/if}> 院校推荐
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">提 交</button>
+          </div>
+        </div>
+      </form>
+      {else /}
+      <form class="form-horizontal" id="programaForm" action="/admin/Programa/add?id={$id}" method="post">
+        <input type="hidden" id="id" value="{$id}">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">名称</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="cname" placeholder="请输入栏目名称" {if condition="($data)"}value="{$data.cname}"{/if}>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">位置</label>
+          <div class="col-sm-10">
+            <label class="radio-inline">
+               {if condition="($data && $data.type == 0)"}
+                  <input type="radio" name="type" value="0" checked="checked"> 招生
+               {elseif condition="($data && $data.type !=0)"}
+                  <input type="radio" name="type" value="0"> 招生
+               {else /}
+                  <input type="radio" name="type" value="0" checked="checked"> 招生
+               {/if}
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="1" {if condition="($data && $data.type == 1)"}checked="checked"{/if}> 院校
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="2" {if condition="($data && $data.type == 2)"}checked="checked"{/if}> 考试
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="3" {if condition="($data && $data.type == 3)"}checked="checked"{/if}> 热点关注
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="4" {if condition="($data && $data.type == 4)"}checked="checked"{/if}> 招考公告
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="5" {if condition="($data && $data.type == 5)"}checked="checked"{/if}> 活动预告
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="type" value="6" {if condition="($data && $data.type == 6)"}checked="checked"{/if}> 院校推荐
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">提 交</button>
+          </div>
+        </div>
+      </form>
+      {/if}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page -->
+
+{include file="layouts/footer" /}
+
+<!-- 引入当前页面js -->
+{js href="/static/admin/programa/js/add.js"}
