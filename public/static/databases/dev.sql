@@ -42,7 +42,7 @@ CREATE TABLE `programa_article`(
   `atype` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>正常，1>置顶}',
   `status` TINYINT(1) UNSIGNED NOT NULL COMMENT '状态{0>展示，1>隐藏}',
   `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
-  `type` TINYINT(2) UNSIGNED NOT NULL COMMENT '0>招生，1>院校，2>考试，3>热点关注，4>招考公告，5>活动预告，6>院校推荐',
+  `type` TINYINT(2) UNSIGNED NOT NULL COMMENT '0>招生，1>院校，2>考试，3>热点关注，4>招考公告，5>活动预告，6>院校推荐，7>招生资讯，8>考试资讯',
   PRIMARY KEY (`id`),
   KEY (`auid`),
   KEY (`pid`)
