@@ -188,7 +188,7 @@ function updateCover(id)
         language: 'zh',
         uploadUrl: '/admin/ProgramaArticle/coverUpload?id='+id,
         //uploadExtraData:{"id": paid},
-        allowedFileExtensions: ['jpg', 'gif', 'png'],
+        allowedFileExtensions: ['jpg', 'jpeg' , 'gif', 'png'],
         showRemove: false,
         maxFileSize: 8192,
         minFileCount: 1,

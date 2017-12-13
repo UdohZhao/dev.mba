@@ -1,0 +1,47 @@
+{include file="layouts/header" /}
+{include file="layouts/nav" /}
+{include file="layouts/menu" /}
+
+<!-- Page -->
+<div class="page animsition">
+  <div class="page-header">
+    <h1 class="page-title"># {$ctlName}</h1>
+  </div>
+  <div class="page-content">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">@ 添加</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          {if condition="($data && $data.img_path)"}
+            <img class="img-responsive" src="{$data.img_path}" style="margin: 0 auto;cursor: pointer;width: 420px;" alt="点击删除图片" title="点击删除图片" onclick="delImg({$id},'{$data.img_path}','{$ctl}');">
+          {else /}
+              <div class="file-loading">
+                  <input id="kv-explorer" type="file" name="image" multiple>
+              </div>
+          {/if}
+        </div>
+        <form class="form-horizontal" id="bannerForm" action="/admin/{$ctl}/add?id={$id}" method="post">
+          <input type="hidden" name="img_path" id="img_path" {if condition="($data)"}value="{$data.img_path}"{/if}>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">链接地址</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="img_link" placeholder="请输入banner图片外链地址" {if condition="($data)"}value="{$data.img_link}"{/if}>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary">提 交</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page -->
+
+{include file="layouts/footer" /}
+<!-- 引入当前页面js -->
+{js href="/static/admin/banner/js/add.js" /}

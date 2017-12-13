@@ -25,4 +25,36 @@ class Base extends Controller
       }
 
     }
+
+    /**
+     * 文件上传
+     */
+    public function fileUpload()
+    {
+        // 获取表单上传文件 例如上传了001.jpg
+        $file = request()->file('image');
+
+        // 移动到框架应用根目录/public/uploads/ 目录下
+        if($file){
+            $info = $file->move(ROOT_PATH . 'public' . DS . 'static' . DS . 'uploads');
+            if($info){
+                // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+                return ajaxReturn(Rs(0, '上传成功！', DS . 'static' . DS . 'uploads' . DS . $info->getSaveName()));
+            }else{
+                // 上传失败获取错误信息
+                return ajaxReturn(Rs(1,'上传失败！',$file->getError()));
+            }
+        }
+    }
+
+    /**
+     * 删除文件
+     */
+    public function fileDel()
+    {
+        // 删除当前图片
+        $path = ROOT_PATH . 'public' . input('post.path');
+        @unlink($path);
+        return ajaxReturn($path);
+    }
 }

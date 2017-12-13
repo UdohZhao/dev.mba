@@ -1,0 +1,80 @@
+{include file="layouts/header" /}
+{include file="layouts/nav" /}
+{include file="layouts/menu" /}
+
+<!-- Page -->
+<div class="page animsition">
+  <div class="page-header">
+    <h1 class="page-title"># {$ctlName}</h1>
+  </div>
+  <div class="page-content">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">@ 列表</h3>
+      </div>
+      <form action="/admin/{$ctl}/index" method="post">
+        <div class="input-group" style="width: 300px;float: right;margin-right: 30px;">
+          <input type="text" class="form-control" name="search" placeholder="请输入搜索关键字">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+      <div class="panel-body">
+        {if condition="(!$data->isEmpty())"}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>时间</th>
+              <th>图片</th>
+              <th>外链地址</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foreach name="data" item="v" key="k" }
+            <tr>
+               <td>
+                 {if condition="($v.status == 0)"}
+                  <span class="text-success">{展示}</span>
+                 {else /}
+                  <span class="text-danger">{隐藏}</span>
+                 {/if}
+               </td>
+               <td>{$v.ctime|date="Y-m-d H:i",###}</td>
+               <td>
+                    <img src="{$v.img_path}" style="width: 120px;height: 90px;">
+               </td>
+               <td>{$v.img_link}</td>
+               <td>
+                  {if condition="($v.status == 1)"}
+                    <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},'{$ctl}');">编辑</button>
+                    <button type="button" class="btn btn-default btn-xs" onclick="del({$v.id},'{$v.img_path}','{$ctl}');">删除</button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},0,'{$ctl}');">展示</button>
+                  {else /}
+                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},1,'{$ctl}');">隐藏</button>
+                  {/if}
+               </td>
+            </tr>
+            {/foreach}
+          </tbody>
+        </table>
+        {else /}
+        <blockquote>
+          <p>暂无数据</p>
+        </blockquote>
+        {/if}
+        <div style="float: right;">
+          {$data->render()}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page -->
+
+{include file="layouts/footer" /}
+
+<!-- 引入当前页面js -->
+{js href="/static/admin/banner/js/index.js"}
