@@ -170,4 +170,17 @@ class Programa extends Base
         }
     }
 
+    /**
+     * 配置管理员权限
+     */
+    public function permissions()
+    {
+        // Get
+        if ($this->request->isGet())
+        {
+            // 渲染模板输出
+            return $this->fetch('permissions');
+        }
+    }
+
 }

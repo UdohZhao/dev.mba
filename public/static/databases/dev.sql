@@ -190,6 +190,7 @@ CREATE TABLE `website`(
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '站点表主键id',
   `service_qq` VARCHAR(25) NOT NULL COMMENT '客服QQ',
   `service_tel` VARCHAR(25) NOT NULL COMMENT '客服电话',
+  `title` VARCHAR(25) NOT NULL COMMENT '网站标题',
   `describe` VARCHAR(255) NOT NULL COMMENT '网站描述',
   `search_keywords` VARCHAR(255) NOT NULL COMMENT '网站搜索关键词',
   `status` TINYINT(1) UNSIGNED NOT NULL COMMENT '状态{0>启动站点，1>关闭站点}',
@@ -203,6 +204,5 @@ CREATE TABLE `website_pv`(
   `pv` INT(11) UNSIGNED NOT NULL COMMENT '访问量',
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 
