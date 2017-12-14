@@ -47,12 +47,18 @@
         <div class="header-wrapper">
             <div class="header-index">
                 <div class="header-index-img lt">
-                    <a href="/"  >
-                    <img src="/static/images/logo.png" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
-                </a>
+                    {if $data.ad_logoData}
+                    <a href="{$data.ad_logoData.img_link}"  >
+                    <img src="{$data.ad_logoData.img_path}" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
+                    </a>
+                    {/if}
                 </div>
                 <div class="header-index-ad  lt">
-                    <img src="/static/images/banner.png" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
+                    {if $data.ad_topData}
+                    <a href="{$data.ad_topData.img_link}">
+                        <img src="{$data.ad_topData.img_path}" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
+                    </a>
+                    {/if}
                 </div>
                 <!-- 搜索框 -->
                 <div class="header-index-search lt">
@@ -72,63 +78,44 @@
                 <li class="nav-second">
                     <div class="nav-title">招生</div>
                         <ul class="nav-td">
-                                <li><a href="#">考试咨询</a></li>
-                                <li><a href="#">热点公告</a></li>
-                                <li><a href="#">招考公告</a></li>
-                                <li><a href="#">招生咨询</a></li>
-                                <li><a href="#">考试咨询</a></li>
-                                <li><a href="#">热点公告</a></li>
-                                <li><a href="#">招考公告</a></li>
-                                <li><a href="#">招生咨询</a></li>
+                            {if $data.programaData}
+                                {foreach name="data.programaData" item="v" key="k"}
+                                 {if condition="($v.type == 0)"}
+                                    {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                <li><a href="#">{$vv.cname}</a></li>
+                                    {/foreach}
+                                 {/if}
+                                {/foreach}   
+                            {/if}
                         </ul>
                 </li>
                 <li class="nav-third">
                     <div class="nav-title">院校</div>
                     <ul class="nav-td">
-                        <!-- {if condition="($data.status == 0)"}
-                            {foreach name="data.data.programa2"  item="v" key="k"}
-                                <li><a href="#">{$v.cname}</a></li>
-                            {/foreach}
-                        {/if} -->
-
-                        <li><a href="#">重庆大学</a></li>
-                        <li><a href="#">重庆工商大学</a></li>
-                        <li><a href="#">重庆师范大学</a></li>
-                        <li><a href="#">西南大学</a></li>
-                        <li><a href="#">重庆理工大学</a></li>
-                        <li><a href="#">西南大学</a></li>
-                        <li><a href="#">重庆理工大学</a></li>
-                        <li><a href="#">西南大学</a></li>
-                        <li><a href="#">重庆理工大学</a></li>
-                        <li><a href="#">重庆理工大学</a></li>
-                        <li><a href="#">西南大学</a></li>
-                        <li><a href="#">重庆理工大学</a></li>
-                        <li><a href="#">西南大学</a></li>
-                        <li><a href="#">重庆理工大学</a></li>
-                        <li><a href="#">重庆理工大学</a></li>
+                        {if $data.programaData}
+                                {foreach name="data.programaData" item="v" key="k"}
+                                 {if condition="($v.type == 1)"}
+                                    {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                <li><a href="#">{$vv.cname}</a></li>
+                                    {/foreach}
+                                 {/if}
+                                {/foreach}   
+                            {/if}
 
                     </ul>
                 </li>
                 <li class="nav-fourth">
                     <div class="nav-title">考试</div>
                     <ul class="nav-td">
-                        <!-- {if condition="($data.status == 0)"}
-                            {foreach name="data.data.programa3"  item="v" key="k"}
-                                <li><a href="#">{$v.cname}</a></li>
-                            {/foreach}
-                        {/if} -->
-                        <li><a href="#">初试</a></li>
-                        <li><a href="#">复试</a></li>
-                        <li><a href="#">英语</a></li>
-                        <li><a href="#">数学</a></li>
-                        <li><a href="#">逻辑</a></li>
-                        <li><a href="#">写作</a></li>
-                        <li><a href="#">初试</a></li>
-                        <li><a href="#">复试</a></li>
-                        <li><a href="#">英语</a></li>
-                        <li><a href="#">数学</a></li>
-                        <li><a href="#">逻辑</a></li>
-                        <li><a href="#">写作</a></li>
+                        {if $data.programaData}
+                                {foreach name="data.programaData" item="v" key="k"}
+                                 {if condition="($v.type == 2)"}
+                                    {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                <li><a href="#">{$vv.cname}</a></li>
+                                    {/foreach}
+                                 {/if}
+                                {/foreach}   
+                            {/if}
                     </ul>
                 </li>
             </ul>

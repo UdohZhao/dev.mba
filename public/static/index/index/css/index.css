@@ -12,6 +12,8 @@ h1,h2,h3{
 .pad0{padding: 0;}
 .oneBox .oneBox_left{width: 350px;height: 264px;}
 .oneBox .oneBox_center{width: 520px;}
+.oneBox_center .banner_bd{width: 490px;height: 264px;}
+.oneBox_center .banner_bd .third_header_aside{width: 100%;height: 100%;}
 .first{width: 100%;height: 264px;}
 .oneBox .oneBox_title{width: 100%;height: 34px;line-height: 34px;font-size: 16px;font-weight: 500;border-bottom: 1px solid #ddd;}
 .oneBox .oneBox_title .oneBox_title_bd{padding-left: 10px;border-left:2px solid #1787e0;font-size: 20px;}
@@ -40,7 +42,7 @@ h1,h2,h3{
 .img img{width: 25%;height: 100%;}
 .img2 img{width: 50%;height: 100%;}
 .img2{width: 100%;height: 120px;border:1px solid #ddd;}
-.img3 img{width: 242px;height: 80px;margin:20px 0 0 10px; }
+.img3 img{width: 242px;height: 80px;margin:20px 0 0 8px; }
 
 
 
@@ -50,6 +52,7 @@ h1,h2,h3{
 .panel_bd .panel_desc{color: #999;font-size: 13px;line-height: 1.2;overflow: hidden;text-overflow: ellipsis;
 	white-space: nowrap;word-wrap: normal;text-indent: 10px;}
 .oneBox_body_list_access .weui-media-box__desc{font-size: 16px;color: #333;line-height: 26px;}
+.oneBox_body_list_access .oneBox_body .weui-media-box__bd>p{font-size: 16px;color: #333;}
 .oneBox_body_list_access .weui-media-box{padding:7px 15px;}
 
 
