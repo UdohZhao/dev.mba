@@ -145,18 +145,14 @@ class Index extends Base
             $data['data']['programa_article']['2']['type'] = '0';
             $data['data']['programa_article']['2']['status'] = '0';
             $data['data']['programa_article']['2']['title'] = '国务院办公厅关于深化医教协同进一步推进医学教育改革与发展的意见';
-            $data['data']['programa_article']['2']['tips'] = '各省、自治区、直辖市人民政府，国务院各部委、各直属机构：
-
-医教协同推进医学教育改革与发展，加强医学人才培养，是提高医疗卫生服务水平的基础工程，是深化医药卫生体制改革的重要任务，是推进健康中国建设的重要保障。为深入贯彻落实全国卫生与健康大会精神和《“健康中国2030”规划纲要》，进一步加强医学人才培养，经国务院同意，现提出以下意见。';
+            $data['data']['programa_article']['2']['tips'] = '各省、自治区、直辖市人民政府，国务院各部委、各直属机构';
             $data['data']['programa_article']['3']['id'] = '1';
             $data['data']['programa_article']['3']['auid'] = '0';
             $data['data']['programa_article']['3']['pid'] = '1';
             $data['data']['programa_article']['3']['type'] = '0';
             $data['data']['programa_article']['3']['status'] = '0';
             $data['data']['programa_article']['3']['title'] = '教育部关于印发《2018年全国硕士研究生招生工作管理规定》的通知';
-            $data['data']['programa_article']['3']['tips'] = '各省、自治区、直辖市高等学校招生委员会、教育厅(教委)、教育招生考试机构，新疆生产建设兵团教育局，有关部门(单位)教育司(局)，中央军委训练管理部职业教育局，各硕士研究生招生单位：
-
-为做好2018年全国硕士研究生招生工作，现将《2018年全国硕士研究生招生工作管理规定》印发给你们，请遵照执行。';
+            $data['data']['programa_article']['3']['tips'] = '各省、自治区、直辖市高等学校招生委员会、教育厅(教委)、教育招生考试机构，新疆生产建设兵团教育局，有关部门(单位)教育司(局)，中央军委训练管理部职业教育局，各硕士研究生招生单位：';
             $data['data']['programa_article']['4']['id'] = '1';
             $data['data']['programa_article']['4']['auid'] = '0';
             $data['data']['programa_article']['4']['pid'] = '1';
