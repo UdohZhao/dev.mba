@@ -178,10 +178,6 @@ class Index extends Base
             $data['data']['programa_article']['6']['status'] = '0';
             $data['data']['programa_article']['6']['title'] = '教育部关于进一步做好“5+3”一体化医学人才培养工作的若干意见';
             $data['data']['programa_article']['6']['tips'] = '2015年，教育部决定，自当年起将七年制临床医学专业招生调整为临床医学专业(“5+3”一体化)，即5年本科阶段合格者直接进入本校与住院医师规范化培训有机衔接的3年临床医学(含中医、口腔医学)硕士专业学位研究生教育阶段，实施一体化人才培养。一体化人才培养是培养高';
-
-
-
-
             //return ajaxReturn($data);
             // 模板变量赋值
             $this->assign('data',$data);
