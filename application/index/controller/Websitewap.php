@@ -2,18 +2,19 @@
 namespace app\index\controller;
 class Websitewap extends Base
 {
+    public $paid;
     /**
      * 构造方法
      */
     public function _auto()
     {
-
+        $this->paid = input('?get.paid') ? input('get.paid') : 0;
     }
 
      /**
      * 默认方法
      */
-    public function websitewap()
+    public function websitewapDemo()
     {
         // Get
         if ($this->request->isGet()) {
@@ -92,4 +93,18 @@ class Websitewap extends Base
             return $this->fetch('websitewap');
         }
     }
+
+    /**
+     * PC端文章页面
+     */
+    public function websitewap()
+    {
+        // 根据当前栏目文章id查询
+        $data = db('programa_article')->where('id',$this->paid)->find();
+        // 模板变量赋值
+        $this->assign('data',$data);
+        // 渲染模板输出
+        return $this->fetch('websitewap');
+    }
+
 }

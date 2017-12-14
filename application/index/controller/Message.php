@@ -2,18 +2,19 @@
 namespace app\index\controller;
 class Message extends Base
 {
+    public $pid;
     /**
      * 构造方法
      */
     public function _auto()
     {
-
+        $this->pid = input('?get.pid') ? input('get.pid') : 0;
     }
 
      /**
      * 默认方法
      */
-    public function message()
+    public function messageDemo()
     {
         // Get
         if ($this->request->isGet()) {
@@ -43,10 +44,10 @@ class Message extends Base
             $data['data'] = '';
             // 组建数据
                 //招生公告
-            $data['data']['programa']['0']['id'] = '1';       
-            $data['data']['programa']['0']['pid'] = '0';    
-            $data['data']['programa']['0']['cname'] = '招生公告';       
-            $data['data']['programa']['0']['type'] = '0';      
+            $data['data']['programa']['0']['id'] = '1';
+            $data['data']['programa']['0']['pid'] = '0';
+            $data['data']['programa']['0']['cname'] = '招生公告';
+            $data['data']['programa']['0']['type'] = '0';
 
             $data['data']['programa']['1']['id'] = '2';
             $data['data']['programa']['1']['pid'] = '0';
@@ -58,16 +59,16 @@ class Message extends Base
             $data['data']['programa']['2']['cname'] = '热点公告';
             $data['data']['programa']['2']['type'] = '0';
 
-            $data['data']['programa']['3']['id'] = '4'; 
+            $data['data']['programa']['3']['id'] = '4';
             $data['data']['programa']['3']['pid'] = '0';
             $data['data']['programa']['3']['cname'] = '招考公告';
             $data['data']['programa']['3']['type'] = '1';
 
             // 院校
-            $data['data']['programa2']['0']['id'] = '1';       
-            $data['data']['programa2']['0']['pid'] = '0';    
-            $data['data']['programa2']['0']['cname'] = '重庆大学';       
-            $data['data']['programa2']['0']['type'] = '1';      
+            $data['data']['programa2']['0']['id'] = '1';
+            $data['data']['programa2']['0']['pid'] = '0';
+            $data['data']['programa2']['0']['cname'] = '重庆大学';
+            $data['data']['programa2']['0']['type'] = '1';
 
             $data['data']['programa2']['1']['id'] = '2';
             $data['data']['programa2']['1']['pid'] = '0';
@@ -79,15 +80,15 @@ class Message extends Base
             $data['data']['programa2']['2']['cname'] = '师范大学';
             $data['data']['programa2']['2']['type'] = '1';
 
-            $data['data']['programa2']['3']['id'] = '4'; 
+            $data['data']['programa2']['3']['id'] = '4';
             $data['data']['programa2']['3']['pid'] = '0';
             $data['data']['programa2']['3']['cname'] = '工商大学';
             $data['data']['programa2']['3']['type'] = '1';
              // 考试
-            $data['data']['programa3']['0']['id'] = '1';       
-            $data['data']['programa3']['0']['pid'] = '0';    
-            $data['data']['programa3']['0']['cname'] = '初试';       
-            $data['data']['programa3']['0']['type'] = '1';      
+            $data['data']['programa3']['0']['id'] = '1';
+            $data['data']['programa3']['0']['pid'] = '0';
+            $data['data']['programa3']['0']['cname'] = '初试';
+            $data['data']['programa3']['0']['type'] = '1';
 
             $data['data']['programa3']['1']['id'] = '2';
             $data['data']['programa3']['1']['pid'] = '0';
@@ -99,12 +100,12 @@ class Message extends Base
             $data['data']['programa3']['2']['cname'] = '英语';
             $data['data']['programa3']['2']['type'] = '1';
 
-            $data['data']['programa3']['3']['id'] = '4'; 
+            $data['data']['programa3']['3']['id'] = '4';
             $data['data']['programa3']['3']['pid'] = '0';
             $data['data']['programa3']['3']['cname'] = '逻辑';
             $data['data']['programa3']['3']['type'] = '1';
             // 返回来自ajax的请求
-            //return ajaxReturn($data); 
+            //return ajaxReturn($data);
             // 模板变量赋值
             $this->assign('data',$data);
             // 模板变量赋值
@@ -116,7 +117,20 @@ class Message extends Base
 
 
     public function item(){
-       
+
     }
-    
+
+    /**
+     * PC端栏目列表页面
+     */
+    public function message()
+    {
+        // 读取当前栏目下的文章列表
+        $data = db('programa_article')->where('status',0)->where('pid',$this->pid)->order('ctime desc')->paginate(config('paging'));
+        // 模板变量赋值
+        $this->assign('data',$data);
+        // 渲染模板输出
+        return $this->fetch('message');
+    }
+
 }
