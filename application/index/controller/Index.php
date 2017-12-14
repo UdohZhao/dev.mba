@@ -13,7 +13,7 @@ class Index extends Base
     /**
      * 默认方法
      */
-    public function index()
+    public function indexDemo()
     {
         // Get
         if ($this->request->isGet()) {
@@ -23,10 +23,10 @@ class Index extends Base
             $data['data'] = '';
             // 组建数据
                 //招生公告
-            $data['data']['programa']['0']['id'] = '1';       
-            $data['data']['programa']['0']['pid'] = '0';    
-            $data['data']['programa']['0']['cname'] = '招生公告';       
-            $data['data']['programa']['0']['type'] = '0';      
+            $data['data']['programa']['0']['id'] = '1';
+            $data['data']['programa']['0']['pid'] = '0';
+            $data['data']['programa']['0']['cname'] = '招生公告';
+            $data['data']['programa']['0']['type'] = '0';
 
             $data['data']['programa']['1']['id'] = '2';
             $data['data']['programa']['1']['pid'] = '0';
@@ -38,16 +38,16 @@ class Index extends Base
             $data['data']['programa']['2']['cname'] = '热点公告';
             $data['data']['programa']['2']['type'] = '0';
 
-            $data['data']['programa']['3']['id'] = '4'; 
+            $data['data']['programa']['3']['id'] = '4';
             $data['data']['programa']['3']['pid'] = '0';
             $data['data']['programa']['3']['cname'] = '招考公告';
             $data['data']['programa']['3']['type'] = '1';
 
             // 院校
-            $data['data']['programa2']['0']['id'] = '1';       
-            $data['data']['programa2']['0']['pid'] = '0';    
-            $data['data']['programa2']['0']['cname'] = '重庆大学';       
-            $data['data']['programa2']['0']['type'] = '1';      
+            $data['data']['programa2']['0']['id'] = '1';
+            $data['data']['programa2']['0']['pid'] = '0';
+            $data['data']['programa2']['0']['cname'] = '重庆大学';
+            $data['data']['programa2']['0']['type'] = '1';
 
             $data['data']['programa2']['1']['id'] = '2';
             $data['data']['programa2']['1']['pid'] = '0';
@@ -59,16 +59,16 @@ class Index extends Base
             $data['data']['programa2']['2']['cname'] = '师范大学';
             $data['data']['programa2']['2']['type'] = '1';
 
-            $data['data']['programa2']['3']['id'] = '4'; 
+            $data['data']['programa2']['3']['id'] = '4';
             $data['data']['programa2']['3']['pid'] = '0';
             $data['data']['programa2']['3']['cname'] = '工商大学';
             $data['data']['programa2']['3']['type'] = '1';
 
              // 考试
-            $data['data']['programa3']['0']['id'] = '1';       
-            $data['data']['programa3']['0']['pid'] = '0';    
-            $data['data']['programa3']['0']['cname'] = '初试';       
-            $data['data']['programa3']['0']['type'] = '1';      
+            $data['data']['programa3']['0']['id'] = '1';
+            $data['data']['programa3']['0']['pid'] = '0';
+            $data['data']['programa3']['0']['cname'] = '初试';
+            $data['data']['programa3']['0']['type'] = '1';
 
             $data['data']['programa3']['1']['id'] = '2';
             $data['data']['programa3']['1']['pid'] = '0';
@@ -80,7 +80,7 @@ class Index extends Base
             $data['data']['programa3']['2']['cname'] = '英语';
             $data['data']['programa3']['2']['type'] = '1';
 
-            $data['data']['programa3']['3']['id'] = '4'; 
+            $data['data']['programa3']['3']['id'] = '4';
             $data['data']['programa3']['3']['pid'] = '0';
             $data['data']['programa3']['3']['cname'] = '逻辑';
             $data['data']['programa3']['3']['type'] = '1';
@@ -145,18 +145,14 @@ class Index extends Base
             $data['data']['programa_article']['2']['type'] = '0';
             $data['data']['programa_article']['2']['status'] = '0';
             $data['data']['programa_article']['2']['title'] = '国务院办公厅关于深化医教协同进一步推进医学教育改革与发展的意见';
-            $data['data']['programa_article']['2']['tips'] = '各省、自治区、直辖市人民政府，国务院各部委、各直属机构：
-
-医教协同推进医学教育改革与发展，加强医学人才培养，是提高医疗卫生服务水平的基础工程，是深化医药卫生体制改革的重要任务，是推进健康中国建设的重要保障。为深入贯彻落实全国卫生与健康大会精神和《“健康中国2030”规划纲要》，进一步加强医学人才培养，经国务院同意，现提出以下意见。';
+            $data['data']['programa_article']['2']['tips'] = '各省、自治区、直辖市人民政府，国务院各部委、各直属机构';
             $data['data']['programa_article']['3']['id'] = '1';
             $data['data']['programa_article']['3']['auid'] = '0';
             $data['data']['programa_article']['3']['pid'] = '1';
             $data['data']['programa_article']['3']['type'] = '0';
             $data['data']['programa_article']['3']['status'] = '0';
             $data['data']['programa_article']['3']['title'] = '教育部关于印发《2018年全国硕士研究生招生工作管理规定》的通知';
-            $data['data']['programa_article']['3']['tips'] = '各省、自治区、直辖市高等学校招生委员会、教育厅(教委)、教育招生考试机构，新疆生产建设兵团教育局，有关部门(单位)教育司(局)，中央军委训练管理部职业教育局，各硕士研究生招生单位：
-
-为做好2018年全国硕士研究生招生工作，现将《2018年全国硕士研究生招生工作管理规定》印发给你们，请遵照执行。';
+            $data['data']['programa_article']['3']['tips'] = '各省、自治区、直辖市高等学校招生委员会、教育厅(教委)、教育招生考试机构，新疆生产建设兵团教育局，有关部门(单位)教育司(局)，中央军委训练管理部职业教育局，各硕士研究生招生单位：';
             $data['data']['programa_article']['4']['id'] = '1';
             $data['data']['programa_article']['4']['auid'] = '0';
             $data['data']['programa_article']['4']['pid'] = '1';
@@ -181,14 +177,94 @@ class Index extends Base
 
 
 
-           
-            //return ajaxReturn($data); 
+
+            //return ajaxReturn($data);
             // 模板变量赋值
             $this->assign('data',$data);
             // 渲染模板输出
             return $this->fetch('index');
-               
+
     }
 
-    } 
+    }
+
+    /**
+     * PC端首页
+     */
+    public function index()
+    {
+        // Get
+        if ($this->request->isGet())
+        {
+            // 读取Logo
+            $data['ad_logoData'] = db('ad_logo')->where('status',0)->find();
+            // 读取顶部广告
+            $data['ad_topData'] = db('ad_top')->where('status',0)->find();
+            // 读取栏目
+            $data['programaData'] = db('programa')->where('pid',0)->select();
+            // 读取栏目子级
+            if ($data['programaData'])
+            {
+                foreach ($data['programaData'] AS $k => $v)
+                {
+                    $data['programaData'][$k]['programaSonData'] = db('programa')->where('pid',$v['id'])->select();
+                    foreach ($data['programaData'][$k]['programaSonData'] AS $kk => $vv)
+                    {
+                        // 读取院校子级发布的文章
+                        if ($vv['type'] == 1)
+                        {
+                            $data['programaData'][$k]['programaSonData'][$kk]['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$vv['id'])->order('ctime desc')->limit(7)->select();
+                        }
+                        // 读取考试子级发布的文章
+                        if ($vv['type'] == 2)
+                        {
+                            $data['programaData'][$k]['programaSonData'][$kk]['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$vv['id'])->order('ctime desc')->limit(7)->select();
+                        }
+                    }
+                }
+            }
+            // 读取banner
+            $data['bannerData'] = db('banner')->where('status',0)->order('ctime desc')->select();
+            // 读取MBA热点关注
+            $data['hotData'] = db('programa_article')->where('status',0)->where('type',3)->order('ctime desc')->limit(6)->select();
+            // 读取招考公告
+            $data['announcementData'] = db('programa_article')->where('status',0)->where('type',4)->order('ctime desc')->limit(4)->select();
+            // 读取MBA活动预告广告
+            $data['ad_foreshowData'] = db('ad_foreshow')->where('status',0)->find();
+            // 读取MBA活动预告
+            $data['foreshowData'] = db('programa_article')->where('status',0)->where('type',5)->order('ctime desc')->limit(6)->select();
+            // 读取招生资讯
+            $data['recruitData'] = db('programa_article')->where('status',0)->where('type',7)->order('ctime desc')->limit(7)->select();
+            // 读取考试资讯
+            $data['examData'] = db('programa_article')->where('status',0)->where('type',8)->order('ctime desc')->limit(5)->select();
+            // 读取院校推荐
+            $data['recommendData'] = db('programa_article')->where('status',0)->where('type',6)->order('ctime desc')->limit(5)->select();
+            // 读取院校推荐广告
+            $data['ad_academyData'] = db('ad_academy')->where('status',0)->find();
+            // 读取资讯热线广告
+            $data['ad_informationData'] = db('ad_information')->where('status',0)->find();
+            // 读取手机二维码广告
+            $data['qr_code_phoneData'] = db('qr_code_phone')->where('status',0)->find();
+            // 读取公众号二维码广告
+            $data['qr_code_publicData'] = db('qr_code_public')->where('status',0)->find();
+            // 读取院校发布上方广告
+            $data['ad_academy_topData'] = db('ad_academy_top')->where('status',0)->order('ctime desc')->select();
+            // 读取考试资讯上方广告
+            $data['ad_exam_topData'] = db('ad_exam_top')->where('status',0)->order('ctime desc')->select();
+            // 读取合作伙伴广告
+            $data['ad_partnerData'] = db('ad_partner')->where('status',0)->order('ctime desc')->select();
+            // 读取友情链接
+            $data['blogrollData'] = db('blogroll')->where('status',0)->order('ctime desc')->select();
+            // 读取底部信息
+            $data['webstatData'] = db('webstat')->find();
+
+            // assign
+            $this->assign('data',$data);
+            // 渲染模板输出
+            return $this->fetch('index');
+        }
+    }
+
+
+
 }
