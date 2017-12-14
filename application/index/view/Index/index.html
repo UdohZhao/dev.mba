@@ -10,7 +10,7 @@
 			<!-- 重庆MBA热点关注 -->
 			<div class="oneBox_left col-md-3">
 				<div class="oneBox_title">
-					<span class="oneBox_title_bd">重庆重点热点关注</span>
+					<span class="oneBox_title_bd">重庆MBA热点关注</span>
 					<a href="#" class="rt">更多></a>
 				</div>
 				<div class="oneBox_body">
@@ -91,8 +91,8 @@
 					<div class="secondLeft_list">
 						<a href="#">
 							<div class="secondLeft_list_img lt">
-								<p>{$v.ctime}</p>
-								<!-- <p>2日</p>  -->
+								<p>{$v.ctime|date="m",###}月</p>
+								<p>{$v.ctime|date="d",###}日</p>
 							</div>
 							<div class="secondLeft_list_hd lt">
 								<div class="yd">·</div>
@@ -109,42 +109,56 @@
 				<!-- 招生咨询 -->
 				<div class="col-md-12">
 					<div class="oneBox_title">
-						<span class="oneBox_title_bd">招生咨询</span>
+						<span class="oneBox_title_bd">招生资讯</span>
 						<a href="#" class="rt">更多></a>
 					</div>
 					<div class="oneBox_body ">
 						<div class="weui-panel__bd">
+							{if $data.recruitData}
+								{foreach name="data.recruitData" item="v" key="k"}
+								{if condition="($k == 0)"}
 							<div class="weui-media-box weui-media-box_text pad0">
 								<a href="javascript:;">
-								  	<h2 class="oneBox_body_list_title">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</h2>
-								  	<div class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</div>
+								  	<h2 class="oneBox_body_list_title">{$v.title}</h2>
+								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
-							</div>	
+							</div>
+							{else /}	
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
-									<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</a></div>
+									<div class="oneBox_body_list_bd"><a href="#">{$v.title}</a></div>
 							</div>
+							{/if}
+							{/foreach}
+						{/if}
 						</div>
 					</div>
 				</div>
 				<!-- 考试咨询 -->
 				<div class="col-md-12">
 					<div class="oneBox_title">
-						<span class="oneBox_title_bd">考试咨询</span>
+						<span class="oneBox_title_bd">考试资讯</span>
 						<a href="#" class="rt">更多></a>
 					</div>
 					<div class="oneBox_body ">
 						<div class="weui-panel__bd">
+							{if $data.examData}
+								{foreach name="data.examData" item="v" key="k"}
+								{if condition="($k == 0)"}
 							<div class="weui-media-box weui-media-box_text pad0">
 								<a href="javascript:;">
-								  	<h2 class="oneBox_body_list_title">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</h2>
-								  	<div class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</div>
+								  	<h2 class="oneBox_body_list_title">{$v.title}</h2>
+								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
-							</div>	
+							</div>
+							{else /}	
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
-									<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</a></div>
+									<div class="oneBox_body_list_bd"><a href="#">{$v.title}</a></div>
 							</div>
+							{/if}
+							{/foreach}
+						{/if}
 						</div>
 					</div>
 				</div>
@@ -165,10 +179,20 @@
 		<div class="h20"></div>
 		<div class="col-md-12">
 			<div class="img">
-				<img src="/static/images/ad2.png" class="lt" title="#" alt="#">
-				<img src="/static/images/ad1.png" class="lt" title="#" alt="#">
-				<img src="/static/images/ad1.png" class="lt" title="#" alt="#">
-				<img src="/static/images/ad1.png" class="lt" title="#" alt="#">
+				{if $data.ad_academy_topData}
+				{foreach name="data.ad_academy_topData" item="v" key="k"}
+				<a href="{$v.img_link}">
+					<img src="{$v.img_path}" class="lt" title="#" alt="#">
+				</a>
+				{/foreach}
+				{/if}
+				{if $data.ad_academy_topData}
+				{foreach name="data.ad_academy_topData" item="v" key="k"}
+				<a href="{$v.img_link}">
+					<img src="{$v.img_path}" class="lt" title="#" alt="#">
+				</a>
+				{/foreach}
+				{/if}
 			</div>
 		</div>
 		<div class="h10"></div>
@@ -177,299 +201,90 @@
 	<div class="row third">
 		<!-- 院校发布 -->
 		<div class="col-md-12">
-	
-		<div class="third_header">
-			<h3 >院校发布</h3>
-			<div class="third_header_aside_banner">
-				<div id="myCarousela" class="carousel slide" data-ride="carousel">
-					    <!-- 轮播（Carousel）项目 -->
-					    <div class="carousel-inner">
-					        <div class="item active">
-					        	<div class="third_header_aside">
-									<ul>
-										<li><a href="{v.cname_link}">重庆大学</a></li>
-							           	<li><a href="{v.cname_link}">重庆大学</a></li>
-							           	<li><a href="{v.cname_link}">重庆大学</a></li>
-							           	<li><a href="{v.cname_link}">重庆大学</a></li>
-							           	<li><a href="{v.cname_link}">重庆大学</a></li>
-							           	<li><a href="{v.cname_link}">重庆大学</a></li>
-							        </ul>
-								</div>
-					        </div>
-					        <div class="item">
-					        	<div class="third_header_aside">
-									<ul>
-										<li><a href="{v.cname_link}">重庆大学</a></li>
-										<li><a href="{v.cname_link}">重庆大学</a></li>
-										<li><a href="{v.cname_link}">重庆大学</a></li>
-										<li><a href="{v.cname_link}">重庆大学</a></li>
-										<li><a href="{v.cname_link}">重庆大学</a></li>
-										<li><a href="{v.cname_link}">重庆大学</a></li>
-							        </ul>
-								</div>
-					        </div>
+			<div class="third_header">
+				<h3 >院校发布</h3>
+				<div class="third_header_aside_banner">
+					<div id="myCarousela" class="carousel slide" data-ride="carousel">
+						    <!-- 轮播（Carousel）项目 -->
+						    <div class="carousel-inner">
+						        <div class="item active">
+						        	<div class="third_header_aside">
+										<ul>
 
-					    </div>
-					    <!-- 轮播（Carousel）导航 -->
-					    <a class="carousel-control left" href="#myCarousela" 
-					        data-slide="prev">&lsaquo;
-					    </a>
-					    <a class="carousel-control right" href="#myCarousela" 
-					        data-slide="next">&rsaquo;
-					    </a>
+											<li><a href="{v.cname_link}">重庆大学</a></li>
+								           	<li><a href="{v.cname_link}">重庆大学</a></li>
+								           	<li><a href="{v.cname_link}">重庆大学</a></li>
+								           	<li><a href="{v.cname_link}">重庆大学</a></li>
+								           	<li><a href="{v.cname_link}">重庆大学</a></li>
+								           	<li><a href="{v.cname_link}">重庆大学</a></li>
+								        </ul>
+									</div>
+						        </div>
+						        <div class="item">
+						        	<div class="third_header_aside">
+										<ul>
+											<li><a href="{v.cname_link}">重庆大学</a></li>
+											<li><a href="{v.cname_link}">重庆大学</a></li>
+											<li><a href="{v.cname_link}">重庆大学</a></li>
+											<li><a href="{v.cname_link}">重庆大学</a></li>
+											<li><a href="{v.cname_link}">重庆大学</a></li>
+											<li><a href="{v.cname_link}">重庆大学</a></li>
+								        </ul>
+									</div>
+						        </div>
+
+						    </div>
+						    <!-- 轮播（Carousel）导航 -->
+						    <a class="carousel-control left" href="#myCarousela" 
+						        data-slide="prev">&lsaquo;
+						    </a>
+						    <a class="carousel-control right" href="#myCarousela" 
+						        data-slide="next">&rsaquo;
+						    </a>
+					</div>
 				</div>
 			</div>
-				
 		</div>
 	</div>
 	<div class="col-md-12">
 		<div class="row oneBox">
+			{if $data.programaData}
+               {foreach name="data.programaData" item="v" key="k"}
+                {if condition="($v.type == 1)"}
+                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}
 			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-	
+					<div class="oneBox_title">
+							<span class="oneBox_title_bd">{$vv.cname}</span>
+							<a href="/message/message?pid/{$vv.id}" class="rt">更多></a>
+					</div>
+					<div class="oneBox_body">
 					<div class="oneBox_body_list_access">
-
+						{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
+							{if $kkk == 0}
 						<div class="oneBox_body">
 							<a href="#" class="weui-media-box weui-media-box_appmsg">
 							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
+							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
 							    </div>
 							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</p>
+							      	<p class="weui-media-box__desc">{$vvv.title}</p>
 							    </div>
 						    </a>
 						</div>
+						{else /}
 						<div class="oneBox_body_list">
 							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</a></div>
+							<div class="oneBox_body_list_bd"><a href="#">{$vvv.title}</a></div>
 						</div>
+						{/if}
+						{/foreach}
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
+			{/volist}
+                {/if}
+               {/foreach}   
+           {/if}
 		</div>
 	</div>
 	<div class="row">
@@ -478,8 +293,20 @@
 		<div class="h10"></div>
 		<div class="col-md-12">
 			<div class="img2">
-				<img src="/static/images/ad2.png" class="lt" alt="#" title="#">
-				<img src="/static/images/ad1.png" class="lt" alt="#" title="#">
+				{if $data.ad_exam_topData}
+				{foreach name="data.ad_exam_topData" item="v" key="k"}
+				<a href="{$v.img_link}">
+					<img src="{$v.img_path}" class="lt" title="#" alt="#">
+				</a>
+				{/foreach}
+				{/if}
+				{if $data.ad_exam_topData}
+				{foreach name="data.ad_exam_topData" item="v" key="k"}
+				<a href="{$v.img_link}">
+					<img src="{$v.img_path}" class="lt" title="#" alt="#">
+				</a>
+				{/foreach}
+				{/if}
 			</div>
 		</div>
 		<div class="h10"></div>
@@ -535,271 +362,44 @@
 		</div>
 	</div>
 	<div class="row oneBox">
-		<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
+			{if $data.programaData}
+               {foreach name="data.programaData" item="v" key="k"}
+                {if condition="($v.type == 2)"}
+                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}
 			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
+					<div class="oneBox_title">
+							<span class="oneBox_title_bd">{$vv.cname}</span>
+							<a href="/message/message?pid/{$vv.id}" class="rt">更多></a>
+					</div>
+					<div class="oneBox_body">
 					<div class="oneBox_body_list_access">
+						{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
+							{if $kkk == 0}
 						<div class="oneBox_body">
 							<a href="#" class="weui-media-box weui-media-box_appmsg">
 							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
+							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
 							    </div>
 							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
+							      	<p class="weui-media-box__desc">{$vvv.title}</p>
 							    </div>
 						    </a>
 						</div>
+						{else /}
 						<div class="oneBox_body_list">
 							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
+							<div class="oneBox_body_list_bd"><a href="#">{$vvv.title}</a></div>
 						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
+						{/if}
+						{/foreach}
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="oneBox_title">
-						<span class="oneBox_title_bd">重庆大学MBA</span>
-						<a href="#" class="rt">更多></a>
-				</div>
-				<div class="oneBox_body">
-					<div class="oneBox_body_list_access">
-						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
-							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="/static/images/icon_2.png">
-							    </div>
-							    <div class="weui-media-box__bd">
-							      	<p class="weui-media-box__desc">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程重庆地质大学(武汉)2018年接收推免生章程</p>
-							    </div>
-						    </a>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-						<div class="oneBox_body_list">
-							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程2018年接收推免生章程</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-	</div>
+			{/volist}
+                {/if}
+               {/foreach}   
+           {/if}
+		</div>
 	<!-- 4L 结束 -->
 	<div class="row third">
 		<div class="col-md-12">
@@ -808,21 +408,21 @@
 			</div>
 		</div>
 		<div class="row">
-		<!-- 广告位 -->
-		<!-- 广告位一 -->
-		<div class="h10"></div>
-		<div class="col-md-12">
-			<div class="img3">
-				<img src="/static/images/blogroll_1.png" class="lt">
-				<img src="/static/images/blogroll_2.png" class="lt">
-				<img src="/static/images/blogroll_1.png" class="lt">
-				<img src="/static/images/blogroll_2.png" class="lt">
-				<img src="/static/images/blogroll_1.png" class="lt">
-				<img src="/static/images/blogroll_2.png" class="lt">
+				<!-- 广告位一 -->
+			<div class="h10"></div>
+			<div class="col-md-12">
+				<div class="img3">
+					{if $data.ad_partnerData}
+					{foreach name="data.ad_partnerData" item="v" key="k"}
+					<a href="{$v.img_link}">
+						<img src="{$v.img_path}" class="lt" title="#" alt="#">
+					</a>
+					{/foreach}
+					{/if}
+				</div>
 			</div>
+			<div class="h10"></div>
 		</div>
-		<div class="h10"></div>
-	</div>
 	</div>
 </div>
 

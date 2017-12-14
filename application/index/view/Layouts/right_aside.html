@@ -13,26 +13,17 @@
 							<a href="#" class="rt">更多></a>
 						</div>
 						<div class="oneBox_body">
+							{if $data.announcementData}
+							{foreach name="data.announcementData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</a></div>
+								<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
 							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</a></div>
-							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</a></div>
-							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程重庆地质大学</a></div>
-							</div>
+							{/foreach}
+							{/if}
 						</div>
 					</div>
 					<!-- 广告位 -->
-					
 			</div>
 			<div class="col-md-12 oneBox_right pad0">
 					<div class="col-md-12">
@@ -41,7 +32,11 @@
 						</div>
 						<div class="h10"></div>
 						<div class="oneBox_top_ad">
-							<img src="/static/images/icon.png">
+							{if $data.ad_informationData}
+							<a href="javascript:;">
+							<img src="{$data.ad_informationData.img_path}">
+							</a>
+							{/if}
 						</div>
 						<div class="h10"></div>
 					</div>
@@ -50,7 +45,12 @@
 							<div class="lt second_QR_hd">
 								<span>手机站二维码</span>
 							</div>
-							<div class="lt second_phone_img"><img src="/static/images/phone.png" alt="手机站二维码" title="手机站二维码"></div>
+							<div class="lt second_phone_img">
+								{if $data.qr_code_phoneData}
+								<img src="{$data.qr_code_phoneData.img_path}" alt="手机站二维码" title="手机站二维码">
+								{/if}
+							</div>
+							
 					</div>
 					<div class="h10"></div>
 					<!-- 微信 -->
@@ -58,7 +58,11 @@
 							<div class="lt second_QR_hd">
 									<span>公众号二维码</span>
 							</div>
-							<div class="lt second_phone_img"><img src="/static/images/wx.png" alt="公众号二维码" title="公众号二维码"></div>
+							<div class="lt second_phone_img">
+								{if $data.qr_code_publicData}
+								<img src="{$data.qr_code_publicData.img_path}" alt="公众号二维码" title="公众号二维码">
+								{/if}
+							</div>
 					</div>
 					<div class="h24"></div>
 					<!-- 院校推荐 -->
@@ -68,34 +72,22 @@
 							<a href="#" class="rt">更多></a>
 						</div>
 						<div class="oneBox_body">
+							{if $data.recommendData}
+							{foreach name="data.recommendData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程</a></div>
+								<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
 							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程</a></div>
-							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程</a></div>
-							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程</a></div>
-							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程</a></div>
-							</div>
-							<div class="oneBox_body_list">
-								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="#">重庆地质大学(武汉)2018年接收推免生章程</a></div>
-							</div>
+							{/foreach}
+							{/if}
 						</div>
 						<!-- 广告位 -->
 						<div class="oneBox_top_ad">
-							<img src="/static/images/icon.png">
+							{if $data.ad_academyData}
+							<a href="javascript:;">
+							<img src="{$data.ad_academyData.img_path}">
+							</a>
+							{/if}
 						</div>
 
 					</div>

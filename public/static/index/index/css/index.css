@@ -42,7 +42,7 @@ h1,h2,h3{
 .img img{width: 25%;height: 100%;}
 .img2 img{width: 50%;height: 100%;}
 .img2{width: 100%;height: 120px;border:1px solid #ddd;}
-.img3 img{width: 242px;height: 80px;margin:20px 0 0 10px; }
+.img3 img{width: 242px;height: 80px;margin:20px 0 0 8px; }
 
 
 
@@ -52,6 +52,7 @@ h1,h2,h3{
 .panel_bd .panel_desc{color: #999;font-size: 13px;line-height: 1.2;overflow: hidden;text-overflow: ellipsis;
 	white-space: nowrap;word-wrap: normal;text-indent: 10px;}
 .oneBox_body_list_access .weui-media-box__desc{font-size: 16px;color: #333;line-height: 26px;}
+.oneBox_body_list_access .oneBox_body .weui-media-box__bd>p{font-size: 16px;color: #333;}
 .oneBox_body_list_access .weui-media-box{padding:7px 15px;}
 
 
