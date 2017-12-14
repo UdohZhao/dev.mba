@@ -15,6 +15,7 @@ class AdPartner extends Base
         // 控制器
         $this->assign('ctl','AdPartner');
         $this->assign('ctlName','合作伙伴广告管理');
+        $this->assign('active','AdPartner');
     }
 
     /**

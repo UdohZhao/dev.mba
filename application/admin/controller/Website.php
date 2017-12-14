@@ -11,6 +11,7 @@ class Website extends Base
     {
         $this->db = db('website');
         $this->id = input('?get.id') ? input('get.id') : 0;
+        $this->assign('active','Website');
     }
 
     /**

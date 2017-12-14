@@ -15,6 +15,7 @@ class AdTop extends Base
         // 控制器
         $this->assign('ctl','AdTop');
         $this->assign('ctlName','顶部广告管理');
+        $this->assign('active','AdTop');
     }
 
     /**

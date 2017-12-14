@@ -12,6 +12,7 @@ class AdminUser extends Base
         $this->db = model('AdminUser');
         $this->id = input('?get.id') ? input('get.id') : 0;
         $this->assign('id',$this->id);
+        $this->assign('active','AdminUser');
     }
 
     /**
@@ -19,6 +20,7 @@ class AdminUser extends Base
      */
     public function add()
     {
+        $this->assign('action','AdminUser/add');
         // Get
         if ($this->request->isGet())
         {
@@ -110,6 +112,7 @@ class AdminUser extends Base
      */
     public function index()
     {
+        $this->assign('action','AdminUser/index');
         // search
         $username = "%%";
         if (input('?post.search')) $username = "%".input('post.search')."%";

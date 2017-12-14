@@ -15,6 +15,7 @@ class QrCodePhone extends Base
         // 控制器
         $this->assign('ctl','QrCodePhone');
         $this->assign('ctlName','手机二维码管理');
+        $this->assign('active','QrCodePhone');
     }
 
     /**

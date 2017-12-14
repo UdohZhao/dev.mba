@@ -13,10 +13,10 @@ CREATE TABLE `admin_user`(
 CREATE TABLE `permissions`(
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '后台用户权限表主键id',
   `auid` INT(11) UNSIGNED NOT NULL COMMENT '关联后台用户表主键id',
-  `pid` INT(11) UNSIGNED NOT NULL COMMENT '关联栏目表主键id',
+  `pid` VARCHAR(255) NOT NULL COMMENT '关联栏目表主键id（序列化数组）',
+  `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
   PRIMARY KEY (`id`),
-  KEY (`auid`),
-  KEY (`pid`)
+  KEY (`auid`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # 栏目表

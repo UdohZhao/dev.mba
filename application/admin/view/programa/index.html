@@ -21,7 +21,7 @@
         </div>
       </form>
       <div class="panel-body">
-        {if condition="(!$data->isEmpty())"}
+        {if condition="(!$data.programaData->isEmpty())"}
         <table class="table table-hover">
           <thead>
             <tr>
@@ -33,7 +33,7 @@
             </tr>
           </thead>
           <tbody>
-            {foreach name="data" item="v" key="k" }
+            {foreach name="data.programaData" item="v" key="k" }
             <tr>
                <td></td>
                <td>{$v.cname}</td>
@@ -50,12 +50,18 @@
                </td>
                <td>{$v.ctime|date="Y-m-d H:i",###}</td>
                <td>
+                  {if condition="($Think.session.adminUser.type eq 0)"}
                   <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},{$v.pid});">编辑</button>
                   <button type="button" class="btn btn-default btn-xs" onclick="del({$v.id});">删除</button>
                   <button type="button" class="btn btn-primary btn-xs" onclick="son({$v.id});">添加子级</button>
+                  {/if}
+                  {if condition="($Think.session.adminUser.type eq 0 || $data.permissionsData && in_array($v.id,$data.permissionsData.pid))"}
                   <button type="button" class="btn btn-primary btn-xs" onclick="sonList({$v.id});">子级列表</button>
+                  {if condition="($v.type neq 0 && $v.type neq 1 && $v.type neq 2)"}
                   <button type="button" class="btn btn-primary btn-xs" onclick="issue({$v.id},{$v.type});">发布文章</button>
                   <button type="button" class="btn btn-primary btn-xs" onclick="aList({$v.id});">文章列表</button>
+                  {/if}
+                  {/if}
                </td>
             </tr>
             {/foreach}
@@ -67,7 +73,7 @@
         </blockquote>
         {/if}
         <div style="float: right;">
-          {$data->render()}
+          {$data.programaData->render()}
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@ class Blogroll extends Base
         // 控制器
         $this->assign('ctl','Blogroll');
         $this->assign('ctlName','友情链接管理');
+        $this->assign('active','Blogroll');
     }
 
     /**

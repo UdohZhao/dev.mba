@@ -15,6 +15,7 @@ class AdExamTop extends Base
         // 控制器
         $this->assign('ctl','AdExamTop');
         $this->assign('ctlName','考试资讯广告管理');
+        $this->assign('active','AdExamTop');
     }
 
     /**

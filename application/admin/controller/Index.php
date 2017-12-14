@@ -7,7 +7,7 @@ class Index extends Base
      */
     public function _auto()
     {
-
+        $this->assign('active','Index');
     }
 
     /**

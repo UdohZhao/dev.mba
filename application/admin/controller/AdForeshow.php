@@ -15,6 +15,7 @@ class AdForeshow extends Base
         // 控制器
         $this->assign('ctl','AdForeshow');
         $this->assign('ctlName','活动预告广告管理');
+        $this->assign('active','AdForeshow');
     }
 
     /**
@@ -22,6 +23,7 @@ class AdForeshow extends Base
      */
     public function add()
     {
+        $this->assign('action','AdForeshow/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class AdForeshow extends Base
      */
     public function index()
     {
+        $this->assign('action','AdForeshow/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

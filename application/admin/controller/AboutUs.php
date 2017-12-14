@@ -11,6 +11,7 @@ class AboutUs extends Base
     {
         $this->db = db('about_us');
         $this->id = input('?get.id') ? input('get.id') : 0;
+        $this->assign('active','AboutUs');
     }
 
     /**
