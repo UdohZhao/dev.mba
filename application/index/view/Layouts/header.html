@@ -77,32 +77,35 @@
                 </li>
                 <li class="nav-second">
                     <div class="nav-title">招生</div>
-                        <ul class="nav-td">
-                            {if $data.programaData}
-                                {foreach name="data.programaData" item="v" key="k"}
-                                 {if condition="($v.type == 0)"}
-                                    {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                <li><a href="#">{$vv.cname}</a></li>
-                                    {/foreach}
-                                 {/if}
-                                {/foreach}   
-                            {/if}
-                        </ul>
+                        <div class="nav-td">
+                            <ul >
+                                {if $data.programaData}
+                                    {foreach name="data.programaData" item="v" key="k"}
+                                     {if condition="($v.type == 0)"}
+                                        {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                    <li><a href="#">{$vv.cname}</a></li>
+                                        {/foreach}
+                                     {/if}
+                                    {/foreach}   
+                                {/if}
+                            </ul>
+                        </div>
                 </li>
                 <li class="nav-third">
                     <div class="nav-title">院校</div>
-                    <ul class="nav-td">
-                        {if $data.programaData}
-                                {foreach name="data.programaData" item="v" key="k"}
-                                 {if condition="($v.type == 1)"}
-                                    {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                <li><a href="#">{$vv.cname}</a></li>
-                                    {/foreach}
-                                 {/if}
-                                {/foreach}   
-                            {/if}
-
-                    </ul>
+                    <div class="nav-td">
+                        <ul >
+                            {if $data.programaData}
+                                    {foreach name="data.programaData" item="v" key="k"}
+                                     {if condition="($v.type == 1)"}
+                                        {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                    <li><a href="#">{$vv.cname}</a></li>
+                                        {/foreach}
+                                     {/if}
+                                    {/foreach}   
+                                {/if}
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-fourth">
                     <div class="nav-title">考试</div>
