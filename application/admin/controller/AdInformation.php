@@ -23,6 +23,7 @@ class AdInformation extends Base
      */
     public function add()
     {
+        $this->assign('action','AdInformation/add');
         // Get
         if ($this->request->isGet())
         {
@@ -92,6 +93,7 @@ class AdInformation extends Base
      */
     public function index()
     {
+        $this->assign('action','AdInformation/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

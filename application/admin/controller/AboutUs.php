@@ -19,6 +19,7 @@ class AboutUs extends Base
      */
     public function add()
     {
+        $this->assign('action','AboutUs/add');
         // Get
         if ($this->request->isGet())
         {

@@ -19,6 +19,7 @@ class Website extends Base
      */
     public function add()
     {
+        $this->assign('action','Website/add');
         // Get
         if ($this->request->isGet())
         {

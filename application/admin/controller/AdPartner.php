@@ -23,6 +23,7 @@ class AdPartner extends Base
      */
     public function add()
     {
+        $this->assign('action','AdPartner/add');
         // Get
         if ($this->request->isGet())
         {
@@ -92,6 +93,7 @@ class AdPartner extends Base
      */
     public function index()
     {
+        $this->assign('action','AdPartner/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

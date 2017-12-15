@@ -23,6 +23,7 @@ class Blogroll extends Base
      */
     public function add()
     {
+        $this->assign('action','Blogroll/add');
         // Get
         if ($this->request->isGet())
         {
@@ -87,6 +88,7 @@ class Blogroll extends Base
      */
     public function index()
     {
+        $this->assign('action','Blogroll/index');
         // search
         $cname = "%%";
         if (input('?post.search')) $cname = "%".input('post.search')."%";

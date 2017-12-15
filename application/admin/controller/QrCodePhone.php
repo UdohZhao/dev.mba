@@ -23,6 +23,7 @@ class QrCodePhone extends Base
      */
     public function add()
     {
+        $this->assign('action','QrCodePhone/add');
         // Get
         if ($this->request->isGet())
         {
@@ -92,6 +93,7 @@ class QrCodePhone extends Base
      */
     public function index()
     {
+        $this->assign('action','QrCodePhone/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

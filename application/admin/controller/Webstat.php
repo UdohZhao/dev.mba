@@ -19,6 +19,7 @@ class Webstat extends Base
      */
     public function add()
     {
+        $this->assign('action','Webstat/add');
         // Get
         if ($this->request->isGet())
         {
