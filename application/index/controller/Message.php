@@ -128,18 +128,12 @@ class Message extends Base
         // Get
         if ($this->request->isGet())
         {
-            // 读取Logo
-            $data['ad_logoData'] = db('ad_logo')->where('status',0)->find();
-            // 读取顶部广告
-            $data['ad_topData'] = db('ad_top')->where('status',0)->find();
-            // 读取栏目
-            $data['programaData'] = db('programa')->where('pid',0)->select();
-        // 读取当前栏目下的文章列表
-        $data = db('programa_article')->where('status',0)->where('pid',$this->pid)->order('ctime desc')->paginate(config('paging'));
-        // 模板变量赋值
-        $this->assign('data',$data);
-        // 渲染模板输出
-        return $this->fetch('message');
+            // 读取当前栏目下的文章列表
+            $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$this->pid)->order('ctime desc')->paginate(config('paging'));
+            // 模板变量赋值
+            $this->assign('data',$this->data);
+            // 渲染模板输出
+            return $this->fetch('message');
         }
     }
 

@@ -6,15 +6,61 @@ use think\Controller;
  */
 class Base extends Controller
 {
+    public $data;
     /**
      * 构造方法
      */
     public function _initialize()
     {
-      // 初始化构造方法
-      if(method_exists($this,'_auto'))
-      {
-        $this->_auto();
-      }
+        // 初始化构造方法
+        if(method_exists($this,'_auto'))
+        {
+          $this->_auto();
+        }
+        // 读取Logo
+        $this->data['ad_logoData'] = db('ad_logo')->where('status',0)->find();
+        // 读取顶部广告
+        $this->data['ad_topData'] = db('ad_top')->where('status',0)->find();
+        // 读取资讯热线广告
+        $this->data['ad_informationData'] = db('ad_information')->where('status',0)->find();
+        // 读取手机二维码广告
+        $this->data['qr_code_phoneData'] = db('qr_code_phone')->where('status',0)->find();
+        // 读取公众号二维码广告
+        $this->data['qr_code_publicData'] = db('qr_code_public')->where('status',0)->find();
+        // 读取院校推荐广告
+        $this->data['ad_academyData'] = db('ad_academy')->where('status',0)->find();
+        // 读取合作伙伴广告
+        $this->data['ad_partnerData'] = db('ad_partner')->where('status',0)->order('ctime desc')->select();
+        // 读取友情链接
+        $this->data['blogrollData'] = db('blogroll')->where('status',0)->order('ctime desc')->select();
+        // 读取底部信息
+        $this->data['webstatData'] = db('webstat')->find();
+        // 读取栏目
+        $this->data['programaData'] = db('programa')->where('pid',0)->select();
+        // 读取栏目子级
+        if ($this->data['programaData'])
+        {
+            foreach ($this->data['programaData'] AS $k => $v)
+            {
+                $this->data['programaData'][$k]['programaSonData'] = db('programa')->where('pid',$v['id'])->select();
+                foreach ($this->data['programaData'][$k]['programaSonData'] AS $kk => $vv)
+                {
+                    // 读取院校子级发布的文章
+                    if ($vv['type'] == 1)
+                    {
+                        $this->data['programaData'][$k]['programaSonData'][$kk]['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$vv['id'])->order('ctime desc')->limit(7)->select();
+                    }
+                    // 读取考试子级发布的文章
+                    if ($vv['type'] == 2)
+                    {
+                        $this->data['programaData'][$k]['programaSonData'][$kk]['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$vv['id'])->order('ctime desc')->limit(7)->select();
+                    }
+                }
+            }
+        }
+        // 读取招考公告
+        $this->data['announcementData'] = db('programa_article')->where('status',0)->where('type',4)->order('ctime desc')->limit(4)->select();
+        // 读取院校推荐
+        $this->data['recommendData'] = db('programa_article')->where('status',0)->where('type',6)->order('ctime desc')->limit(5)->select();
     }
 }

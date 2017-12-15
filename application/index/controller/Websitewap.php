@@ -99,23 +99,13 @@ class Websitewap extends Base
      */
     public function websitewap()
     {
-       
-            // 读取Logo
-            $data['ad_logoData'] = db('ad_logo')->where('status',0)->find();
-            // 读取顶部广告
-            $data['ad_topData'] = db('ad_top')->where('status',0)->find();
-            // 读取栏目
-            $data['programaData'] = db('programa')->where('pid',0)->select();
-            // 根据当前栏目文章id查询
-            $data = db('programa_article')->where('id',$this->paid)->find();
+        // 根据当前栏目文章id查询
+        $this->data['programa_articleData'] = db('programa_article')->where('id',$this->paid)->find();
 
-
-            // 模板变量赋值
-            $this->assign('data',$data);
-            // 渲染模板输出
-            return $this->fetch('websitewap');
-        
-        
+        // 模板变量赋值
+        $this->assign('data',$this->data);
+        // 渲染模板输出
+        return $this->fetch('websitewap');
     }
 
 }
