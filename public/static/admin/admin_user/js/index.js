@@ -59,3 +59,10 @@ swal({
 })
 
 }
+
+// 配置权限
+function permissions(id)
+{
+    console.log(id);
+    window.location.href = "/admin/Permissions/add?auid="+id;
+}

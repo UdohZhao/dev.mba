@@ -15,6 +15,7 @@ class AdAcademy extends Base
         // 控制器
         $this->assign('ctl','AdAcademy');
         $this->assign('ctlName','院校推荐广告管理');
+        $this->assign('active','AdAcademy');
     }
 
     /**
@@ -22,6 +23,7 @@ class AdAcademy extends Base
      */
     public function add()
     {
+        $this->assign('action','AdAcademy/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class AdAcademy extends Base
      */
     public function index()
     {
+        $this->assign('action','AdAcademy/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

@@ -11,6 +11,7 @@ class AboutUs extends Base
     {
         $this->db = db('about_us');
         $this->id = input('?get.id') ? input('get.id') : 0;
+        $this->assign('active','AboutUs');
     }
 
     /**
@@ -18,6 +19,7 @@ class AboutUs extends Base
      */
     public function add()
     {
+        $this->assign('action','AboutUs/add');
         // Get
         if ($this->request->isGet())
         {

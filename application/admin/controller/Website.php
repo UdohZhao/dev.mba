@@ -11,6 +11,7 @@ class Website extends Base
     {
         $this->db = db('website');
         $this->id = input('?get.id') ? input('get.id') : 0;
+        $this->assign('active','Website');
     }
 
     /**
@@ -18,6 +19,7 @@ class Website extends Base
      */
     public function add()
     {
+        $this->assign('action','Website/add');
         // Get
         if ($this->request->isGet())
         {

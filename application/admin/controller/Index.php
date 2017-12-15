@@ -7,7 +7,8 @@ class Index extends Base
      */
     public function _auto()
     {
-
+        $this->assign('active','Index');
+        $this->assign('action','Index');
     }
 
     /**
@@ -18,6 +19,11 @@ class Index extends Base
         // Get
         if ($this->request->isGet())
         {
+            // 读取访问量
+            $data['website_pvCount'] = db('website_pv')->value('pv');
+            dump($data);
+            die;
+
             // 渲染模板输出
             return $this->fetch('index');
         }

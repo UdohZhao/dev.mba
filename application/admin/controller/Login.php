@@ -59,6 +59,12 @@ class Login extends Controller
         {
           return ajaxReturn(Rs(2,'改用户已被冻结，暂时无法登录，请联系网站管理员！',''));
         }
+        // 读取当前用户权限
+        $res[0]['permissions'] = db('permissions')->where('auid',$res[0]['id'])->find();
+        if ($res[0]['permissions'])
+        {
+            $res[0]['permissions']['pid'] = unserialize($res[0]['permissions']['pid']);
+        }
         // 用户信息存入session
         session('adminUser',$res[0]);
         return ajaxReturn(Rs(0,'',''));

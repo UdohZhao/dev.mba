@@ -11,6 +11,7 @@ class Webstat extends Base
     {
         $this->db = db('webstat');
         $this->id = input('?get.id') ? input('get.id') : 0;
+        $this->assign('active','Webstat');
     }
 
     /**
@@ -18,6 +19,7 @@ class Webstat extends Base
      */
     public function add()
     {
+        $this->assign('action','Webstat/add');
         // Get
         if ($this->request->isGet())
         {
