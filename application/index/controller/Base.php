@@ -62,5 +62,25 @@ class Base extends Controller
         $this->data['announcementData'] = db('programa_article')->where('status',0)->where('type',4)->order('ctime desc')->limit(4)->select();
         // 读取院校推荐
         $this->data['recommendData'] = db('programa_article')->where('status',0)->where('type',6)->order('ctime desc')->limit(5)->select();
+        // 读取网站地图
+        $this->data['website_map'] = config('website_map');
     }
+
+    /**
+     * 搜索文章
+     */
+    public function search()
+    {
+        // 获取搜索关键词
+        $search_keywords = "%%";
+        if (input('?post.search')) $search_keywords = "%".input('post.search')."%";
+        // 查
+        $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('search_keywords','like',$search_keywords)->order('ctime desc')->paginate(config('paging'));
+
+        // 模板变量赋值
+        $this->assign('data',$this->data);
+        // 渲染模板输出
+        return $this->fetch('message');
+    }
+
 }
