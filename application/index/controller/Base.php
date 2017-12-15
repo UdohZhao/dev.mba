@@ -99,7 +99,7 @@ class Base extends Controller
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出
-        return $this->fetch('message');
+        return $this->fetch('message/message');
     }
 
     /**
@@ -112,7 +112,19 @@ class Base extends Controller
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出
-        return $this->fetch('websitewap');
+        return $this->fetch('/sitemap/aboutUs');
+    }
+
+    /**
+     * 网站地图
+     */
+    public function sitemap()
+    {
+         // 模板变量赋值
+         $this->assign('data',$this->data);
+         // 渲染模板输出
+         return $this->fetch('/sitemap/sitemap');
+        
     }
 
 }

@@ -11,14 +11,12 @@
 		
 	<!-- 左边列表样式 -->
 	<div class="left_aside lt" >
-		{if $data.programa_articleData}
+		{if $data.about_usData}
 		<div class="article_bd" >
-			<h1>{$data.programa_articleData.title}</h1>
-			<div class="title-box">
-				<p>{$data.programa_articleData.tips}</p>
-			</div>
+			<h1 style="padding-bottom: 20px;">{$data.about_usData.title}</h1>
+
 			<div class="content">
-				{$data.programa_articleData.content}
+				{$data.about_usData.content}
 			</div>
 		</div>
 		{/if}

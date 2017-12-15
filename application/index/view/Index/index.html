@@ -15,7 +15,7 @@
 					{if condition="($k == 3)"}
 				<div class="oneBox_title">
 					<span class="oneBox_title_bd">{$v.cname}</span>
-					<a href="/message/message/pid/{$v.id}" class="rt">更多></a>
+					<a href="/message/message?pid={$v.id}" class="rt">更多></a>
 				</div>
 				{/if}
 				{/foreach}
@@ -25,7 +25,7 @@
 						{foreach name="data.hotData" item="v" key="k"}
 					<div class="oneBox_body_list">
 						<div class="yd">·</div>
-						<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
+						<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid={$v.id}">{$v.title}</a></div>
 					</div>
 					{/foreach}
 					{/if}
@@ -79,7 +79,7 @@
 					{if condition="($k == 5)"}
 				<div class="oneBox_title">
 					<span class="oneBox_title_bd">{$v.cname}</span>
-					<a href="/message/message?pid/{$v.id}" class="rt">更多></a>
+					<a href="/message/message?pid={$v.id}" class="rt">更多></a>
 				</div>
 				{/if}
 				{/foreach}
@@ -103,7 +103,7 @@
 					{if $data.foreshowData}
 					{foreach name="data.foreshowData" item="v" key="k"}
 					<div class="secondLeft_list">
-						<a href="/websitewap/websitewap?paid/{$v.id}">
+						<a href="/websitewap/websitewap?paid={$v.id}">
 							<div class="secondLeft_list_img lt">
 								<p>{$v.ctime|date="m",###}月</p>
 								<p>{$v.ctime|date="d",###}日</p>
@@ -122,17 +122,23 @@
 			<div class="col-md-6 oneBox_center">
 				<!-- 招生咨询 -->
 				<div class="col-md-12">
+					{if $data.programaData}
+					{foreach name="data.programaData" item="v" key="k"}
+					{if condition="($k == 7)"}
 					<div class="oneBox_title">
-						<span class="oneBox_title_bd">招生资讯</span>
-						<a href="#" class="rt">更多></a>
+						<span class="oneBox_title_bd">{$v.cname}</span>
+						<a href="/message/message?pid={$v.id}" class="rt">更多></a>
 					</div>
+					{/if}
+					{/foreach}
+					{/if}
 					<div class="oneBox_body ">
 						<div class="weui-panel__bd">
 							{if $data.recruitData}
 								{foreach name="data.recruitData" item="v" key="k"}
 								{if condition="($k == 0)"}
 							<div class="weui-media-box weui-media-box_text pad0">
-								<a href="/websitewap/websitewap?paid/{$v.id}">
+								<a href="/websitewap/websitewap?paid={$v.id}">
 								  	<h2 class="oneBox_body_list_title">{$v.title}</h2>
 								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
@@ -140,7 +146,7 @@
 							{else /}	
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
-									<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
+									<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid={$v.id}">{$v.title}</a></div>
 							</div>
 							{/if}
 							{/foreach}
@@ -150,17 +156,23 @@
 				</div>
 				<!-- 考试咨询 -->
 				<div class="col-md-12">
+					{if $data.programaData}
+					{foreach name="data.programaData" item="v" key="k"}
+					{if condition="($k == 8)"}
 					<div class="oneBox_title">
-						<span class="oneBox_title_bd">考试资讯</span>
-						<a href="#" class="rt">更多></a>
+						<span class="oneBox_title_bd">{$v.cname}</span>
+						<a href="/message/message?pid={$v.id}" class="rt">更多></a>
 					</div>
+					{/if}
+					{/foreach}
+					{/if}
 					<div class="oneBox_body ">
 						<div class="weui-panel__bd">
 							{if $data.examData}
 								{foreach name="data.examData" item="v" key="k"}
 								{if condition="($k == 0)"}
 							<div class="weui-media-box weui-media-box_text pad0">
-								<a href="/websitewap/websitewap?paid/{$v.id}">
+								<a href="/websitewap/websitewap?paid={$v.id}">
 								  	<h2 class="oneBox_body_list_title">{$v.title}</h2>
 								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
@@ -168,7 +180,7 @@
 							{else /}	
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
-									<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
+									<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid={$v.id}">{$v.title}</a></div>
 							</div>
 							{/if}
 							{/foreach}
@@ -221,7 +233,7 @@
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 1)"}
 					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
-										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										<li><a href="/message/message?pid={$vv.id}">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
 							               {/foreach}   
@@ -236,7 +248,7 @@
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 1)"}
 					                   {volist name="$v.programaSonData" id="vv" offset="6" length='6'}	
-										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										<li><a href="/message/message?pid={$vv.id}">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
 							               {/foreach}   
@@ -267,14 +279,14 @@
 			<div class="col-md-4">
 					<div class="oneBox_title">
 							<span class="oneBox_title_bd">{$vv.cname}</span>
-							<a href="/message/message?pid/{$vv.id}" class="rt">更多></a>
+							<a href="/message/message?pid={$vv.id}" class="rt">更多></a>
 					</div>
 					<div class="oneBox_body">
 					<div class="oneBox_body_list_access">
 						{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 						<div class="oneBox_body">
-							<a href="/websitewap/websitewap?paid/{$vvv.id}" class="weui-media-box weui-media-box_appmsg">
+							<a href="/websitewap/websitewap?paid={$vvv.id}" class="weui-media-box weui-media-box_appmsg">
 							    <div class="weui-media-box__hd">
 							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
 							    </div>
@@ -286,7 +298,7 @@
 						{else /}
 						<div class="oneBox_body_list">
 							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$vvv.id}">{$vvv.title}</a></div>
+							<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid={$vvv.id}">{$vvv.title}</a></div>
 						</div>
 						{/if}
 						{/foreach}
@@ -335,7 +347,7 @@
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 2)"}
 					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
-										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										<li><a href="/message/message?pid={$vv.id}">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
 							               {/foreach}   
@@ -350,7 +362,7 @@
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 2)"}
 					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
-										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										<li><a href="/message/message?pid={$vv.id}">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
 							               {/foreach}   
@@ -380,14 +392,14 @@
 			<div class="col-md-4">
 					<div class="oneBox_title">
 							<span class="oneBox_title_bd">{$vv.cname}</span>
-							<a href="/message/message?pid/{$vv.id}" class="rt">更多></a>
+							<a href="/message/message?pid={$vv.id}" class="rt">更多></a>
 					</div>
 					<div class="oneBox_body">
 					<div class="oneBox_body_list_access">
 						{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 						<div class="oneBox_body">
-							<a href="/websitewap/websitewap?paid/{$vvv.id}" class="weui-media-box weui-media-box_appmsg">
+							<a href="/websitewap/websitewap?paid={$vvv.id}" class="weui-media-box weui-media-box_appmsg">
 							    <div class="weui-media-box__hd">
 							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
 							    </div>
@@ -399,7 +411,7 @@
 						{else /}
 						<div class="oneBox_body_list">
 							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$vvv.id}">{$vvv.title}</a></div>
+							<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid={$vvv.id}">{$vvv.title}</a></div>
 						</div>
 						{/if}
 						{/foreach}
