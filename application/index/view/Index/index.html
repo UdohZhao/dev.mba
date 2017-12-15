@@ -8,21 +8,29 @@
 	<div class="lt left_aside">
 		<div class="oneBox row first">
 			<!-- 重庆MBA热点关注 -->
+
 			<div class="oneBox_left col-md-3">
+				{if $data.programaData}
+					{foreach name="data.programaData" item="v" key="k"}
+					{if condition="($k == 3)"}
 				<div class="oneBox_title">
-					<span class="oneBox_title_bd">重庆MBA热点关注</span>
-					<a href="#" class="rt">更多></a>
+					<span class="oneBox_title_bd">{$v.cname}</span>
+					<a href="/message/message?pid/{$v.id}" class="rt">更多></a>
 				</div>
+				{/if}
+				{/foreach}
+				{/if}
 				<div class="oneBox_body">
 					{if $data.hotData}
 						{foreach name="data.hotData" item="v" key="k"}
 					<div class="oneBox_body_list">
 						<div class="yd">·</div>
-						<div class="oneBox_body_list_bd"><a href="#">{$v.title}</a></div>
+						<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
 					</div>
 					{/foreach}
 					{/if}
 				</div>
+			
 			</div>
 			<!-- 幻灯片 -->
 			<div class="oneBox_center col-md-6">
@@ -66,10 +74,16 @@
 		<div class="oneBox row second">
 			<!-- 2L-左 重庆MBA 活动预告 -->
 			<div class="col-md-3 oneBox_left">
+				{if $data.programaData}
+					{foreach name="data.programaData" item="v" key="k"}
+					{if condition="($k == 5)"}
 				<div class="oneBox_title">
-					<span class="oneBox_title_bd">重庆MBA活动预告</span>
-					<a href="#" class="rt">更多></a>
+					<span class="oneBox_title_bd">{$v.cname}</span>
+					<a href="/message/message?pid/{$v.id}" class="rt">更多></a>
 				</div>
+				{/if}
+				{/foreach}
+				{/if}
 				<div class="oneBox_title_img">
 					<!-- 此处为广告位置 -->
 					{if $data.ad_foreshowData}
@@ -89,7 +103,7 @@
 					{if $data.foreshowData}
 					{foreach name="data.foreshowData" item="v" key="k"}
 					<div class="secondLeft_list">
-						<a href="#">
+						<a href="/websitewap/websitewap?paid/{$v.id}">
 							<div class="secondLeft_list_img lt">
 								<p>{$v.ctime|date="m",###}月</p>
 								<p>{$v.ctime|date="d",###}日</p>
@@ -118,7 +132,7 @@
 								{foreach name="data.recruitData" item="v" key="k"}
 								{if condition="($k == 0)"}
 							<div class="weui-media-box weui-media-box_text pad0">
-								<a href="javascript:;">
+								<a href="/websitewap/websitewap?paid/{$v.id}">
 								  	<h2 class="oneBox_body_list_title">{$v.title}</h2>
 								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
@@ -126,7 +140,7 @@
 							{else /}	
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
-									<div class="oneBox_body_list_bd"><a href="#">{$v.title}</a></div>
+									<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
 							</div>
 							{/if}
 							{/foreach}
@@ -146,7 +160,7 @@
 								{foreach name="data.examData" item="v" key="k"}
 								{if condition="($k == 0)"}
 							<div class="weui-media-box weui-media-box_text pad0">
-								<a href="javascript:;">
+								<a href="/websitewap/websitewap?paid/{$v.id}">
 								  	<h2 class="oneBox_body_list_title">{$v.title}</h2>
 								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
@@ -154,7 +168,7 @@
 							{else /}	
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
-									<div class="oneBox_body_list_bd"><a href="#">{$v.title}</a></div>
+									<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$v.id}">{$v.title}</a></div>
 							</div>
 							{/if}
 							{/foreach}
@@ -186,13 +200,6 @@
 				</a>
 				{/foreach}
 				{/if}
-				{if $data.ad_academy_topData}
-				{foreach name="data.ad_academy_topData" item="v" key="k"}
-				<a href="{$v.img_link}">
-					<img src="{$v.img_path}" class="lt" title="#" alt="#">
-				</a>
-				{/foreach}
-				{/if}
 			</div>
 		</div>
 		<div class="h10"></div>
@@ -210,25 +217,30 @@
 						        <div class="item active">
 						        	<div class="third_header_aside">
 										<ul>
-
-											<li><a href="{v.cname_link}">重庆大学</a></li>
-								           	<li><a href="{v.cname_link}">重庆大学</a></li>
-								           	<li><a href="{v.cname_link}">重庆大学</a></li>
-								           	<li><a href="{v.cname_link}">重庆大学</a></li>
-								           	<li><a href="{v.cname_link}">重庆大学</a></li>
-								           	<li><a href="{v.cname_link}">重庆大学</a></li>
+										{if $data.programaData}
+					               	{foreach name="data.programaData" item="v" key="k"}
+					                {if condition="($v.type == 1)"}
+					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
+										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										{/volist}
+							                {/if}
+							               {/foreach}   
+							           {/if}
 								        </ul>
 									</div>
 						        </div>
 						        <div class="item">
 						        	<div class="third_header_aside">
 										<ul>
-											<li><a href="{v.cname_link}">重庆大学</a></li>
-											<li><a href="{v.cname_link}">重庆大学</a></li>
-											<li><a href="{v.cname_link}">重庆大学</a></li>
-											<li><a href="{v.cname_link}">重庆大学</a></li>
-											<li><a href="{v.cname_link}">重庆大学</a></li>
-											<li><a href="{v.cname_link}">重庆大学</a></li>
+											{if $data.programaData}
+					               	{foreach name="data.programaData" item="v" key="k"}
+					                {if condition="($v.type == 1)"}
+					                   {volist name="$v.programaSonData" id="vv" offset="6" length='6'}	
+										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										{/volist}
+							                {/if}
+							               {/foreach}   
+							           {/if}
 								        </ul>
 									</div>
 						        </div>
@@ -251,7 +263,7 @@
 			{if $data.programaData}
                {foreach name="data.programaData" item="v" key="k"}
                 {if condition="($v.type == 1)"}
-                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}
+                   {foreach name="$v.programaSonData" item="vv" key="kk"}
 			<div class="col-md-4">
 					<div class="oneBox_title">
 							<span class="oneBox_title_bd">{$vv.cname}</span>
@@ -262,7 +274,7 @@
 						{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
+							<a href="/websitewap/websitewap?paid/{$vvv.id}" class="weui-media-box weui-media-box_appmsg">
 							    <div class="weui-media-box__hd">
 							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
 							    </div>
@@ -281,7 +293,7 @@
 					</div>
 				</div>
 			</div>
-			{/volist}
+			{/foreach}
                 {/if}
                {/foreach}   
            {/if}
@@ -293,13 +305,6 @@
 		<div class="h10"></div>
 		<div class="col-md-12">
 			<div class="img2">
-				{if $data.ad_exam_topData}
-				{foreach name="data.ad_exam_topData" item="v" key="k"}
-				<a href="{$v.img_link}">
-					<img src="{$v.img_path}" class="lt" title="#" alt="#">
-				</a>
-				{/foreach}
-				{/if}
 				{if $data.ad_exam_topData}
 				{foreach name="data.ad_exam_topData" item="v" key="k"}
 				<a href="{$v.img_link}">
@@ -326,24 +331,30 @@
 					        <div class="item active">
 					        	<div class="third_header_aside">
 									<ul>
-							           	<li><a href="#">重庆大学MBA</a></li>
-							           	<li><a href="#">西南大学MBA</a></li>
-							           	<li><a href="#">重庆工商大学MBA</a></li>
-							           	<li><a href="#">重庆理工大学MBA</a></li>
-							           	<li><a href="#">重庆师范大学MBA</a></li>
-							           	<li><a href="#">其他MBA学院</a></li>
+							           	{if $data.programaData}
+					               	{foreach name="data.programaData" item="v" key="k"}
+					                {if condition="($v.type == 2)"}
+					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
+										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										{/volist}
+							                {/if}
+							               {/foreach}   
+							           {/if}
 							        </ul>
 								</div>
 					        </div>
 					        <div class="item">
 					        	<div class="third_header_aside">
 									<ul>
-							           	<li><a href="#">重庆大学MBA</a></li>
-							           	<li><a href="#">西南大学MBA</a></li>
-							           	<li><a href="#">重庆工商大学MBA</a></li>
-							           	<li><a href="#">重庆理工大学MBA</a></li>
-							           	<li><a href="#">重庆师范大学MBA</a></li>
-							           	<li><a href="#">其他MBA学院</a></li>
+							           	{if $data.programaData}
+					               	{foreach name="data.programaData" item="v" key="k"}
+					                {if condition="($v.type == 2)"}
+					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
+										<li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
+										{/volist}
+							                {/if}
+							               {/foreach}   
+							           {/if}
 							        </ul>
 								</div>
 					        </div>
@@ -376,7 +387,7 @@
 						{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 						<div class="oneBox_body">
-							<a href="#" class="weui-media-box weui-media-box_appmsg">
+							<a href="/websitewap/websitewap?paid/{$vvv.id}" class="weui-media-box weui-media-box_appmsg">
 							    <div class="weui-media-box__hd">
 							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
 							    </div>
@@ -388,7 +399,7 @@
 						{else /}
 						<div class="oneBox_body_list">
 							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">{$vvv.title}</a></div>
+							<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$vvv.id}">{$vvv.title}</a></div>
 						</div>
 						{/if}
 						{/foreach}

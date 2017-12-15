@@ -211,12 +211,15 @@ class Index extends Base
             $this->data['ad_academy_topData'] = db('ad_academy_top')->where('status',0)->order('ctime desc')->select();
             // 读取考试资讯上方广告
             $this->data['ad_exam_topData'] = db('ad_exam_top')->where('status',0)->order('ctime desc')->select();
-
+            
+            
             // assign
             $this->assign('data',$this->data);
+               
             // 渲染模板输出
             return $this->fetch('index');
         }
+
     }
 
 

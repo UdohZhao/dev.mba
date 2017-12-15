@@ -37,6 +37,9 @@ class Base extends Controller
         $this->data['webstatData'] = db('webstat')->find();
         // 读取栏目
         $this->data['programaData'] = db('programa')->where('pid',0)->select();
+            // var_dump($this->data['programaData']);
+            // die;
+            
         // 读取栏目子级
         if ($this->data['programaData'])
         {

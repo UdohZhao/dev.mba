@@ -21,12 +21,7 @@ class Index extends Base
         {
             // 读取访问量
             $data['website_pvCount'] = db('website_pv')->value('pv');
-<<<<<<< HEAD
-            dump($data);
-            die;
-=======
 
->>>>>>> liujie
 
             // 渲染模板输出
             return $this->fetch('index');

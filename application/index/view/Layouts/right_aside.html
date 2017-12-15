@@ -8,10 +8,16 @@
 			<div class="oneBox_right col-md-12">
 					<!-- 招考广告 -->
 					<div class="col-md-12 pad0">
-						<div class="oneBox_title">
-							<span class="oneBox_title_bd">招考公告</span>
-							<a href="#" class="rt">更多></a>
-						</div>
+						{if $data.programaData}
+						{foreach name="data.programaData" item="v" key="k"}
+						{if condition="($k == 4)"}
+					<div class="oneBox_title">
+						<span class="oneBox_title_bd">{$v.cname}</span>
+						<a href="/message/message?pid/{$v.id}" class="rt">更多></a>
+					</div>
+					{/if}
+					{/foreach}
+					{/if}
 						<div class="oneBox_body">
 							{if $data.announcementData}
 							{foreach name="data.announcementData" item="v" key="k"}
@@ -33,7 +39,7 @@
 						<div class="h10"></div>
 						<div class="oneBox_top_ad">
 							{if $data.ad_informationData}
-							<a href="javascript:;">
+							<a href="{$data.ad_informationData.img_link}">
 							<img src="{$data.ad_informationData.img_path}">
 							</a>
 							{/if}
@@ -67,10 +73,16 @@
 					<div class="h24"></div>
 					<!-- 院校推荐 -->
 					<div class="col-md-12">
+						{if $data.programaData}
+							{foreach name="data.programaData" item="v" key="k"}
+							{if condition="($k == 6)"}
 						<div class="oneBox_title">
-							<span class="oneBox_title_bd">院校推荐</span>
-							<a href="#" class="rt">更多></a>
+							<span class="oneBox_title_bd">{$v.cname}</span>
+							<a href="/message/message?pid/{$v.id}" class="rt">更多></a>
 						</div>
+						{/if}
+						{/foreach}
+						{/if}
 						<div class="oneBox_body">
 							{if $data.recommendData}
 							{foreach name="data.recommendData" item="v" key="k"}

@@ -72,7 +72,7 @@
             <ul class="nav-box">
                 <li class="nav-first">
                     <div class="nav-title">
-                        <a href="/message/message">首页</a>
+                        <a href="/index/index">首页</a>
                     </div>
                 </li>
                 <li class="nav-second">
@@ -83,7 +83,7 @@
                                     {foreach name="data.programaData" item="v" key="k"}
                                      {if condition="($v.type == 0)"}
                                         {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                    <li><a href="#">{$vv.cname}</a></li>
+                                    <li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
                                         {/foreach}
                                      {/if}
                                     {/foreach}   
@@ -99,7 +99,7 @@
                                     {foreach name="data.programaData" item="v" key="k"}
                                      {if condition="($v.type == 1)"}
                                         {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                    <li><a href="#">{$vv.cname}</a></li>
+                                    <li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
                                         {/foreach}
                                      {/if}
                                     {/foreach}   
@@ -114,7 +114,7 @@
                                 {foreach name="data.programaData" item="v" key="k"}
                                  {if condition="($v.type == 2)"}
                                     {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                <li><a href="#">{$vv.cname}</a></li>
+                                <li><a href="/message/message?pid/{$vv.id}">{$vv.cname}</a></li>
                                     {/foreach}
                                  {/if}
                                 {/foreach}   
