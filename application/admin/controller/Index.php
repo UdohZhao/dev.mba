@@ -22,9 +22,12 @@ class Index extends Base
             // 统计访问量
             $data['website_pvCount'] = db('website_pv')->value('pv');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 35464b15a27aac3e23366fe66bbb30bcbb1e140e
             // 统计栏目数
             $data['programaCount'] = db('programa')->count();
             // 统计栏目文章数
@@ -59,6 +62,9 @@ class Index extends Base
 
 >>>>>>> liujie
 >>>>>>> b1f186b9bbcd30c75b955270d933700e662e0eab
+<<<<<<< HEAD
+>>>>>>> 35464b15a27aac3e23366fe66bbb30bcbb1e140e
+=======
 >>>>>>> 35464b15a27aac3e23366fe66bbb30bcbb1e140e
 
             // assign
