@@ -16,5 +16,63 @@ class Base extends Controller
       {
         $this->_auto();
       }
+        // 读取站点信息
+        $this->data['websiteData'] = db('website')->find();
+        if ($this->data['websiteData']['status'] == 1)
+        {
+            // 站点关闭跳转提示
+            header('Location:https://www.baidu.com/');
+            die;
+        }
+        // 读取Logo
+        $this->data['ad_logoData'] = db('ad_logo')->where('status',0)->find();
+        // 读取栏目子级
+        $this->data['programaData'] = db('programa')->where('pid','>','0')->select();
+        foreach ($this->data['programaData'] AS $k => $v)
+        {
+            // 读取院校子级发布的文章
+            if ($v['type'] == 1)
+            {
+                $this->data['programaData'][$k]['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$v['id'])->order('ctime desc')->limit(6)->field('content',true)->select();
+            }
+            // 读取考试子级发布的文章
+            if ($v['type'] == 2)
+            {
+                $this->data['programaData'][$k]['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$v['id'])->order('ctime desc')->limit(6)->field('content',true)->select();
+            }
+        }
+        // 读取网站地图
+        $this->data['website_mapData'] = config('website_map');
     }
+
+    /**
+     * 搜索文章
+     */
+    public function search()
+    {
+        // 获取搜索关键词
+        $search_keywords = "%%";
+        if (input('?post.search')) $search_keywords = "%".input('post.search')."%";
+        // 查
+        $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('search_keywords','like',$search_keywords)->order('ctime desc')->field('content',true)->paginate(config('paging'));
+
+        // 模板变量赋值
+        $this->assign('data',$this->data);
+        // 渲染模板输出
+        return $this->fetch('message');
+    }
+
+    /**
+     * 关于我们
+     */
+    public function aboutUs()
+    {
+        // 读取关于我们信息
+        $this->data['about_usData'] = db('about_us')->find();
+        // 模板变量赋值
+        $this->assign('data',$this->data);
+        // 渲染模板输出
+        return $this->fetch('websitewap');
+    }
+
 }

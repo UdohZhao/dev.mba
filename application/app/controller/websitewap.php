@@ -1,24 +1,27 @@
 <?php
 namespace app\app\controller;
-class websitewap extends Base
+class Websitewap extends Base
 {
+    public $paid;
     /**
      * 构造方法
      */
     public function _auto()
     {
-
+        $this->paid = input('?get.paid') ? input('get.paid') : 0;
     }
 
     /**
-     * 默认方法
+     * 移动端文章页面
      */
     public function websitewap()
     {
-        // Get
-        if ($this->request->isGet()) {
-            // 渲染模板输出
-            return $this->fetch('websitewap');
-        }
+        // 根据当前栏目文章id查询
+        $this->data['programa_articleData'] = db('programa_article')->where('id',$this->paid)->find();
+
+        // 模板变量赋值
+        $this->assign('data',$this->data);
+        // 渲染模板输出
+        return $this->fetch('websitewap');
     }
 }

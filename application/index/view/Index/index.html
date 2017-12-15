@@ -15,7 +15,7 @@
 					{if condition="($k == 3)"}
 				<div class="oneBox_title">
 					<span class="oneBox_title_bd">{$v.cname}</span>
-					<a href="/message/message?pid/{$v.id}" class="rt">更多></a>
+					<a href="/message/message/pid/{$v.id}" class="rt">更多></a>
 				</div>
 				{/if}
 				{/foreach}
@@ -286,7 +286,7 @@
 						{else /}
 						<div class="oneBox_body_list">
 							<div class="yd">·</div>
-							<div class="oneBox_body_list_bd"><a href="#">{$vvv.title}</a></div>
+							<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid/{$vvv.id}">{$vvv.title}</a></div>
 						</div>
 						{/if}
 						{/foreach}

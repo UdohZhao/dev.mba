@@ -198,15 +198,15 @@ class Index extends Base
             // 读取banner
             $this->data['bannerData'] = db('banner')->where('status',0)->order('ctime desc')->select();
             // 读取MBA热点关注
-            $this->data['hotData'] = db('programa_article')->where('status',0)->where('type',3)->order('ctime desc')->limit(6)->select();
+            $this->data['hotData'] = db('programa_article')->where('status',0)->where('type',3)->order('ctime desc')->limit(6)->field('content',true)->select();
             // 读取MBA活动预告广告
             $this->data['ad_foreshowData'] = db('ad_foreshow')->where('status',0)->find();
             // 读取MBA活动预告
-            $this->data['foreshowData'] = db('programa_article')->where('status',0)->where('type',5)->order('ctime desc')->limit(6)->select();
+            $this->data['foreshowData'] = db('programa_article')->where('status',0)->where('type',5)->order('ctime desc')->limit(6)->field('content',true)->select();
             // 读取招生资讯
-            $this->data['recruitData'] = db('programa_article')->where('status',0)->where('type',7)->order('ctime desc')->limit(7)->select();
+            $this->data['recruitData'] = db('programa_article')->where('status',0)->where('type',7)->order('ctime desc')->limit(7)->field('content',true)->select();
             // 读取考试资讯
-            $this->data['examData'] = db('programa_article')->where('status',0)->where('type',8)->order('ctime desc')->limit(5)->select();
+            $this->data['examData'] = db('programa_article')->where('status',0)->where('type',8)->order('ctime desc')->limit(5)->field('content',true)->select();
             // 读取院校发布上方广告
             $this->data['ad_academy_topData'] = db('ad_academy_top')->where('status',0)->order('ctime desc')->select();
             // 读取考试资讯上方广告

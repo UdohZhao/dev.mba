@@ -11,7 +11,20 @@
 		
 	<!-- 左边列表样式 -->
 	<div class="left_aside lt" >
+		{if $data.programa_articleData}
 		<div class="article_bd" id="returnMsg">
+			<h1>{$programa_articleData.title}</h1>
+			<div class="title-box">
+				<p>{$programa_articleData.tips}</p>
+				<span class="newTime">{$programa_articleData.ctime}</span>
+				<!-- <span class="newfrom">来源：厦门理工学院 </span> -->
+			</div>
+			<div class="content">
+				{$programa_articleData.content}
+			</div>
+		</div>
+		{/if}
+		<!-- <div class="article_bd" id="returnMsg">
 			<h1>欢迎报考厦门理工学院硕士研究生</h1>
 			<div class="title-box">
 				<span class="newTime">2017年06月30日</span>
@@ -33,7 +46,7 @@
 				研究生招生工作办公室电话：0592-6291820/6291269许老师、林老师
 				厦理工研究生招生咨询QQ群：428196215</p>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<!-- 引入公共右部样式 -->
 	{include file="layouts/right_aside" /}
