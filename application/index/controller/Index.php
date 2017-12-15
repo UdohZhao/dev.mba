@@ -7,7 +7,10 @@ class Index extends Base
      */
     public function _auto()
     {
-
+        // 访问量+1
+        $website_pvData = db('website_pv')->find();
+        $upData['pv'] = bcadd($website_pvData['pv'], 1, 0);
+        db('website_pv')->where('id', $website_pvData['id'])->update($upData);
     }
 
     /**
