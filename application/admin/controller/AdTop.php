@@ -15,6 +15,7 @@ class AdTop extends Base
         // 控制器
         $this->assign('ctl','AdTop');
         $this->assign('ctlName','顶部广告管理');
+        $this->assign('active','AdTop');
     }
 
     /**
@@ -22,6 +23,7 @@ class AdTop extends Base
      */
     public function add()
     {
+        $this->assign('action','AdTop/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class AdTop extends Base
      */
     public function index()
     {
+        $this->assign('action','AdTop/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

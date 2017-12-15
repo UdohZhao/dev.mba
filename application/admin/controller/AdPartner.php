@@ -15,6 +15,7 @@ class AdPartner extends Base
         // 控制器
         $this->assign('ctl','AdPartner');
         $this->assign('ctlName','合作伙伴广告管理');
+        $this->assign('active','AdPartner');
     }
 
     /**
@@ -22,6 +23,7 @@ class AdPartner extends Base
      */
     public function add()
     {
+        $this->assign('action','AdPartner/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class AdPartner extends Base
      */
     public function index()
     {
+        $this->assign('action','AdPartner/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

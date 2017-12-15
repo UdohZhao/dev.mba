@@ -15,6 +15,7 @@ class Programa extends Base
         $this->pid = input('?get.pid') ? input('get.pid') : 0;
         $this->assign('id',$this->id);
         $this->assign('pid',$this->pid);
+        $this->assign('active','Programa');
     }
 
     /**
@@ -22,6 +23,7 @@ class Programa extends Base
      */
     public function add()
     {
+        $this->assign('action','Programa/add');
         // Get
         if ($this->request->isGet())
         {
@@ -130,12 +132,14 @@ class Programa extends Base
      */
     public function index()
     {
+        $this->assign('action','Programa/index');
         // search
         $cname = "%%";
         if (input('?post.search')) $cname = "%".input('post.search')."%";
         // 查
-        $data = $this->db->where('pid',$this->pid)->where('cname','like',$cname)->paginate(config('paging'));
-        // assign
+        $data['programaData'] = $this->db->where('pid',$this->pid)->where('cname','like',$cname)->paginate(config('paging'));
+        // assign 用户权限
+        $data['permissionsData'] = session('adminUser.permissions');
         $this->assign('data',$data);
         // 渲染模板输出
         return $this->fetch('index');
@@ -167,19 +171,6 @@ class Programa extends Base
             {
                 return ajaxReturn(Rs(1,'不受影响的操作！',''));
             }
-        }
-    }
-
-    /**
-     * 配置管理员权限
-     */
-    public function permissions()
-    {
-        // Get
-        if ($this->request->isGet())
-        {
-            // 渲染模板输出
-            return $this->fetch('permissions');
         }
     }
 

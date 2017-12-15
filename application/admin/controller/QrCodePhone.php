@@ -15,6 +15,7 @@ class QrCodePhone extends Base
         // 控制器
         $this->assign('ctl','QrCodePhone');
         $this->assign('ctlName','手机二维码管理');
+        $this->assign('active','QrCodePhone');
     }
 
     /**
@@ -22,6 +23,7 @@ class QrCodePhone extends Base
      */
     public function add()
     {
+        $this->assign('action','QrCodePhone/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class QrCodePhone extends Base
      */
     public function index()
     {
+        $this->assign('action','QrCodePhone/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

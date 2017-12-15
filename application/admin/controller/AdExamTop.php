@@ -15,6 +15,7 @@ class AdExamTop extends Base
         // 控制器
         $this->assign('ctl','AdExamTop');
         $this->assign('ctlName','考试资讯广告管理');
+        $this->assign('active','AdExamTop');
     }
 
     /**
@@ -22,6 +23,7 @@ class AdExamTop extends Base
      */
     public function add()
     {
+        $this->assign('action','AdExamTop/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class AdExamTop extends Base
      */
     public function index()
     {
+        $this->assign('action','AdExamTop/add');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

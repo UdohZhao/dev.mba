@@ -15,6 +15,7 @@ class QrCodePublic extends Base
         // 控制器
         $this->assign('ctl','QrCodePublic');
         $this->assign('ctlName','公众号二维码管理');
+        $this->assign('active','QrCodePublic');
     }
 
     /**
@@ -22,6 +23,7 @@ class QrCodePublic extends Base
      */
     public function add()
     {
+        $this->assign('action','QrCodePublic/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class QrCodePublic extends Base
      */
     public function index()
     {
+        $this->assign('action','QrCodePublic/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

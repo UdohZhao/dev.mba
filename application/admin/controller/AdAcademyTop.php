@@ -15,6 +15,7 @@ class AdAcademyTop extends Base
         // 控制器
         $this->assign('ctl','AdAcademyTop');
         $this->assign('ctlName','院校发布广告管理');
+        $this->assign('active','AdAcademyTop');
     }
 
     /**
@@ -22,6 +23,7 @@ class AdAcademyTop extends Base
      */
     public function add()
     {
+        $this->assign('action','AdAcademyTop/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class AdAcademyTop extends Base
      */
     public function index()
     {
+        $this->assign('action','AdAcademyTop/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

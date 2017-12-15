@@ -15,6 +15,7 @@ class Banner extends Base
         // 控制器
         $this->assign('ctl','Banner');
         $this->assign('ctlName','Banner管理');
+        $this->assign('active','Banner');
     }
 
     /**
@@ -22,6 +23,7 @@ class Banner extends Base
      */
     public function add()
     {
+        $this->assign('action','Banner/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class Banner extends Base
      */
     public function index()
     {
+        $this->assign('action','Banner/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";

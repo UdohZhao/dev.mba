@@ -20,6 +20,7 @@ class ProgramaArticle extends Base
       $this->assign('id',$this->id);
       $this->assign('pid',$this->pid);
       $this->assign('type',$this->type);
+      $this->assign('active','ProgramaArticle');
     }
 
     /**

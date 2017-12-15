@@ -15,6 +15,7 @@ class AdInformation extends Base
         // 控制器
         $this->assign('ctl','AdInformation');
         $this->assign('ctlName','资讯热线广告管理');
+        $this->assign('active','AdInformation');
     }
 
     /**
@@ -22,6 +23,7 @@ class AdInformation extends Base
      */
     public function add()
     {
+        $this->assign('action','AdInformation/add');
         // Get
         if ($this->request->isGet())
         {
@@ -91,6 +93,7 @@ class AdInformation extends Base
      */
     public function index()
     {
+        $this->assign('action','AdInformation/index');
         // search
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";
