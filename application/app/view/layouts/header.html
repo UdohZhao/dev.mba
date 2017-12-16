@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>重庆MBA招生考试服务平台</title>
-    <meta  name="description" content="重庆MBA招生考试服务平台">
-    <meta name="keywords" content="MBA 考研">
+    <title>{$data.websiteData.title}</title>
+    <meta  name="description" content="{$data.websiteData.describe}">
+    <meta name="keywords" content="{$data.websiteData.search_keywords}">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
     <!-- Bootstrap -->
@@ -31,39 +31,40 @@
   <div class="header">
     <div class="weui-flex">
       <div class="weui-flex__item">
-          <img src="/static/images/app_logo.png">
+          {if $data.ad_logoData}
+            <a href="{$data.ad_logoData.img_link}"  target="_blank">
+              <img src="{$data.ad_logoData.img_path}" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
+              </a>
+          {/if}
       </div>
       <div class="weui-flex__item">
-          <p>重庆MBA院校信息发布和咨询平台</p>
+        <p>{$data.websiteData.title}</p>
       </div>
     </div>
     <div class="weui-flex backg333 posR">
       <ul class="expand-list">
-        <li><a href="/app/index/index">首页</a></li>
-        <li><a href="/app/message/message">重庆大学</a></li>
-        <li><a href="/app/websitewap/websitewap">工商大学</a></li>
-        <li><a href="#">西南大学</a></li>
-        <li><a href="#">师范大学</a></li>
-        <li><a href="#">重庆大学</a></li>
-        <li><a href="#">工商大学</a></li>
-        <li><a href="#">西南大学</a></li>
-        <li><a href="#">师范大学</a></li>
-        <li><a href="#">重庆大学</a></li>
-        <li><a href="#">工商大学</a></li>
-        <li><a href="#">西南大学</a></li>
-        <li><a href="#">师范大学</a></li>
+        <li><a href="/app/Index/index">首页</a></li>
+        {if $data.programaData}
+          {foreach name="data.programaData" item="v" key="k"} 
+            <li><a href="/app/Message/message?pid={$v.id}" target="_blank">{$v.cname}</a></li>
+          {/foreach}  
+        {/if}
       </ul>
       <div class="toggle-area" >
         <i class="glyphicon glyphicon-chevron-down"></i>
-        <!-- <i class="glyphicon glyphicon-chevron-up"></i> -->
       </div>
     </div>
     <div class="weui-flex">
       <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" ><img src="/static/images/banner.png" alt=""></div>
-          <div class="swiper-slide" ><img src="/static/images/banner.png" alt=""></div>
-          <div class="swiper-slide" ><img src="/static/images/banner.png" alt=""></div>
+          {if $data.bannerData}
+            {foreach name="data.bannerData" item="v" key="k"} 
+            <div class="swiper-slide" >
+              <a href="{$v.img_link}"></a>
+              <img src="{$v.img_path}" >
+            </div>
+            {/foreach}
+          {/if}
         </div>
         <!-- If we need pagination -->
       <div class="swiper-pagination"></div>

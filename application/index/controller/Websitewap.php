@@ -2,13 +2,17 @@
 namespace app\index\controller;
 class Websitewap extends Base
 {
+    public $type;
     public $paid;
     /**
      * 构造方法
      */
     public function _auto()
     {
+        $this->type = input('?get.type') ? input('get.type') : 0;
         $this->paid = input('?get.paid') ? input('get.paid') : 0;
+        $this->assign('type',$this->type);
+        $this->assign('paid',$this->paid);
     }
 
      /**
@@ -99,6 +103,10 @@ class Websitewap extends Base
      */
     public function websitewap()
     {
+        // 读取当前栏目名称
+        $this->data['programaCname'] = db('programa')->where('type',$this->type)->value('cname');
+        // 读取当前文章标题
+        $this->data['programa_articleTitle'] = strip_tags(db('programa_article')->where('id',$this->paid)->value('title'));
         // 根据当前栏目文章id查询
         $this->data['programa_articleData'] = db('programa_article')->where('id',$this->paid)->find();
         // var_dump($this->data['programa_articleData']);

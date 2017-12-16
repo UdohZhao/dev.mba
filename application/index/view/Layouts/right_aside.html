@@ -23,7 +23,7 @@
 							{foreach name="data.announcementData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?paid={$v.id}" target="_blank">{$v.title}</a></div>
+								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
 							</div>
 							{/foreach}
 							{/if}
@@ -88,7 +88,7 @@
 							{foreach name="data.recommendData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?paid={$v.id}" target="_blank">{$v.title}</a></div>
+								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
 							</div>
 							{/foreach}
 							{/if}

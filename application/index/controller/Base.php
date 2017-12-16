@@ -10,6 +10,14 @@ class Base extends Controller
     /**
      * 构造方法
      */
+    public function _auto()
+    {
+        $this->pid = input('?get.pid') ? input('get.pid') : 0;
+        $this->paid = input('?get.paid') ? input('get.paid') : 0;
+        $this->assign('pid',$this->pid);
+        $this->assign('paid',$this->paid);
+    }
+
     public function _initialize()
     {
         // 判断是否为移动端访问
@@ -90,12 +98,16 @@ class Base extends Controller
      */
     public function search()
     {
+
         // 获取搜索关键词
         $search_keywords = "%%";
         if (input('?post.search')) $search_keywords = "%".input('post.search')."%";
         // 查
         $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('search_keywords','like',$search_keywords)->order('ctime desc')->field('content',true)->paginate(config('paging'));
-
+        // 读取当前栏目名称
+        $this->data['programaCname'] = db('programa')->where('id',$this->pid)->value('cname');
+        // 读取当前文章标题
+        $this->data['programa_articleTitle'] = strip_tags(db('programa_article')->where('id',$this->paid)->value('title'));
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出

@@ -5,80 +5,38 @@
 
 <div class="container">
 	<div class="weui-search-bar" id="searchBar">
-		  <form class="weui-search-bar__form">
+		  <form class="weui-search-bar__form" action="/Base/search" method="POST">
 		    <div class="weui-search-bar__box">
 		      <i class="weui-icon-search"></i>
-		      <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+		      <input type="text" class="weui-search-bar__input" name="search" id="searchInput" placeholder="搜索" required="">
 		      <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
 		    </div>
 		    <label class="weui-search-bar__label" id="searchText">
 		      <i class="weui-icon-search"></i>
-		      <span>搜索</span>
+		      <input type="submit" value="搜索" class="btn_submit">
 		    </label>
 		  </form>
 		  <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
 	</div>
 	<div class="weui-panel weui-panel_access message">
 	  	<div class="weui-panel__bd">
-		    <a href="/app/websitewap/websitewap" class="weui-media-box weui-media-box_appmsg">
+	  		{if $data.programa_articleData}
+	  			{foreach name="data.programa_articleData" item="v" key="k"}
+		    <a href="/app/websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
 		      	<div class="weui-media-box__bd">
-		        	<h4 class="weui-media-box__title">欢迎报考厦门理工学院硕士研究生</h4>
+		        	<h4 class="weui-media-box__title">{$v.title}</h4>
 		        	<p class="weui-media-box__desc">
-		        		<span class="">院校政策</span>
-		        		<span class="cTime">2017年06月30日</span>
+		        		<span class="cTime">{$v.ctime|date="Y-m-d",###}</span>
 					</p>
 		      	</div>
 		      	<div class="weui-media-box__hd">
-		        	<img class="weui-media-box__thumb" src="/static/images/gc-all.png">
+		        	<img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      	</div>
 		    </a>
-		    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-		      	<div class="weui-media-box__bd">
-		        	<h4 class="weui-media-box__title">欢迎报考厦门理工学院硕士研究生</h4>
-		        	<p class="weui-media-box__desc">
-		        		<span class="">院校政策</span>
-		        		<span class="cTime">2017年06月30日</span>
-					</p>
-		      	</div>
-		      	<div class="weui-media-box__hd">
-		        	<img class="weui-media-box__thumb" src="/static/images/gc-all.png">
-		      	</div>
-		    </a>
-		    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-		      	<div class="weui-media-box__bd">
-		        	<h4 class="weui-media-box__title">欢迎报考厦门理工学院硕士研究生</h4>
-		        	<p class="weui-media-box__desc">
-		        		<span class="">院校政策</span>
-		        		<span class="cTime">2017年06月30日</span>
-					</p>
-		      	</div>
-		      	<div class="weui-media-box__hd">
-		        	<img class="weui-media-box__thumb" src="/static/images/gc-all.png">
-		      	</div>
-		    </a>
-		    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
-		      	<div class="weui-media-box__bd">
-		        	<h4 class="weui-media-box__title">欢迎报考厦门理工学院硕士研究生</h4>
-		        	<p class="weui-media-box__desc">
-		        		<span class="">院校政策</span>
-		        		<span class="cTime">2017年06月30日</span>
-					</p>
-		      	</div>
-		      	<div class="weui-media-box__hd">
-		        	<img class="weui-media-box__thumb" src="/static/images/gc-all.png">
-		      	</div>
-		    </a>
+		    {/foreach}
+		    {/if}
 		</div>
-		<div class="weui-panel__ft">
-			<ul class="pagination pagination-md">
-				<li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-				<li><a href="#">&raquo;</a></li>
-			</ul>
-		</div>
+
 	</div>
 </div>
 

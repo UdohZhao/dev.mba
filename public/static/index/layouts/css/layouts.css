@@ -4,11 +4,13 @@ a{
 }
 ul,li{list-style-type: none;}
 body{
+	font-family: 'Microsoft YaHei';
 	min-width: 1250px;
 	color: #333;
 	text-align: left;
 	font-size: 12px;
 }
+
 .lt{float: left;}
 .rt{float: right;}
 .both{clear: both;}

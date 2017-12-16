@@ -9,6 +9,14 @@ class Base extends Controller
     /**
      * 构造方法
      */
+    public function _auto()
+    {
+        $this->pid = input('?get.pid') ? input('get.pid') : 0;
+        $this->paid = input('?get.paid') ? input('get.paid') : 0;
+        $this->assign('pid',$this->pid);
+        $this->assign('paid',$this->paid);
+    }
+
     public function _initialize()
     {
       // 初始化构造方法
@@ -26,6 +34,8 @@ class Base extends Controller
         }
         // 读取Logo
         $this->data['ad_logoData'] = db('ad_logo')->where('status',0)->find();
+        // 读取banner
+        $this->data['bannerData'] = db('banner')->where('status',0)->order('ctime desc')->select();
         // 读取栏目子级
         $this->data['programaData'] = db('programa')->where('pid','>','0')->select();
         foreach ($this->data['programaData'] AS $k => $v)
@@ -59,7 +69,7 @@ class Base extends Controller
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出
-        return $this->fetch('message');
+        return $this->fetch('/app/message/message');
     }
 
     /**

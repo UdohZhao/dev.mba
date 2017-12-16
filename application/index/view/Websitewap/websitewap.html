@@ -4,7 +4,17 @@
     {css href="/static/index/websitewap/css/websitewap.css" /}
 <div class="main_topnav">
 	<div class="mainwd">
-		<p>您的位置 : <a href="/Index/index" target="_blank">首页</a>><a href="#">招生公告</a></p>
+		<!-- <p>您的位置 : <a href="/Index/index" target="_blank">首页</a>><a href="#" class="cname"></a></p> -->
+		<ol class="breadcrumb">
+		  <li><a href="/">首页</a></li>
+		  {if condition="($type neq 0 && $paid eq 0)"}
+		  <li class="active">{$data.programaCname}</li>
+		  {/if}
+		  {if condition="($paid && $type)"}
+		  <li><a href="/Message/message?type={$type}">{$data.programaCname}</a></li>
+		  <li class="active">{$data.programa_articleTitle}</li>
+		  {/if}
+		</ol>
 	</div>
 </div>
 <div class="container">
@@ -29,3 +39,4 @@
 </div>
 
 {include file="layouts/footer" /}
+{js href="/static/index/message/js/message.js" /}

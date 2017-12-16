@@ -1,31 +1,17 @@
 
-	// $.ajax({
-	// 	type:"POST",
- //        url:'http://dev.mba.vag/Index/item',
- //        dataType:'json',
- //        success:function(data){
- //        	console.log(data);
- //        	//var item = data.item;
- //        	//console.log(item);
- //        	var html ="";
- //        	$.each(data,function(i,e){
- //        		html+=`
- //        			<div class="item_list">
-	// 					<div class="item_list_img lt">
-	// 						<img src="${item.img}">
-	// 					</div>
-	// 					<div class="item_list_con rt">
-	// 						<h3><a href="${item.url}">${item.title}</a></h3>
-	// 						<p>
-	// 							<a href="${item.url}">${item.title}</a>
-	// 						</p>
-	// 						<p class="item_list_con_time">
-	// 							<span>发布时间 ： ${item.time}</span>
-	// 						</p>
-	// 					</div>
-	// 				</div>
- //        		`
- //        	});
- //        	$("#items_list").html(html);
- //        }
-	// })
+$(document).ready(
+	function GetRequest() { 
+	var url =  window.location.search; //获取url中"?"符后的字串  
+	console.log(url);
+	var theRequest = new Object(); 
+	if (url.indexOf("?") != -1) { 
+		var str = url.substr(1); 
+		strs = str.split("&"); 
+		for(var i = 0; i < strs.length; i ++) { 
+		theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]); 
+		} 
+	} 
+	console.log(theRequest);
+ 	$('.cname').html(theRequest.cname);
+	return theRequest; 
+})
