@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>重庆MBA招生考试服务平台</title>
-    <meta  name="description" content="重庆MBA招生考试服务平台">
-    <meta name="keywords" content="MBA 考研">
+    <title>{$data.websiteData.title}</title>
+    <meta  name="description" content="{$data.websiteData.describe}">
+    <meta name="keywords" content="{$data.websiteData.search_keywords}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
@@ -46,15 +46,15 @@
             <div class="header-index">
                 <div class="header-index-img lt">
                     {if $data.ad_logoData}
-                    <a href="{$data.ad_logoData.img_link}"  >
+                    <a href="{$data.ad_logoData.img_link}"  target="_blank">
                     <img src="{$data.ad_logoData.img_path}" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
                     </a>
                     {/if}
                 </div>
                 <div class="header-index-ad  lt">
                     {if $data.ad_topData}
-                    <a href="{$data.ad_topData.img_link}">
-                        <img src="{$data.ad_topData.img_path}" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
+                    <a href="{$data.ad_topData.img_link}" target="_blank">
+                        <img src="{$data.ad_topData.img_path}" >
                     </a>
                     {/if}
                 </div>
@@ -72,7 +72,7 @@
             <ul class="nav-box">
                 <li class="nav-first">
                     <div class="nav-title">
-                        <a href="/index/index">首页</a>
+                        <a href="/Index/index" target="_blank">首页</a>
                     </div>
                 </li>
                 <li class="nav-second">
@@ -83,7 +83,7 @@
                                     {foreach name="data.programaData" item="v" key="k"}
                                      {if condition="($v.type == 0)"}
                                         {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                    <li><a href="/message/message?pid={$vv.id}">{$vv.cname}</a></li>
+                                    <li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
                                         {/foreach}
                                      {/if}
                                     {/foreach}
@@ -99,7 +99,7 @@
                                     {foreach name="data.programaData" item="v" key="k"}
                                      {if condition="($v.type == 1)"}
                                         {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                    <li><a href="/message/message?pid={$vv.id}">{$vv.cname}</a></li>
+                                    <li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
                                         {/foreach}
                                      {/if}
                                     {/foreach}
@@ -114,7 +114,7 @@
                                 {foreach name="data.programaData" item="v" key="k"}
                                  {if condition="($v.type == 2)"}
                                     {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                <li><a href="/message/message?pid={$vv.id}">{$vv.cname}</a></li>
+                                <li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
                                     {/foreach}
                                  {/if}
                                 {/foreach}

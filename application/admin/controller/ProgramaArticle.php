@@ -20,7 +20,7 @@ class ProgramaArticle extends Base
       $this->assign('id',$this->id);
       $this->assign('pid',$this->pid);
       $this->assign('type',$this->type);
-      $this->assign('active','ProgramaArticle');
+      $this->assign('active','Programa');
     }
 
     /**
@@ -28,6 +28,7 @@ class ProgramaArticle extends Base
      */
     public function add()
     {
+        $this->assign('action','Programa/add');
         // Get
         if ($this->request->isGet())
         {
@@ -121,13 +122,14 @@ class ProgramaArticle extends Base
      */
     public function index()
     {
+        $this->assign('action','Programa/index');
         // 读取栏目名称
         $data['pData']['cname'] = $this->pdb->where('id',$this->pid)->value('cname');
         // search
         $title = "%%";
         if (input('?post.search')) $title = "%".input('post.search')."%";
         // 根据父级id读取文章
-        $data['sData'] = $this->db->where('pid',$this->pid)->where('title','like',$title)->order('ctime desc')->paginate(config('paging'));
+        $data['sData'] = $this->db->where('pid',$this->pid)->where('title','like',$title)->order('ctime desc')->paginate(config('paging'),false,['query' => request()->param()]);
         // assign
         $this->assign('data',$data);
         // 渲染模板输出

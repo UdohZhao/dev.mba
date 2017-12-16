@@ -117,7 +117,7 @@ class AdminUser extends Base
         $username = "%%";
         if (input('?post.search')) $username = "%".input('post.search')."%";
         // data
-        $data = $this->db->where('username','like',$username)->paginate(config('paging'));
+        $data = $this->db->where('username','like',$username)->paginate(config('paging'),false,['query' => request()->param()]);
         // assign
         $this->assign('data',$data);
         // 渲染模板输出

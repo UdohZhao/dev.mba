@@ -137,7 +137,7 @@ class Programa extends Base
         $cname = "%%";
         if (input('?post.search')) $cname = "%".input('post.search')."%";
         // 查
-        $data['programaData'] = $this->db->where('pid',$this->pid)->where('cname','like',$cname)->paginate(config('paging'));
+        $data['programaData'] = $this->db->where('pid',$this->pid)->where('cname','like',$cname)->paginate(config('paging'),false,['query' => request()->param()]);
         // assign 用户权限
         $data['permissionsData'] = session('adminUser.permissions');
         $this->assign('data',$data);

@@ -13,7 +13,7 @@
 						{if condition="($k == 4)"}
 					<div class="oneBox_title">
 						<span class="oneBox_title_bd">{$v.cname}</span>
-						<a href="/message/message?pid={$v.id}" class="rt">更多></a>
+						<a href="/Message/message?pid={$v.id}" class="rt" target="_blank">更多></a>
 					</div>
 					{/if}
 					{/foreach}
@@ -23,7 +23,7 @@
 							{foreach name="data.announcementData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid={$v.id}">{$v.title}</a></div>
+								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?paid={$v.id}" target="_blank">{$v.title}</a></div>
 							</div>
 							{/foreach}
 							{/if}
@@ -39,7 +39,7 @@
 						<div class="h10"></div>
 						<div class="oneBox_top_ad">
 							{if $data.ad_informationData}
-							<a href="{$data.ad_informationData.img_link}">
+							<a href="{$data.ad_informationData.img_link}" target="_blank">
 							<img src="{$data.ad_informationData.img_path}">
 							</a>
 							{/if}
@@ -78,7 +78,7 @@
 							{if condition="($k == 6)"}
 						<div class="oneBox_title">
 							<span class="oneBox_title_bd">{$v.cname}</span>
-							<a href="/message/message?pid={$v.id}" class="rt">更多></a>
+							<a href="/Message/message?pid={$v.id}" class="rt" target="_blank">更多></a>
 						</div>
 						{/if}
 						{/foreach}
@@ -88,7 +88,7 @@
 							{foreach name="data.recommendData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="/websitewap/websitewap?paid={$v.id}">{$v.title}</a></div>
+								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?paid={$v.id}" target="_blank">{$v.title}</a></div>
 							</div>
 							{/foreach}
 							{/if}
@@ -96,7 +96,7 @@
 						<!-- 广告位 -->
 						<div class="oneBox_top_ad">
 							{if $data.ad_academyData}
-							<a href="javascript:;">
+							<a href="{$data.ad_academyData.img_link}" target="_blank">
 							<img src="{$data.ad_academyData.img_path}">
 							</a>
 							{/if}

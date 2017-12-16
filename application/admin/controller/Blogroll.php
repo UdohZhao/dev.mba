@@ -93,7 +93,7 @@ class Blogroll extends Base
         $cname = "%%";
         if (input('?post.search')) $cname = "%".input('post.search')."%";
         // 根据父级id读取文章
-        $data = $this->db->where('cname','like',$cname)->order('ctime desc')->paginate(config('paging'));
+        $data = $this->db->where('cname','like',$cname)->order('ctime desc')->paginate(config('paging'),false,['query' => request()->param()]);
         // assign
         $this->assign('data',$data);
         // 渲染模板输出

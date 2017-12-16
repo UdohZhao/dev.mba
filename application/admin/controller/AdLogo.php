@@ -98,7 +98,7 @@ class AdLogo extends Base
         $img_link = "%%";
         if (input('?post.search')) $img_link = "%".input('post.search')."%";
         // 根据父级id读取文章
-        $data = $this->db->where('img_link','like',$img_link)->order('ctime desc')->paginate(config('paging'));
+        $data = $this->db->where('img_link','like',$img_link)->order('ctime desc')->paginate(config('paging'),false,['query' => request()->param()]);
         // assign
         $this->assign('data',$data);
         // 渲染模板输出

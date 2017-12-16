@@ -11,28 +11,26 @@
 
 	<!-- 左边列表样式 -->
 	<div class="left_aside lt">
-		<div class="item_bd" id="items_list">
-			{if $data.programa_articleData}
+		{if $data.programa_articleData}
+		<div class="oneBox_body">
+			
 			{foreach name="data.programa_articleData" item="v" key="k"}
-			<div class="item_list">
-				<div class="item_list_img lt">
-					<img src="{$v.cover_path}">
-				</div>
-				<div class="item_list_con rt">
-					<h2><a href="/websitewap/websitewap/paid={$v.id}">{$v.title}</a></h2>
-					<p>
-						<a href="/websitewap/websitewap/paid={$v.id}">{$v.tips}</a>
-					</p>
-					<p class="item_list_con_time">
-						<span>发布时间 ：{$v.ctime}</span>
-					</p>
-				</div>
+			<div class="oneBox_body_list message_body_list">
+				<div class="yd">·</div>
+					<div class="oneBox_body_list_bd">
+						<a href="/Websitewap/websitewap?paid={$v.id}" target="_blank">{$v.title}</a>
+					</div>
+				<div class="div_time">{$v.ctime|date="Y-m-d",###}</div>
 			</div>
 			{/foreach}
-			{/if}
-
-
+			
 		</div>
+		{$data.programa_articleData->render()}
+
+		{else /}
+			<h2>暂无数据 ~~</h2>
+		{/if}
+
 	</div>
 	<!-- 引入公共右部样式 -->
 	{include file="layouts/right_aside" /}
