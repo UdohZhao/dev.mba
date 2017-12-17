@@ -13,9 +13,11 @@
 <div class="h20"></div>
 <!-- 固定底部 -->
 <div class="sub_footer">
-    <a href="javascript:;" class="weui-tabbar__item weui-bar__item--on">在线咨询</a>
-    <a href="javascript:;" class="weui-tabbar__item">拨打电话</a>
+    {if $data.websiteData}
+    <a href="mqqwpa://im/chat?chat_type=wpa&uin={$data.websiteData.server_qq}&version=1&src_type=web&web_src=oicqzone.com" class="weui-tabbar__item weui-bar__item--on">在线咨询</a>
+    <a href="wtai://wp/mc;{$data.websiteData.server_tel}" class="weui-tabbar__item">拨打电话</a>
     <a href="/app/Index/index" class="weui-tabbar__item">返回首页</a>
+    {/if}
 </div>
 
 
