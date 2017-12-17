@@ -43,10 +43,9 @@
     </div>
     <div class="weui-flex backg333 posR">
       <ul class="expand-list">
-        <li><a href="/app/Index/index">首页</a></li>
         {if $data.programaData}
           {foreach name="data.programaData" item="v" key="k"} 
-            <li><a href="/app/Message/message?pid={$v.id}" target="_blank">{$v.cname}</a></li>
+            <li><a href="/app/Message/message?pid={$v.id}">{$v.cname}</a></li>
           {/foreach}  
         {/if}
       </ul>

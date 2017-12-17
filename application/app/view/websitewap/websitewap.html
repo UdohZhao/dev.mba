@@ -10,12 +10,10 @@
                 <li>
                     <a href="/app/index/index">首页</a>
                 </li>
-                {if condition="($pid neq 0 && $paid eq 0)"}
-                  <li class="active">{$data.programaCname}</li>
-                  {/if}
-                {if condition="($paid && $pid)"}
+                {if condition="($pid)"}
                   <li><a href="/app/Message/message?pid={$pid}">{$data.programaCname}</a></li>
-                {/if}
+                  <li class="active webstyle">{$data.programa_articleTitle}</li>
+                  {/if}
             </ul>
         </div>
         <div class="content">

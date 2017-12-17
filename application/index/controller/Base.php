@@ -7,14 +7,18 @@ use think\Controller;
 class Base extends Controller
 {
     public $data;
+    public $pid;
+    public $paid;
     /**
      * 构造方法
      */
     public function _auto()
     {
+        $this->type = input('?get.type') ? input('get.type') : 0;
         $this->pid = input('?get.pid') ? input('get.pid') : 0;
         $this->paid = input('?get.paid') ? input('get.paid') : 0;
         $this->assign('pid',$this->pid);
+        $this->assign('type',$this->type);
         $this->assign('paid',$this->paid);
     }
 
@@ -61,8 +65,7 @@ class Base extends Controller
 
         // 读取栏目
         $this->data['programaData'] = db('programa')->where('pid',0)->select();
-            // var_dump($this->data['programaData']);
-            // die;
+ 
             
         // 读取栏目子级
         if ($this->data['programaData'])
@@ -105,7 +108,7 @@ class Base extends Controller
         // 查
         $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('search_keywords','like',$search_keywords)->order('ctime desc')->field('content',true)->paginate(config('paging'));
         // 读取当前栏目名称
-        $this->data['programaCname'] = db('programa')->where('id',$this->pid)->value('cname');
+        $this->data['programaCname'] = db('programa')->where('id',$this->type)->value('cname');
         // 读取当前文章标题
         $this->data['programa_articleTitle'] = strip_tags(db('programa_article')->where('id',$this->paid)->value('title'));
         // 模板变量赋值

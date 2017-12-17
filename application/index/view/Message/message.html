@@ -7,13 +7,7 @@
 		<!-- <p>您的位置 : <a href="/index/index">首页1</a>><a href="#" class="cname"></a></p> -->
 		<ol class="breadcrumb">
 		  <li><a href="/">首页</a></li>
-		  {if condition="($type neq 0 && $paid eq 0)"}
 		  <li class="active">{$data.programaCname}</li>
-		  {/if}
-		  {if condition="($paid && $type)"}
-		  <li><a href="/Message/message?type={$type}">{$data.programaCname}</a></li>
-		  <li class="active">{$data.programa_articleTitle}</li>
-		  {/if}
 		</ol>
 	</div>
 </div>
@@ -29,7 +23,7 @@
 			<div class="oneBox_body_list message_body_list">
 				<div class="yd">·</div>
 					<div class="oneBox_body_list_bd">
-						<a href="/Websitewap/websitewap?type={$v.type}&paid={$v.id}" target="_blank">{$v.title}</a>
+						<a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a>
 					</div>
 				<div class="div_time">{$v.ctime|date="Y-m-d",###}</div>
 			</div>
