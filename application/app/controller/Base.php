@@ -28,6 +28,7 @@ class Base extends Controller
       }
         // 读取站点信息
         $this->data['websiteData'] = db('website')->find();
+
         if ($this->data['websiteData']['status'] == 1)
         {
             // 站点关闭跳转提示
