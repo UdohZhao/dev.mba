@@ -3,6 +3,7 @@ namespace app\app\controller;
 class Message extends Base
 {
     public $type;
+    public $pid;
     /**
      * 构造方法`
      */

@@ -20,8 +20,6 @@ class Index extends Base
         {
             // 读取招考公告
             $this->data['announcementData'] = db('programa_article')->where('status',0)->where('type',4)->order('ctime desc')->limit(6)->field('content',true)->select();
-            // dump($this->data['announcementData']);
-            
             // 读取院校推荐
             $this->data['recommendData'] = db('programa_article')->where('status',0)->where('type',6)->order('ctime desc')->limit(6)->field('content',true)->select();
             // 读取MBA热点关注
