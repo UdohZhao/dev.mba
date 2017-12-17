@@ -65,8 +65,8 @@ class Base extends Controller
 
         // 读取栏目
         $this->data['programaData'] = db('programa')->where('pid',0)->select();
- 
-            
+
+
         // 读取栏目子级
         if ($this->data['programaData'])
         {
@@ -139,7 +139,7 @@ class Base extends Controller
          $this->assign('data',$this->data);
          // 渲染模板输出
          return $this->fetch('/sitemap/sitemap');
-        
+
     }
 
 }

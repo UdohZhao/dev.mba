@@ -4,7 +4,7 @@ class Message extends Base
 {
     public $type;
     /**
-     * 构造方法
+     * 构造方法`
      */
     public function _auto()
     {
