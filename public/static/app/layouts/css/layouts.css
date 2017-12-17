@@ -5,7 +5,7 @@ a:hover{text-decoration: none;}
 .header{width: 100%;}
 img{width: 100%;height: 100%;}
 .weui-flex__item img{padding:.3rem; }
-.weui-flex__item p{padding: .3rem;font-size: 13px;font-weight: 600;text-align: center;margin: 0;}
+.weui-flex__item p{padding: .5rem.3rem;font-size: 16px;font-weight: 600;text-align: center;margin: 0;}
 .weui-tab{width: 100%;}
 .weui-tab_nav .weui-navbar{background-color: #505050;}
 .weui-tab_nav .weui-navbar:after{border:0;}
