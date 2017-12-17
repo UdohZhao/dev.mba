@@ -96,7 +96,7 @@ class Base extends Controller
          $this->assign('data',$this->data);
          // 渲染模板输出
          return $this->fetch('/sitemap/sitemap');
-        
+
     }
 
 }
