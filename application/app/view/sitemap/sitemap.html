@@ -1,0 +1,27 @@
+{include file="layouts/header" /}
+
+    <!-- 当前页面css -->
+    {css href="/static/app/sitemap/css/sitemap.css" /}
+
+<div class="container">
+	<div class="weui-panel weui-panel_access ">
+	  	<div class="weui-panel__bd sitemap_bd">
+	  		{if $data.website_mapData}
+	  			{foreach name="data.website_mapData" item="v" key="k"}
+		    	<div class="sitemap">
+		    		<h3>{$k}</h3>
+		    			<ul>
+		    				{foreach name="$v" item="vv" key="kk"}
+		    				<li><a href="{$vv}">{$kk}</a></li>
+		    				{/foreach}
+		    			</ul>
+		    	</div>
+		    {/foreach}
+		    {/if}
+		</div>
+
+	</div>
+</div>
+
+
+{include file="layouts/footer" /}

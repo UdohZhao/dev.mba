@@ -4,7 +4,7 @@
     {css href="/static/app/index/css/index.css" /}
 <div class="container">
 	<div class="weui-search-bar" id="searchBar">
-	  	<form class="weui-search-bar__form" action="/Base/search" method="POST">
+	  	<form class="weui-search-bar__form" action="/app/Base/search" method="POST">
 	    	<div class="weui-search-bar__box">
 	      		<i class="weui-icon-search"></i>
 	      		<input type="text" class="weui-search-bar__input"  placeholder="搜索" name="search">
@@ -26,7 +26,7 @@
 	  </div>
 	  	<div class="weui-panel__bd">
 	  		{foreach name="data.announcementData" item="v" key="k"}
-		    <a href="/app/Message/message?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
@@ -42,11 +42,11 @@
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>院校推荐</span>
-	  	<a href="/app/Message/message">进入栏目></a>
+	  	<a href="/app/Message/message?type=6">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.recommendData" item="v" key="k"}
-		    <a href="/app/Message/message?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
@@ -62,11 +62,11 @@
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>MBA热点关注</span>
-	  	<a href="/app/Message/message">进入栏目></a>
+	  	<a href="/app/Message/message?type=3">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.hotData" item="v" key="k"}
-		    <a href="/app/Message/message?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
@@ -82,13 +82,11 @@
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>MBA活动预告</span>
-	  	{foreach name="data.foreshowData" item="v" key="k"}
-	  	<a href="/app/Message/message?pid={$v.pid}">进入栏目></a>
-	  	{/foreach}
+	  	<a href="/app/Message/message?type=5">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.foreshowData" item="v" key="k"}
-		    <a href="/app/Message/message?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
@@ -104,11 +102,11 @@
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>招生咨询</span>
-	  	<a href="/app/Message/message">进入栏目></a>
+	  	<a href="/app/Message/message?type=7">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.recruitData" item="v" key="k"}
-		    <a href="/app/Message/message?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
@@ -124,11 +122,11 @@
 	<div class="weui-panel weui-panel_access">
 	  	<div class="weui-panel__hd">
 	  		<span>考试资讯</span>
-	  		<a href="/app/Message/message">进入栏目></a>
+	  		<a href="/app/Message/message?type=8">进入栏目></a>
 	  	</div>
 	  <div class="weui-panel__bd">
 	    {foreach name="data.recruitData" item="v" key="k"}
-	    <a href="/app/Message/message?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+	    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
 	      <div class="weui-media-box__hd">
 	        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 	      </div>

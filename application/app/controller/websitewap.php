@@ -8,8 +8,8 @@ class Websitewap extends Base
      */
     public function _auto()
     {
-        $this->pid = input('?get.pid') ? input('get.pid') : 0;
         $this->paid = input('?get.paid') ? input('get.paid') : 0;
+        $this->pid = input('?get.pid') ? input('get.pid') : 0;
         $this->assign('pid',$this->pid);
         $this->assign('paid',$this->paid);
     }

@@ -1,0 +1,5 @@
+.sitemap_bd {padding: 1rem .5rem;}
+.sitemap{margin-left: .5rem;width: 20%;float: left;}
+.sitemap h3{padding-bottom: .5rem;border-bottom: 1px solid #f3f3f3;margin: 0;}
+.sitemap li{width: 25%; }
+.sitemap li a{height: 1rem;line-height: 1rem;}

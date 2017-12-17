@@ -11,9 +11,11 @@ class Base extends Controller
      */
     public function _auto()
     {
+        $this->type = input('?get.type') ? input('get.type') : 0;
         $this->pid = input('?get.pid') ? input('get.pid') : 0;
         $this->paid = input('?get.paid') ? input('get.paid') : 0;
         $this->assign('pid',$this->pid);
+        $this->assign('type',$this->type);
         $this->assign('paid',$this->paid);
     }
 
@@ -69,7 +71,7 @@ class Base extends Controller
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出
-        return $this->fetch('/app/message/message');
+        return $this->fetch('/message/message');
     }
 
     /**
@@ -82,7 +84,18 @@ class Base extends Controller
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出
-        return $this->fetch('websitewap');
+        return $this->fetch('/sitemap/aboutUs');
+    }
+    /**
+     * 网站地图
+     */
+    public function sitemap()
+    {
+         // 模板变量赋值
+         $this->assign('data',$this->data);
+         // 渲染模板输出
+         return $this->fetch('/sitemap/sitemap');
+        
     }
 
 }
