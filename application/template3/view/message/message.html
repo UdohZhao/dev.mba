@@ -1,0 +1,52 @@
+{include file="layouts/header" /}
+
+<!-- 当前页面css -->
+    {css href="/static/template3/message/css/message.css" /}
+<div class="main_topnav">
+	<div class="mainwd">
+		<!-- <p>您的位置 : <a href="/index/index">首页1</a>><a href="#" class="cname"></a></p> -->
+		<ol class="breadcrumb">
+		  <li><a href="/">首页</a></li>
+		  <li class="active">{$data.programaCname}</li>
+		</ol>
+	</div>
+</div>
+<div class="container">
+
+	<!-- 左边列表样式 -->
+	<div class="left_aside lt">
+		{if $data.programa_articleData}
+		
+		<div class="oneBox_body">
+			
+			{foreach name="data.programa_articleData" item="v" key="k"}
+			<div class="oneBox_body_list message_body_list">
+				<div class="yd">·</div>
+					<div class="oneBox_body_list_bd">
+						<a href="/template3/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a>
+					</div>
+				<div class="div_time">{$v.ctime|date="Y-m-d",###}</div>
+			</div>
+			{/foreach}
+			
+		</div>
+		<!-- 分页 -->
+		{$data.programa_articleData->render()}
+
+		{else /}
+		<div class="oneBox_body">
+			<h3 style="text-align: center;">哎呀，没有数据！</h3>
+		</div>
+		
+		{/if}
+
+
+		
+	</div>
+	<!-- 引入公共右部样式 -->
+	{include file="layouts/right_aside" /}
+</div>
+
+{include file="layouts/footer" /}
+
+{js href="/static/template3/message/js/message.js" /}

@@ -15,7 +15,7 @@
 <div class="sub_footer">
     {if $data.websiteData}
     <a href="http://wpa.qq.com/msgrd?v=3&uin={$data.websiteData.service_qq}&site=oicqzone.com&menu=yes" class="weui-tabbar__item">在线咨询</a>
-    <a href="wtai://wp/ap;{$data.websiteData.service_tel}" class="weui-tabbar__item">拨打电话</a>
+    <a href="tel:{$data.websiteData.service_tel}" class="weui-tabbar__item">拨打电话</a>
     <a href="/app/Index/index" class="weui-tabbar__item">返回首页</a>
     {/if}
 </div>

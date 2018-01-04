@@ -1,0 +1,32 @@
+{include file="layouts/header" /}
+
+<!-- 当前页面css -->
+    {css href="/static/template6/websitewap/css/websitewap.css" /}
+<div class="main_topnav">
+	<div class="mainwd">
+		<ol class="breadcrumb">
+		  <li><a href="/template6/Index/index">首页</a></li>
+		  <li class="active">关于我们</li>
+		</ol>
+	</div>
+</div>
+<div class="container">
+		
+	<!-- 左边列表样式 -->
+	<div class="left_aside lt" >
+		{if $data.about_usData}
+		<div class="article_bd" >
+			<h1 style="padding-bottom: 20px;">{$data.about_usData.title}</h1>
+
+			<div class="content">
+				{$data.about_usData.content}
+			</div>
+		</div>
+		{/if}
+
+	</div>
+	<!-- 引入公共右部样式 -->
+	{include file="layouts/right_aside" /}
+</div>
+
+{include file="layouts/footer" /}

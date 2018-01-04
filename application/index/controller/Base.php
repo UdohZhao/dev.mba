@@ -9,7 +9,7 @@ class Base extends Controller
     public $data;
     public $pid;
     public $paid;
-    /**
+    /**s
      * 构造方法
      */
     public function _auto()
@@ -99,6 +99,7 @@ class Base extends Controller
     /**
      * 搜索文章
      */
+
     public function search()
     {
 
@@ -107,14 +108,34 @@ class Base extends Controller
         if (input('?post.search')) $search_keywords = "%".input('post.search')."%";
         // 查
         $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('search_keywords','like',$search_keywords)->order('ctime desc')->field('content',true)->paginate(config('paging'));
-        // 读取当前栏目名称
-        $this->data['programaCname'] = db('programa')->where('id',$this->type)->value('cname');
-        // 读取当前文章标题
-        $this->data['programa_articleTitle'] = strip_tags(db('programa_article')->where('id',$this->paid)->value('title'));
-        // 模板变量赋值
-        $this->assign('data',$this->data);
-        // 渲染模板输出
-        return $this->fetch('message/message');
+
+            // if($this->data['programa_articleData'])
+            // {
+            //     foreach ($this->data['programa_articleData'] AS $k => $v) 
+            //     {
+            //         $this->data['programa_articleData'][$k]['programa_articleDataLst'] = db('programa')->where('pid',$v['id'])->select();
+            //         if(data['programa_articleData'][$k]['programa_articleDataLst'])
+            //         {}
+            //         // 读取当前栏目名称
+            //         $this->data['programaCname'] = db('programa')->where('id',$this->type)->value('cname');
+            //         // 读取当前文章标题
+            //         $this->data['programa_articleTitle'] = strip_tags(db('programa_article')->where('id',$this->paid)->value('title'));
+            //         // 模板变量赋值
+            //         $this->assign('data',$this->data);
+            //          // 渲染模板输出
+            //         return $this->fetch('message/message');
+                    
+            //     }
+
+            // }
+
+            $this->data['programaCname'] = db('programa')->where('id',$this->type)->value('cname');
+            // 读取当前文章标题
+            $this->data['programa_articleTitle'] = strip_tags(db('programa_article')->where('id',$this->paid)->value('title'));
+            // 模板变量赋值
+            $this->assign('data',$this->data);
+             // 渲染模板输出
+            return $this->fetch('message/message');
     }
 
     /**
