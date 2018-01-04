@@ -1,0 +1,16 @@
+
+.main_topnav{width: 100%;height: 48px;background-color: #f8f8f8;line-height: 32px;box-shadow: 1px 2px 1px #ccc;}
+.main_topnav .mainwd{width: 1250px;margin: 0 auto;min-width: 1250px;}
+.left_aside{width: 850px;padding: 10px;border:1px solid #e3e3e3;margin-top: 20px;}
+.item_bd{margin: 10px 0;}
+.item_list{margin: 10px 0;border-bottom: 1px dashed #ddd;overflow: hidden;padding-bottom: 10px;}
+.item_list .item_list_img img{width: 140px;height:160px;}
+.item_list .item_list_con{width: 78%;margin-left: 20px;}
+.item_list_con_time{color: #999;}
+.textC{text-align: center;}
+
+
+.message_body_list{border-bottom: 1px  dashed #e3e3e3;text-align: left;position: relative;}
+.message_body_list .div_time{position: absolute;top:0;right: 0;}
+.message_body_list .oneBox_body_list_bd a p{max-width: 700px;}
+
