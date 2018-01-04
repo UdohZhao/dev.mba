@@ -1,6 +1,6 @@
 <?php
 return [
-    'paging'        =>      '10', // 数据分页
+    'paging'        =>      '15', // 数据分页
     'website_map'   =>      array(
         'one'       =>      array(
             'AAA'   =>      'https://www.baidu.com/',

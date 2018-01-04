@@ -65,8 +65,8 @@ class Base extends Controller
 
         // 读取栏目
         $this->data['programaData'] = db('programa')->where('pid',0)->select();
- 
-            
+
+
         // 读取栏目子级
         if ($this->data['programaData'])
         {
@@ -109,6 +109,7 @@ class Base extends Controller
         // 查
         $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('search_keywords','like',$search_keywords)->order('ctime desc')->field('content',true)->paginate(config('paging'));
 
+
             // if($this->data['programa_articleData'])
             // {
             //     foreach ($this->data['programa_articleData'] AS $k => $v) 
@@ -136,6 +137,13 @@ class Base extends Controller
             $this->assign('data',$this->data);
              // 渲染模板输出
             return $this->fetch('message/message');
+
+        // 读取当前栏目名称
+        $this->data['programaCname'] = '搜索文章';
+        // 模板变量赋值
+        $this->assign('data',$this->data);
+        // 渲染模板输出
+        return $this->fetch('message/message');
     }
 
     /**
@@ -145,6 +153,8 @@ class Base extends Controller
     {
         // 读取关于我们信息
         $this->data['about_usData'] = db('about_us')->find();
+        // 读取当前栏目名称
+        $this->data['programaCname'] = '关于我们';
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出
@@ -156,11 +166,13 @@ class Base extends Controller
      */
     public function sitemap()
     {
+         // 读取当前栏目名称
+         $this->data['programaCname'] = '网站地图';
          // 模板变量赋值
          $this->assign('data',$this->data);
          // 渲染模板输出
          return $this->fetch('/sitemap/sitemap');
-        
+
     }
 
 }

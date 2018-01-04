@@ -25,7 +25,7 @@ CREATE TABLE `programa`(
   `pid` INT(11) UNSIGNED NOT NULL COMMENT '父级id，0为顶级',
   `cname` VARCHAR(25) NOT NULL COMMENT '名称',
   `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
-  `type` TINYINT(2) UNSIGNED NOT NULL COMMENT '0>招生，1>院校，2>考试，3>热点关注，4>招考公告，5>活动预告，6>院校推荐',
+  `type` TINYINT(2) UNSIGNED NOT NULL COMMENT '0>招生，1>院校，2>考试，3>热点关注，4>招考公告，5>活动预告，6>院校推荐，7>招生资讯，8>考试资讯',
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

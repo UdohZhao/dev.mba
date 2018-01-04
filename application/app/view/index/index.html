@@ -27,14 +27,16 @@
 	  	<div class="weui-panel__bd">
 	  		{foreach name="data.announcementData" item="v" key="k"}
 		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
+		      {/if}
 		      <div class="weui-media-box__bd">
 		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
 		      </div>
 		    </a>
-		   {/foreach} 
+		   {/foreach}
 	  	</div>
 	</div>
 	{/if}
@@ -47,9 +49,11 @@
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.recommendData" item="v" key="k"}
 		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
+		      {/if}
 		      <div class="weui-media-box__bd">
 		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
 		      </div>
@@ -67,9 +71,11 @@
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.hotData" item="v" key="k"}
 		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
+		      {/if}
 		      <div class="weui-media-box__bd">
 		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
 		      </div>
@@ -87,9 +93,11 @@
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.foreshowData" item="v" key="k"}
 		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
+		      {/if}
 		      <div class="weui-media-box__bd">
 		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
 		      </div>
@@ -107,9 +115,11 @@
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.recruitData" item="v" key="k"}
 		    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
+		      {/if}
 		      <div class="weui-media-box__bd">
 		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
 		      </div>
@@ -125,11 +135,13 @@
 	  		<a href="/app/Message/message?type=8">进入栏目></a>
 	  	</div>
 	  <div class="weui-panel__bd">
-	    {foreach name="data.recruitData" item="v" key="k"}
+	    {foreach name="data.examData" item="v" key="k"}
 	    <a href="/app/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    {if condition="($k eq 0)"}
 	      <div class="weui-media-box__hd">
 	        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 	      </div>
+	      {/if}
 	      <div class="weui-media-box__bd">
 	        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
 	      </div>

@@ -6,6 +6,9 @@ use think\Controller;
  */
 class Base extends Controller
 {
+    public $type;
+    public $pid;
+    public $paid;
     /**
      * 构造方法
      */
@@ -68,6 +71,8 @@ class Base extends Controller
         if (input('?post.search')) $search_keywords = "%".input('post.search')."%";
         // 查
         $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('search_keywords','like',$search_keywords)->order('ctime desc')->field('content',true)->paginate(config('paging'));
+        // 读取当前栏目名称
+        $this->data['programaCname'] = '搜索文章';
 
         // 模板变量赋值
         $this->assign('data',$this->data);
@@ -82,6 +87,8 @@ class Base extends Controller
     {
         // 读取关于我们信息
         $this->data['about_usData'] = db('about_us')->find();
+        // 读取当前栏目名称
+        $this->data['programaCname'] = '关于我们';
         // 模板变量赋值
         $this->assign('data',$this->data);
         // 渲染模板输出
@@ -92,11 +99,13 @@ class Base extends Controller
      */
     public function sitemap()
     {
+         // 读取当前栏目名称
+         $this->data['programaCname'] = '网站地图';
          // 模板变量赋值
          $this->assign('data',$this->data);
          // 渲染模板输出
          return $this->fetch('/sitemap/sitemap');
-        
+
     }
 
 }

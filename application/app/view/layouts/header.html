@@ -7,7 +7,7 @@
     <meta  name="description" content="{$data.websiteData.describe}">
     <meta name="keywords" content="{$data.websiteData.search_keywords}">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
+
     <!-- Bootstrap -->
     {css href="/static/bootstrap/css/bootstrap.min.css" /}
     <!-- Bootstrap验证插件 -->
@@ -26,7 +26,7 @@
     {css href="/static/app/layouts/css/layouts.css" /}
 
   </head>
-  <body>    
+  <body>
     <!-- 头部开始 -->
   <div class="header">
     <div class="weui-flex">
@@ -44,9 +44,9 @@
     <div class="weui-flex backg333 posR">
       <ul class="expand-list">
         {if $data.programaData}
-          {foreach name="data.programaData" item="v" key="k"} 
+          {foreach name="data.programaData" item="v" key="k"}
             <li><a href="/app/Message/message?pid={$v.id}">{$v.cname}</a></li>
-          {/foreach}  
+          {/foreach}
         {/if}
       </ul>
       <div class="toggle-area" >
@@ -57,7 +57,7 @@
       <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
         <div class="swiper-wrapper">
           {if $data.bannerData}
-            {foreach name="data.bannerData" item="v" key="k"} 
+            {foreach name="data.bannerData" item="v" key="k"}
             <div class="swiper-slide" >
               <a href="{$v.img_link}"></a>
               <img src="{$v.img_path}" >

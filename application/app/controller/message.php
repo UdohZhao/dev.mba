@@ -3,8 +3,9 @@ namespace app\app\controller;
 class Message extends Base
 {
     public $type;
+    public $pid;
     /**
-     * 构造方法
+     * 构造方法`
      */
     public function _auto()
     {
@@ -23,7 +24,7 @@ class Message extends Base
         if ($this->request->isGet())
         {
             // 读取当前栏目下的文章列表
-            if ($this->pid) 
+            if ($this->pid)
             {
 
                 // 读取当前栏目名称
@@ -31,7 +32,7 @@ class Message extends Base
                 $this->data['programa_articleData'] = db('programa_article')->where('status',0)->where('pid',$this->pid)->order('ctime desc')->field('content',true)->paginate(config('paging'),false,['query' => request()->param()]);
 
             }
-            else 
+            else
             {
                 // 读取当前栏目名称
                 $this->data['programaCname'] = db('programa')->where('type',$this->type)->value('cname');
