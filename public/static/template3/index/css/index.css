@@ -26,7 +26,7 @@ h1,h2,h3{
 .samebox_new h3{color: #ff6900;}
 .samebox_new_body{width:100%;height: 80px;overflow: hidden;margin:10px 0; }
 .samebox_box_img{width: 100px;margin-right: 20px;height: 100%;}
-.samebox_box_desc{height: 100%;width: 162px;padding: 10px 0;font-size: 15px;line-height:2;overflow: hidden;}
+.samebox_box_desc{height: 100%;width: 162px;padding: 10px 0;font-size: 15px;line-height:1.6;overflow: hidden;}
 .tit_bg h3{border-bottom:1px solid #2da3ff;padding-bottom: 10px;}
 
 
