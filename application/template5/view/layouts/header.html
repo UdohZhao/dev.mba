@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$data.websiteData.title}</title>
+    <meta  name="description" content="{$data.websiteData.describe}">
+    <meta name="keywords" content="{$data.websiteData.search_keywords}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    {css href="/static/bootstrap/css/bootstrap.min.css" /}
+    <!-- Bootstrap验证插件 -->
+    {css href="/static/bootstrapvalidator/dist/css/bootstrapValidator.css" /}
+    <!-- sweetalert弹窗插件 -->
+    {css href="/static/sweetalert2/dist/sweetalert2.min.css" /}
+
+    <!-- 谷歌字体 -->
+    <link href='https://fonts.cat.net/css?family=Open+Sans' rel='stylesheet'>
+
+    <!-- jQuery WEUI -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+
+    <!-- 当前页面css -->
+    {css href="/static/template5/layouts/css/layouts.css" /}
+
+  </head>
+  <body>
+<div class="header">
+    <!-- 顶部通用栏 一 -->
+    <div class="top-nav-wrapper">
+        <div class="top-nav-index">
+            <div class="top-list top-list_left">
+                <a href="/template5/Base/aboutUs" target="_blank" >关于我们</a>
+                <a href="/template5/Base/sitemap" target="_blank" >网站地图</a>
+            </div>
+            <div class="top-list textR">
+                <a href="/admin" title="院校登录" target="_blank">院校登录</a>
+                <a href="#" id="favorites" title="#">加入收藏</a>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部通用栏 二 -->
+        <div class="header-wrapper">
+            <div class="header-index">
+                <div class="header-index-img lt">
+                    {if $data.ad_logoData}
+                    <a href="{$data.ad_logoData.img_link}"  target="_blank">
+                    <img src="{$data.ad_logoData.img_path}" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
+                    </a>
+                    {/if}
+                </div>
+                <div class="header-index-ad  lt">
+                    {if $data.ad_topData}
+                    <a href="{$data.ad_topData.img_link}" target="_blank">
+                        <img src="{$data.ad_topData.img_path}" >
+                    </a>
+                    {/if}
+                </div>
+                <!-- 搜索框 -->
+                <div class="header-index-search lt">
+                    <form action="/template5/Base/search" method="POST">
+                        <input type="text" name="search" id="keywords" placeholder="站内搜索" maxlength="40">
+                        <button type="submit" class="search_btn" id="searchBtn"><i class="glyphicon glyphicon-search" title="站内搜索"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- 顶部通用栏 三 -->
+        <nav class="header-nav-box">
+            <ul class="nav-box">
+                <li class="nav-first">
+                    <div class="nav-title">
+                        <a href="/template5/Index/index" target="_blank">首页</a>
+                    </div>
+                </li>
+                <li class="nav-second">
+                    <div class="nav-title">招生</div>
+                        <div class="nav-td">
+                            <ul >
+                                {if $data.programaData}
+                                    {foreach name="data.programaData" item="v" key="k"}
+                                     {if condition="($v.type == 0)"}
+                                        {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                    <li><a href="/template5/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
+                                        {/foreach}
+                                     {/if}
+                                    {/foreach}
+                                {/if}   
+                            </ul>
+                        </div>
+                </li>
+                <li class="nav-third">
+                    <div class="nav-title">院校</div>
+                    <div class="nav-td">
+                        <ul >
+                            {if $data.programaData}
+                                    {foreach name="data.programaData" item="v" key="k"}
+                                     {if condition="($v.type == 1)"}
+                                        {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                    <li><a href="/template5/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
+                                        {/foreach}
+                                     {/if}
+                                    {/foreach}
+                                {/if}
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-fourth">
+                    <div class="nav-title">考试</div>
+                    <ul class="nav-td">
+                        {if $data.programaData}
+                                {foreach name="data.programaData" item="v" key="k"}
+                                 {if condition="($v.type == 2)"}
+                                    {foreach name="$v.programaSonData" item="vv" key="kk"}
+                                <li><a href="/template5/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
+                                    {/foreach}
+                                 {/if}
+                                {/foreach}
+                            {/if}
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+
+</div>
+

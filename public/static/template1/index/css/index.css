@@ -1,0 +1,41 @@
+body{
+	font-family: 'Microsoft YaHei';
+}
+h1,h2,h3{
+	margin-top: 0;
+}
+.lt{float: left;}
+.rt{float: right;}
+.both{clear: both;}
+.h10{display: block;width: 100%;height: 10px;font-size: 0;clear: both;}
+.h20{display: block;width: 100%;height: 20px;font-size: 0;clear: both;}
+.magTop20{margin-top: 20px;}
+.magTop40{margin-top: 40px;}
+.news_box{max-height:251px;overflow: hidden;margin-bottom: 7px;border-bottom: 1px solid #ddd;padding-bottom: 20px;}
+.news_box_ad{max-height:186px;overflow: hidden;}
+/*列表项前的小点*/
+.yd{text-align: left;float: left;font-size: 32px;line-height: 30px;height: 30px;width: 15px;}
+.oneBox_body_list{width: 100%;height: 30px;line-height: 30px;font-size: 16px;overflow: hidden;}
+.oneBox_body_list_title{font-weight: bold;font-size: 22px;width: auto;line-height: 35px;}
+.box_title{line-height: 40px;}
+.img_box{height: 258px;overflow: hidden;background-color: #f5f5f5;}
+.img_box img{width: 100%;height: 170px;}
+.img_box strong{font-size: 14px;line-height: 30px;text-align: center;}
+.img_box p{line-height:2;padding: 0 10px;}
+.img_box_list h4 p{line-height: 40px;font-size: 24px;overflow: hidden;}
+.img_box_list p{font-size: 14px;overflow: hidden;margin: 0;line-height: 25px;}
+.phone{height: 258px;overflow: hidden;}
+.phone .second_QR_hd{width: 60px;height: 200px;margin:28px 20px 20px 0;text-align: center;color: #fff;
+	background-color:#1787E0;}
+.phone .second_QR_hd span{text-align:center;font-weight: bold;font-size: 20px;display: inline-block;padding:2px 20px;}
+.img2 img{width: 100%;height: 80px;}
+.second_phone_img{width: 300px;height: 100%;padding: 20px;}
+.oneBox_title h3 span{line-height: 30px;border-right: 2px solid #e0e0e0;padding:0 20px;}
+.oneBox_body{width: 100%;min-height: 366px;}
+.oneBox_body .oneBox_body_img{font-size: 14px;line-height: 50px;text-align: center;position: relative;
+	overflow: hidden;width: 100%;height: 170px;}
+.oneBox_body .oneBox_body_img span{position: absolute;bottom: 0;left: 0;background-color: rgba(66,24,13,.8);
+	display: inline-block;width: 100%;height: 35px;line-height: 35px;color: #fff;}
+.img3 img{width: 236px;height: 80px;margin:20px 0 0 8px; }
+.box_title span,
+.consociation h3 span{line-height: 30px;border-right: 2px solid #e0e0e0;padding: 0 20px;}

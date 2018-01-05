@@ -1,0 +1,38 @@
+{include file="layouts/header" /}
+
+<!-- 当前页面css -->
+    {css href="/static/template2/websitewap/css/websitewap.css" /}
+<div class="main_topnav">
+	<div class="mainwd">
+		<ol class="breadcrumb">
+		  <li><a href="/template2/Index/index">首页</a></li>
+		  {if condition="($pid)"}
+		  <li><a href="/template2/Message/message?pid={$pid}">{$data.programaCname}</a></li>
+		  <li class="active">{$data.programa_articleTitle}</li>
+		  {/if}
+		</ol>
+	</div>
+</div>
+<div class="container">
+		
+	<!-- 左边列表样式 -->
+	<div class="left_aside lt" >
+		{if $data.programa_articleData}
+		<div class="article_bd" >
+			<h1>{$data.programa_articleData.title}</h1>
+			<div class="title-box">
+				<p>{$data.programa_articleData.tips}</p>
+			</div>
+			<div class="content">
+				{$data.programa_articleData.content}
+			</div>
+		</div>
+		{/if}
+
+	</div>
+	<!-- 引入公共右部样式 -->
+	{include file="layouts/right_aside" /}
+</div>
+
+{include file="layouts/footer" /}
+{js href="/static/template2/message/js/message.js" /}

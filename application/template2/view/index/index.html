@@ -1,0 +1,307 @@
+{include file="layouts/header" /}
+
+<!-- 当前页面css -->
+    {css href="/static/template2/index/css/index.css" /}
+
+<div class="container">
+	<!-- 一楼  -->
+	<div class="row magTop20">
+		<div class="col-md-4">
+			<!-- 重庆MBA热点关注 -->
+			<div class="news_box">
+				<h4 class="oneBox_body_list_title"><a href="/template2/Message/message?type=3" target="_blank">重庆MBA热点关注</a></h4>
+				<div class="oneBox_body">
+					{if $data.hotData}
+						{foreach name="data.hotData" item="v" key="k"}
+					<div class="oneBox_body_list">
+						<div class="yd">·</div>
+						<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+					</div>
+					{/foreach}
+					{/if}
+				</div>
+			</div>
+			<!-- 招考广告 -->
+			<div class="news_box_ad">
+				<h4 class="oneBox_body_list_title"><a href="/template2/Message/message?type=4" target="_blank">招考广告</a></h4>
+				<div class="oneBox_body">
+					{if $data.announcementData}
+						{foreach name="data.announcementData" item="v" key="k"}
+					<div class="oneBox_body_list">
+						<div class="yd">·</div>
+						<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+					</div>
+					{/foreach}
+					{/if}
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<!-- 轮播图 -->
+			<div id="myCarousels" class="carousel slide" data-ride="carousel">
+			            <ol class="carousel-indicators">
+			              <li data-target="#myCarousels" data-slide-to="0" class="active"></li>
+			              <li data-target="#myCarousels" data-slide-to="1"></li>
+			              <li data-target="#myCarousels" data-slide-to="2"></li>
+			              <li data-target="#myCarousels" data-slide-to="3"></li>
+			            </ol>
+					    <!-- 轮播（Carousel）项目 -->
+					    <div class="carousel-inner banner_bd" role="listbox">
+					    	{if $data.bannerData}
+								{foreach name="data.bannerData" item="v" key="k"}
+							<div {if $k == 0}class="item active"{else/}class="item"{/if}>
+					        	<div class="third_header_aside">
+					        		<a href="{$v.img_link}" target="_blank">
+					        			<img src="{$v.img_path}" alt="{$v.id}">
+					        		</a>
+								</div>
+					        </div>
+							{/foreach}
+							{/if}       
+					    </div>
+					    <!-- 轮播（Carousel）导航 -->
+					    <a class="left carousel-control" href="#myCarousels" data-slide="prev">  
+				            <span class="glyphicon glyphicon-chevron-left"></span>  
+				        </a>  
+				        <a class="right carousel-control" href="#myCarousels" data-slide="next">  
+				            <span class="glyphicon glyphicon-chevron-right"></span>  
+				        </a> 
+			</div>
+		</div>
+	</div>
+	<div class="row magTop20">
+		<div class="col-md-12">
+			<div class="img">
+				{if $data.ad_academy_topData}
+				{foreach name="data.ad_academy_topData" item="v" key="k"}
+				<a href="{$v.img_link}" target="_blank">
+					<img src="{$v.img_path}" class="lt" >
+				</a>
+				{/foreach}
+				{/if}
+			</div>
+		</div>
+	</div>
+	<!-- 二楼 -->
+	<div class="row magTop20 backbgm">
+		<div class="col-md-4 height368">
+			<div class="recruit_title">
+				<a href="/template2/Message/message?type=7" target="_blank">招生资讯</a>
+				<span>最新最全面的招生咨询</span>
+			</div>
+			{if $data.recruitData}
+				{foreach name="data.recruitData" item="v" key="k"}
+				{if condition="($k == 0)"}
+			<div class="recruit_body_img">
+				<a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank"><img src="{$v.cover_path}">
+						<span>{$v.title}</span>
+				</a>
+				
+			</div>
+			{else /}
+			<div class="oneBox_body_list">
+				<div class="yd">·</div>
+				<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+			</div>
+			{/if}
+			{/foreach}
+			{/if}
+		</div>
+		<div class="col-md-4 height368">
+			<div class="recruit_title">
+				<a href="/template2/Message/message?type=8" target="_blank">考试资讯</a>
+				<span>最快最便捷的考试咨询</span>
+			</div>
+			{if $data.examData}
+				{foreach name="data.examData" item="v" key="k"}
+				{if condition="($k == 0)"}
+			<div class="recruit_body_img">
+				<a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank"><img src="{$v.cover_path}">
+						<span>{$v.title}</span>
+				</a>
+				
+			</div>
+			{else /}
+			<div class="oneBox_body_list">
+				<div class="yd">·</div>
+				<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+			</div>
+			{/if}
+			{/foreach}
+			{/if}
+		</div>
+		<div class="col-md-4 height368">
+			<div class="recruit_title">
+				<a >手机网站二维码</a>
+			</div>
+			<div class="phone_img">
+				{if $data.qr_code_phoneData}
+					<img src="{$data.qr_code_phoneData.img_path}" alt="手机站二维码" title="手机站二维码">
+					{/if}
+			</div>
+		</div>
+	</div>
+	<!-- 三楼 -->
+	<div class="row magTop20 backbgm">
+		<div class="col-md-4 height368">
+			<div class="recruit_title">
+				<a href="/template2/Message/message?type=3" target="_blank">重庆MBA活动预告</a>
+				<span>重庆MBA通往成功的桥梁</span>
+			</div>
+			{if $data.hotData}
+				{foreach name="data.hotData" item="v" key="k"}
+				{if condition="($k == 0)"}
+			<div class="recruit_body_img">
+				<a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank"><img src="{$v.cover_path}"></a>
+				<span>{$v.title}</span>
+			</div>
+			{else /}
+			<div class="oneBox_body_list">
+				<div class="yd">·</div>
+				<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+			</div>
+			{/if}
+			{/foreach}
+			{/if}
+		</div>
+		<div class="col-md-4 height368">
+			<div class="recruit_title">
+				<a href="/template2/Message/message?type=6" target="_blank">院校推荐</a>
+				<span>院校推荐 科学选校</span>
+			</div>
+			{if $data.recommendData}
+				{foreach name="data.recommendData" item="v" key="k"}
+				{if condition="($k == 0)"}
+			<div class="recruit_body_img">
+				<a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank"><img src="{$v.cover_path}"></a>
+				<span>{$v.title}</span>
+			</div>
+			{else /}
+			<div class="oneBox_body_list">
+				<div class="yd">·</div>
+				<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+			</div>
+			{/if}
+			{/foreach}
+			{/if}
+		</div>
+		<div class="col-md-4 height368">
+			<div class="recruit_title">
+				<a >微信公众号二维码</a>
+			</div>
+			<div class="phone_img">
+				{if $data.qr_code_publicData}
+					<img src="{$data.qr_code_publicData.img_path}" alt="手机站二维码" title="手机站二维码">
+					{/if}
+			</div>
+		</div>
+	</div>
+	<!-- 广告 -->
+	<div class="row magTop20">
+		<div class="col-md-12">
+			<div class="img2">
+				{if $data.ad_exam_topData}
+				{foreach name="data.ad_exam_topData" item="v" key="k"}
+				<a href="{$v.img_link}" target="_blank">
+					<img src="{$v.img_path}" class="lt" title="#" alt="#">
+				</a>
+				{/foreach}
+				{/if}
+			</div>
+		</div>
+	</div>
+	<!-- 五楼 -->
+	<div class="row magTop20 section">
+		{if $data.programaData}
+               {foreach name="data.programaData" item="v" key="k"}
+                {if condition="($v.type == 1)"}
+                   {foreach name="$v.programaSonData" item="vv" key="kk"}
+		<div class="col-md-4 backbgm magbot20">
+			<h4><a href="/template2/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></h4>
+			{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
+							{if $kkk == 0}
+			<div class="news_box">
+				<a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
+					<div class="news_box_img lt">
+						<img src="{$vvv.cover_path}">
+					</div>
+					<div class="news_box_desc lt">{$vvv.title}</div>
+				</a>
+			</div>
+			{else /}
+			<div class="oneBox_body_list">
+				<div class="yd">·</div>
+				<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">{$vvv.title}</a></div>
+			</div>
+			{/if}
+			{/foreach}
+		</div>
+		{/foreach}
+                {/if}
+               {/foreach}   
+           {/if}
+	</div>
+	<!-- 广告 -->
+	<div class="row magTop20">
+		<div class="col-md-12">
+			<div class="img2">
+				{if $data.ad_exam_topData}
+				{foreach name="data.ad_exam_topData" item="v" key="k"}
+				<a href="{$v.img_link}" target="_blank">
+					<img src="{$v.img_path}" class="lt" title="#" alt="#">
+				</a>
+				{/foreach}
+				{/if}
+			</div>
+		</div>
+	</div>
+	<!-- 六楼 -->
+	<div class="row magTop20 section">
+		{if $data.programaData}
+               {foreach name="data.programaData" item="v" key="k"}
+                {if condition="($v.type == 2)"}
+                   {foreach name="$v.programaSonData" item="vv" key="kk"}
+		<div class="col-md-4 backbgm magbot20">
+			<h4><a href="/template2/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></h4>
+			{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
+							{if $kkk == 0}
+			<div class="news_box">
+				<a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
+					<div class="news_box_img lt">
+						<img src="{$vvv.cover_path}">
+					</div>
+					<div class="news_box_desc lt">{$vvv.title}</div>
+				</a>
+			</div>
+			{else /}
+			<div class="oneBox_body_list">
+				<div class="yd">·</div>
+				<div class="oneBox_body_list_bd"><a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">{$vvv.title}</a></div>
+			</div>
+			{/if}
+			{/foreach}
+		</div>
+		{/foreach}
+                {/if}
+               {/foreach}   
+           {/if}
+	</div>
+	<!-- 六楼 合作伙伴 -->
+	<div class="row magTop10">
+		<div class="col-md-12 ">
+			<h3 ><span class="backbgm paddingTop20">合作伙伴</span></h3>
+			<div class="img3">
+				{if $data.ad_partnerData}
+					{foreach name="data.ad_partnerData" item="v" key="k"}
+					<a href="{$v.img_link}" target="_blank">
+						<img src="{$v.img_path}" class="lt" target="_blank">
+					</a>
+					{/foreach}
+					{/if}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{include file="layouts/footer" /}
