@@ -98,9 +98,9 @@
 				{foreach name="data.recruitData" item="v" key="k"}
 				{if condition="($k eq 0)"}
 				{elseif  condition="($k eq 1)"/}
-				<h4><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}">{$v.title}</a></h4>
+				<h4><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></h4>
 				{else /}
-				<p><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}">{$v.title}</a></p>
+				<p><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></p>
 				{/if}
 				{/foreach}
 				{/if}
@@ -148,9 +148,9 @@
 				{foreach name="data.examData" item="v" key="k"}
 				{if condition="($k eq 0)"}
 				{elseif  condition="($k eq 1)"/}
-				<h4><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}">{$v.title}</a></h4>
+				<h4><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></h4>
 				{else /}
-				<p><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}">{$v.title}</a></p>
+				<p><a href="/template1/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></p>
 				{/if}
 				{/foreach}
 				{/if}
@@ -193,13 +193,13 @@
 		<div class="col-md-4">
 			<div class="oneBox_list">
 				<div class="oneBox_title">
-					<h3><a href="/template1/Message/message?pid={$vv.id}"><span>{$vv.cname}</span></a></h3>
+					<h3><a href="/template1/Message/message?pid={$vv.id}" target="_blank"><span>{$vv.cname}</span></a></h3>
 				</div>
 				<div class="oneBox_body ">
 					{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 					<div class="oneBox_body_img">
-						<a href="/template1/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}">
+						<a href="/template1/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
 							<img src="{$vvv.cover_path}">
 							<span>{$vvv.title}</span>
 						</a>
@@ -242,13 +242,13 @@
 		<div class="col-md-4">
 			<div class="oneBox_list">
 				<div class="oneBox_title">
-					<h3><a href="/template1/Message/message?pid={$vv.id}"><span>{$vv.cname}</span></a></h3>
+					<h3><a href="/template1/Message/message?pid={$vv.id}" target="_blank"><span>{$vv.cname}</span></a></h3>
 				</div>
 				<div class="oneBox_body ">
 					{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 					<div class="oneBox_body_img">
-						<a href="/template1/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}">
+						<a href="/template1/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
 							<img src="{$vvv.cover_path}">
 							<span>{$vvv.title}</span>
 						</a>

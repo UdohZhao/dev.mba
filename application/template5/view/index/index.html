@@ -158,7 +158,7 @@
 				{foreach name="data.recruitData" item="v" key="k"}
 				{if condition="($k eq 0)"}
 				{elseif  condition="($k eq 1)"/}
-				<h4><a href="/template5/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}">{$v.title}</a></h4>
+				<h4><a href="/template5/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></h4>
 				{else /}
 				<div class="oneBox_body_list">
 					<div class="yd">·</div>
@@ -211,7 +211,7 @@
 				{foreach name="data.examData" item="v" key="k"}
 				{if condition="($k eq 0)"}
 				{elseif  condition="($k eq 1)"/}
-				<h4><a href="/template5/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}">{$v.title}</a></h4>
+				<h4><a href="/template5/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></h4>
 				{else /}
 				<div class="oneBox_body_list">
 					<div class="yd">·</div>
@@ -266,7 +266,7 @@
 					{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 					<div class="recruit_body_img">
-						<a href="/template5/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}">
+						<a href="/template5/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
 							<img src="{$vvv.cover_path}">
 							<span>{$vvv.title}</span>
 						</a>
@@ -320,7 +320,7 @@
 					{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 					<div class="recruit_body_img">
-						<a href="/template5/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}">
+						<a href="/template5/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
 							<img src="{$vvv.cover_path}">
 							<span>{$vvv.title}</span>
 						</a>

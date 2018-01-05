@@ -86,7 +86,7 @@
 	<div class="row magTop20 backbgm">
 		<div class="col-md-4 height368">
 			<div class="recruit_title">
-				<a href="/template2/Message/message?type=7">招生资讯</a>
+				<a href="/template2/Message/message?type=7" target="_blank">招生资讯</a>
 				<span>最新最全面的招生咨询</span>
 			</div>
 			{if $data.recruitData}
@@ -109,7 +109,7 @@
 		</div>
 		<div class="col-md-4 height368">
 			<div class="recruit_title">
-				<a href="/template2/Message/message?type=8">考试资讯</a>
+				<a href="/template2/Message/message?type=8" target="_blank">考试资讯</a>
 				<span>最快最便捷的考试咨询</span>
 			</div>
 			{if $data.examData}
@@ -145,7 +145,7 @@
 	<div class="row magTop20 backbgm">
 		<div class="col-md-4 height368">
 			<div class="recruit_title">
-				<a href="/template2/Message/message?type=3">重庆MBA活动预告</a>
+				<a href="/template2/Message/message?type=3" target="_blank">重庆MBA活动预告</a>
 				<span>重庆MBA通往成功的桥梁</span>
 			</div>
 			{if $data.hotData}
@@ -166,7 +166,7 @@
 		</div>
 		<div class="col-md-4 height368">
 			<div class="recruit_title">
-				<a href="/template2/Message/message?type=6">院校推荐</a>
+				<a href="/template2/Message/message?type=6" target="_blank">院校推荐</a>
 				<span>院校推荐 科学选校</span>
 			</div>
 			{if $data.recommendData}
@@ -217,11 +217,11 @@
                 {if condition="($v.type == 1)"}
                    {foreach name="$v.programaSonData" item="vv" key="kk"}
 		<div class="col-md-4 backbgm magbot20">
-			<h4><a href="/template2/Message/message?pid={$vv.id}">{$vv.cname}</a></h4>
+			<h4><a href="/template2/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></h4>
 			{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 			<div class="news_box">
-				<a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}">
+				<a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
 					<div class="news_box_img lt">
 						<img src="{$vvv.cover_path}">
 					</div>
@@ -262,11 +262,11 @@
                 {if condition="($v.type == 2)"}
                    {foreach name="$v.programaSonData" item="vv" key="kk"}
 		<div class="col-md-4 backbgm magbot20">
-			<h4><a href="/template2/Message/message?pid={$vv.id}">{$vv.cname}</a></h4>
+			<h4><a href="/template2/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></h4>
 			{foreach name="$vv.programa_articleData" item="vvv" key="kkk"}
 							{if $kkk == 0}
 			<div class="news_box">
-				<a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}">
+				<a href="/template2/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" target="_blank">
 					<div class="news_box_img lt">
 						<img src="{$vvv.cover_path}">
 					</div>
