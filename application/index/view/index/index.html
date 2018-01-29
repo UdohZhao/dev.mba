@@ -43,7 +43,7 @@
 							<div {if $k == 0}class="item active"{else/}class="item"{/if}>
 					        	<div class="third_header_aside">
 					        		<a href="{$v.img_link}" target="_blank">
-					        			<img src="{$v.img_path}" alt="{$v.id}">
+					        			<img src="{$v.img_path}" alt="{$v.id}" >
 					        		</a>
 								</div>
 					        </div>
@@ -104,7 +104,7 @@
 						<span class="oneBox_title_bd">招生资讯</span>
 						<a href="/Message/message?type=7" class="rt" target="_blank">更多></a>
 					</div>
-					<div class="oneBox_body ">
+					<div class="oneBox_body " style="margin-bottom: 20px;">
 						<div class="weui-panel__bd">
 							{if $data.recruitData}
 								{foreach name="data.recruitData" item="v" key="k"}
@@ -182,7 +182,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="h10"></div>
+		<div class="h20"></div>
 	</div>
 	<!-- 院校发布 -->
 	<div class="row third">

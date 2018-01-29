@@ -21,7 +21,7 @@ h1,h2,h3{
 .weui-panel__bd .weui-media-box{padding-bottom:4px;}
 .weui-panel__bd .weui-media-box .weui-media-box__title{font-weight: bold;}
 .oneBox_body_list{width: 100%;height: 39px;line-height: 39px;font-size: 16px;overflow: hidden;}
-.oneBox_body_list_title{font-weight: bold;font-size: 22px;width: auto;text-align: center;line-height: 35px;}
+.oneBox_body_list_title{font-weight: bold;font-size: 22px;width: auto;text-align: center;line-height: 35px;margin-top: 10px;}
 .oneBox_body .pad0 .weui-media-box__desc{line-height: 1.6;text-indent: 20px;padding: 5px 20px;}
 /*列表项前的小点*/
 .yd{text-align: left;float: left;font-size: 32px;line-height: 39px;height: 39px;width: 15px;}
@@ -31,7 +31,7 @@ h1,h2,h3{
 .oneBox_title_img .oneBox_title_img_span{position: absolute;top:30%;left: 10%;}
 .oneBox_title_img .oneBox_title_img_span p{font-size: 16px;color: #1787e0;font-weight: bold;}
 .oneBox_title_img .oneBox_title_img_span p:nth-child(2){text-indent: 10px;}
-.weui-panel__bd{max-height: 280px;overflow: hidden;}
+.weui-panel__bd{max-height: 348px;overflow: hidden;}
 .oneBox_body_list_access{height: 210px;overflow: hidden;}
 .h16{display: block;width: 100%;height: 16px;font-size: 0;clear: both;}
 .second{width: 100%;}
@@ -39,7 +39,7 @@ h1,h2,h3{
 .second .secondLeft .secondLeft_list_img{background: url(/static/images/icon_2.png) no-repeat;color: #fff;
 	width: 80px;height: 93px;text-align: center;font-weight: bold;font-size: 18px;padding-top: 20px;}
 .second .secondLeft .secondLeft_list_img p{line-height: 20px;}
-.img{width: 100%;height: 60px;}
+.img{width: 100%;height: 120px;}
 .img img{width: 25%;height: 100%;}
 .img2 img{width: 50%;height: 100%;}
 .img2{width: 100%;height: 120px;border:1px solid #ddd;}

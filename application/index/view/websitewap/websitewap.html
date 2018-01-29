@@ -22,7 +22,10 @@
 		<div class="article_bd" >
 			<h1>{$data.programa_articleData.title}</h1>
 			<div class="title-box">
-				<p>{$data.programa_articleData.tips}</p>
+					<!-- 时间 -->
+				 <span>{$data.programa_articleData.ctime|date='y-m-d',###}</span>
+				 	<!-- 来源 -->
+				 <span></span>
 			</div>
 			<div class="content">
 				{$data.programa_articleData.content}

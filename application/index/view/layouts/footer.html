@@ -2,12 +2,9 @@
     <!--  底部样式开始  -->
     <div class="h10"></div>
   <div class="container ">
-            <!-- 友情链接  -->
+            <!-- 底部链接  -->
             <div class="row">
-                <div class="footer_link">
-                    <div class="third_header">
-                            <h3>友情链接</h3>
-                        </div>
+                    <div class="third_header"></div>
                     {if $data.blogrollData}
                     <div class="main_footer_bottom last_span">
                        <p> 
@@ -17,12 +14,9 @@
                         </p>
                     </div>
                     {/if}
-                </div>
                 <!-- 底部链接 -->
                 {if $data.webstatData}
-                    <div class="main_footer_bottom">
                         {$data.webstatData.content}
-                    </div>
                 {/if}
 
             </div>
