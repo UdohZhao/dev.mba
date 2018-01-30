@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$data.websiteData.title}</title>
+    <meta  name="description" content="{$data.websiteData.describe}">
+    <meta name="keywords" content="{$data.websiteData.search_keywords}">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Bootstrap -->
+    {css href="/static/bootstrap/css/bootstrap.min.css" /}
+    <!-- Bootstrap验证插件 -->
+    {css href="/static/bootstrapvalidator/dist/css/bootstrapValidator.css" /}
+    <!-- sweetalert弹窗插件 -->
+    {css href="/static/sweetalert2/dist/sweetalert2.min.css" /}
+
+    <!-- 谷歌字体 -->
+    <link href='https://fonts.cat.net/css?family=Open+Sans' rel='stylesheet'>
+
+    <!-- jQuery WEUI -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+
+    <!-- 当前页面css -->
+    {css href="/static/wap/layouts/css/layouts.css" /}
+
+  </head>
+  <body>
+    <!-- 头部开始 -->
+  <div class="header">
+    <div class="weui-flex">
+      <div class="weui-flex__item">
+          {if $data.ad_logoData}
+            <a href="{$data.ad_logoData.img_link}"  target="_blank">
+              <img src="{$data.ad_logoData.img_path}" alt="重庆MBA院校信息发布和咨询平台" title="重庆MBA院校信息发布和咨询平台">
+              </a>
+          {/if}
+      </div>
+      <div class="weui-flex__item">
+        <p>{$data.websiteData.title}</p>
+      </div>
+    </div>
+    <div class="weui-flex backg333 posR">
+      <ul class="expand-list">
+        {if $data.programaData}
+          {foreach name="data.programaData" item="v" key="k"}
+            <li><a href="/wap/Message/message?pid={$v.id}">{$v.cname}</a></li>
+          {/foreach}
+        {/if}
+      </ul>
+      <div class="toggle-area" >
+        <i class="glyphicon glyphicon-chevron-down"></i>
+      </div>
+    </div>
+    <div class="weui-flex">
+      <div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+        <div class="swiper-wrapper">
+          {if $data.bannerData}
+            {foreach name="data.bannerData" item="v" key="k"}
+            <div class="swiper-slide" >
+              <a href="{$v.img_link}"></a>
+              <img src="{$v.img_path}" >
+            </div>
+            {/foreach}
+          {/if}
+        </div>
+        <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+

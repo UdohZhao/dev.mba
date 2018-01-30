@@ -1,0 +1,27 @@
+{include file="layouts/header" /}
+
+    <!-- 当前页面css -->
+    {css href="/static/wap/websitewap/css/websitewap.css" /}
+<div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/wap/Index/index">首页</a>
+                </li>
+                <li class="active">{$data.programaCname}</li>
+            </ul>
+        </div>
+<div class="container">
+    <div class="row">
+        <div class="content">
+            {if $data.about_usData}
+        	<h2>{$data.about_usData.title}</h2>
+
+        	<div class="content-box">
+                {$data.about_usData.content}
+        	</div>
+            {/if}
+        </div>
+    </div>
+</div>
+
+{include file="layouts/footer" /}
