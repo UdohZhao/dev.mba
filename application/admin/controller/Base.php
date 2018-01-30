@@ -23,7 +23,7 @@ class Base extends Controller
         header('Location:/admin/Login/index');
         die;
       }
-
+        $this->assign('active','Base');
     }
 
     /**
@@ -57,4 +57,30 @@ class Base extends Controller
         @unlink($path);
         return ajaxReturn($path);
     }
+
+    /**
+     * 快捷通道
+     */
+    public function search()
+    {
+        $this->assign('action','Base/search');
+        // Get
+        if ($this->request->isGet())
+        {
+            // 渲染模板输出
+            return $this->fetch('search');
+        }
+        // Post
+        if ($this->request->isPost())
+        {
+            // 关键词
+            $search = input('post.search');
+            // if
+            // if ()
+            // {
+
+            // }
+        }
+    }
+
 }

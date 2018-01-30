@@ -13,9 +13,9 @@ $('#loginForm').bootstrapValidator({
                     message: '用户名不能为空！'
                 },
                 stringLength: {
-                    min: 6,
-                    max: 30,
-                    message: '用户名必须大于6，小于30个字符！'
+                    min: 2,
+                    max: 20,
+                    message: '用户名必须大于2，小于20个字符！'
                 }
                 /*remote: {
                     url: 'remote.php',

@@ -48,13 +48,13 @@
                </td>
                <td>{$v.img_link}</td>
                <td>
-                  {if condition="($v.status == 1)"}
+                    {if condition="($v.status == 1)"}
+                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},0,'{$ctl}');">展示</button>
+                    {else /}
+                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},1,'{$ctl}');">隐藏</button>
+                    {/if}
                     <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},'{$ctl}');">编辑</button>
                     <button type="button" class="btn btn-default btn-xs" onclick="del({$v.id},'{$v.img_path}','{$ctl}');">删除</button>
-                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},0,'{$ctl}');">展示</button>
-                  {else /}
-                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},1,'{$ctl}');">隐藏</button>
-                  {/if}
                </td>
             </tr>
             {/foreach}

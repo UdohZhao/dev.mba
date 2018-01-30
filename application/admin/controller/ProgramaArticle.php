@@ -59,7 +59,7 @@ class ProgramaArticle extends Base
               return ajaxReturn(Rs(2,'文章标题或者文章内容不能为空！',''));
             }
             // 防止重复添加
-            if ($this->db->where('title',$title)->count() && $this->id)
+            if ($this->db->where('title',$title)->count() && $this->id == 0)
             {
               return ajaxReturn(Rs(3,'文章标题已经存在，请勿重复发布！',''));
             }
@@ -98,6 +98,8 @@ class ProgramaArticle extends Base
           $data['title'] = input('post.title');
           $data['tips'] = input('post.tips');
           $data['search_keywords'] = input('post.search_keywords');
+          $data['source'] = input('post.source');
+          $data['notice_date'] = input('post.notice_date');
           $data['content'] = input('post.content');
         }
         else
@@ -105,12 +107,14 @@ class ProgramaArticle extends Base
           $data['title'] = input('post.title');
           $data['tips'] = input('post.tips');
           $data['search_keywords'] = input('post.search_keywords');
+          $data['source'] = input('post.source');
+          $data['notice_date'] = input('post.notice_date');
           $data['content'] = input('post.content');
           $data['auid'] = session('adminUser.id');
           $data['pid'] = $this->pid;
           $data['cover_path'] = '';
           $data['atype'] = 0;
-          $data['status'] = 1;
+          $data['status'] = 0;
           $data['ctime'] = time();
           $data['type'] = $this->type;
         }

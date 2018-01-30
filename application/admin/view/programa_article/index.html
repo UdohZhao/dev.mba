@@ -58,19 +58,20 @@
                  {/if}
                </td>
                <td>
-                  {if condition="($v.status == 0)"}
+                    {if condition="($v.status == 0)"}
                     <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},1);">隐藏</button>
-                  {else /}
+                    {else /}
+                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},0);">展示</button>
+                    {/if}
                     <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},{$pid});">编辑</button>
                     <button type="button" class="btn btn-default btn-xs" onclick="del({$v.id});">删除</button>
                     <button type="button" class="btn btn-primary btn-xs" onclick="updateCover({$v.id});">更新封面</button>
-                    <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},0);">展示</button>
                     {if condition="($v.atype == 0)"}
                       <button type="button" class="btn btn-primary btn-xs" onclick="tops({$v.id},1);">置顶</button>
                     {else /}
                       <button type="button" class="btn btn-primary btn-xs" onclick="tops({$v.id},0);">正常</button>
                     {/if}
-                  {/if}
+
                </td>
             </tr>
             {/foreach}

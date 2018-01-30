@@ -20,6 +20,7 @@ class Permissions extends Base
      */
     public function add()
     {
+        $this->assign('action','Programa/add');
         // Get
         if ($this->request->isGet())
         {

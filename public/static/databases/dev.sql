@@ -38,6 +38,8 @@ CREATE TABLE `programa_article`(
   `tips` VARCHAR(255) NOT NULL COMMENT '小贴士',
   `cover_path` VARCHAR(255) NOT NULL COMMENT '封面图片路径',
   `search_keywords` VARCHAR(255) NOT NULL COMMENT '搜索关键词',
+  `source` VARCHAR(255) NOT NULL COMMENT '来源',
+  `notice_date` VARCHAR(255) NOT NULL COMMENT '预告时间',
   `content` VARCHAR(30000) NOT NULL COMMENT '内容',
   `atype` TINYINT(1) UNSIGNED NOT NULL COMMENT '类型{0>正常，1>置顶}',
   `status` TINYINT(1) UNSIGNED NOT NULL COMMENT '状态{0>展示，1>隐藏}',
