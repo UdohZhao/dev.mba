@@ -43,7 +43,7 @@
 							<div {if $k == 0}class="item active"{else/}class="item"{/if}>
 					        	<div class="third_header_aside">
 					        		<a href="{$v.img_link}" target="_blank">
-					        			<img src="{$v.img_path}" alt="{$v.id}" >
+					        			<img src="{$v.img_path}" alt="{$v.id}" alt="{{k}}" title="{$v.id}">
 					        		</a>
 								</div>
 					        </div>
@@ -74,7 +74,7 @@
 				<div class="oneBox_title_img">
 					<!-- 此处为广告位置 -->
 					{if $data.ad_foreshowData}
-					<img src="{$data.ad_foreshowData.img_path}">
+					<img src="{$data.ad_foreshowData.img_path}" alt="1" title="">
 					{/if}
 				</div>
 				<div class="secondLeft">
@@ -135,7 +135,7 @@
 					</div>
 
 					<div class="oneBox_body ">
-						<div class="weui-panel__bd">
+						<div class="weui-panel__bd" style="height: 330px;">
 							{if $data.examData}
 								{foreach name="data.examData" item="v" key="k"}
 								{if condition="($k == 0)"}
@@ -176,7 +176,7 @@
 				{if $data.ad_academy_topData}
 				{foreach name="data.ad_academy_topData" item="v" key="k"}
 				<a href="{$v.img_link}" target="_blank">
-					<img src="{$v.img_path}" class="lt" >
+					<img src="{$v.img_path}" class="lt" alt="" title="">
 				</a>
 				{/foreach}
 				{/if}
@@ -256,7 +256,7 @@
 						<div class="oneBox_body">
 							<a href="/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" class="weui-media-box weui-media-box_appmsg" target="_blank">
 							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
+							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}" alt="{{kkk}}" title="{$vvv.id}">
 							    </div>
 							    <div class="weui-media-box__bd">
 							      	<p class="weui-media-box__desc">{$vvv.title}</p>
@@ -299,6 +299,7 @@
 	<!-- 3L 结束 -->
 
 	<!-- 4L 开始 -->
+	<div class="h20"></div>
 	<div class="row third">
 		<!-- 考试咨询 综合咨询 初试 复试 英语 数学 逻辑 写作 -->
 		<div class="col-md-12">
@@ -369,7 +370,7 @@
 						<div class="oneBox_body">
 							<a href="/Websitewap/websitewap?pid={$vvv.pid}&paid={$vvv.id}" class="weui-media-box weui-media-box_appmsg" target="_blank">
 							    <div class="weui-media-box__hd">
-							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}">
+							      <img class="weui-media-box__thumb" src="{$vvv.cover_path}" alt="{{kkk}}" title="{$vvv.id}">
 							    </div>
 							    <div class="weui-media-box__bd">
 							      	<p class="weui-media-box__desc">{$vvv.title}</p>
@@ -407,13 +408,35 @@
 					{if $data.ad_partnerData}
 					{foreach name="data.ad_partnerData" item="v" key="k"}
 					<a href="{$v.img_link}" target="_blank">
-						<img src="{$v.img_path}" class="lt" target="_blank">
+						<img src="{$v.img_path}" class="lt" target="_blank" alt="{{k}}" title="{$v.id}">
 					</a>
 					{/foreach}
 					{/if}
 				</div>
 			</div>
 			<div class="h10"></div>
+		</div>
+	</div>
+	<!-- 4L 友情链接 -->
+	<div class="h20"></div>
+	<div class="row third">
+		<div class="col-md-12">
+			<div class="third_header">
+				<h3 >友情链接</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+                    {if $data.blogrollData}
+                    <div class="main_footer_bottom last_span">
+                       <p> 
+                        {foreach name="data.blogrollData" item="v" key="k"}
+                        <a href="{$v.cname_link}" target="_blank">{$v.cname}</a> <span>-</span>
+                        {/foreach}
+                        </p>
+                    </div>
+                    {/if}
+            </div>
 		</div>
 	</div>
 </div>
