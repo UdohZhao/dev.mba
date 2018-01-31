@@ -20,6 +20,9 @@ return [
     'zs/:pid'        =>  ['Message/message',['ext'=>'shtml']],
     'yx/:pid'        =>  ['Message/message',['ext'=>'shtml']],
     'ks/:pid'        =>  ['Message/message',['ext'=>'shtml']],
-    'd/:pid/:paid' =>  ['Websitewap/websitewap',['ext'=>'shtml']],
+    'zsmore/:type'   =>  ['Message/message',['ext'=>'shtml']],
+    'yxmore/:type'   =>  ['Message/message',['ext'=>'shtml']],
+    'ksmore/:type'   =>  ['Message/message',['ext'=>'shtml']],
+    'd/:pid/:paid'   =>  ['Websitewap/websitewap',['ext'=>'shtml']],
 
 ];
