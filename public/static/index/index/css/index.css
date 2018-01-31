@@ -37,7 +37,8 @@ h1,h2,h3{
 .second{width: 100%;}
 .second .secondLeft{width: 100%;overflow: hidden;margin-top: 20px;height: 560px;}
 .second .secondLeft .secondLeft_list_img{background: url(/static/images/icon_2.png) no-repeat;color: #fff;
-	width: 80px;height: 93px;text-align: center;font-weight: bold;font-size: 18px;padding-top: 20px;}
+	width: 80px;height: 93px;text-align: center;font-weight: bold;font-size: 20px;padding-top: 10px;padding-left: 6px;}
+.notice_date{letter-spacing: 10px;overflow: inherit;text-align: center;margin: 0;padding:0 10px; }
 .second .secondLeft .secondLeft_list_img p{line-height: 20px;}
 .img{width: 100%;height: 120px;}
 .img img{width: 25%;height: 100%;}

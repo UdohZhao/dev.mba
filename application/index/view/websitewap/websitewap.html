@@ -23,9 +23,9 @@
 			<h1>{$data.programa_articleData.title}</h1>
 			<div class="title-box">
 					<!-- 时间 -->
-				 <span>{$data.programa_articleData.ctime|date='y-m-d',###}</span>
+				 <span style="margin-right:20px;">{$data.programa_articleData.notice_date}</span>
 				 	<!-- 来源 -->
-				 <span></span>
+				 <span> 来源 : {$data.programa_articleData.source}</span>
 			</div>
 			<div class="content">
 				{$data.programa_articleData.content}

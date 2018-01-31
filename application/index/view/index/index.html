@@ -83,8 +83,7 @@
 					<div class="secondLeft_list">
 						<a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">
 							<div class="secondLeft_list_img lt">
-								<p>{$v.ctime|date="m",###}月</p>
-								<p>{$v.ctime|date="d",###}日</p>
+								<p class="notice_date" style="line-height: 1.8;">{$v.notice_date}</p>
 							</div>
 							<div class="secondLeft_list_hd lt">
 								<div class="yd">·</div>
@@ -415,28 +414,6 @@
 				</div>
 			</div>
 			<div class="h10"></div>
-		</div>
-	</div>
-	<!-- 4L 友情链接 -->
-	<div class="h20"></div>
-	<div class="row third">
-		<div class="col-md-12">
-			<div class="third_header">
-				<h3 >友情链接</h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-                    {if $data.blogrollData}
-                    <div class="main_footer_bottom last_span">
-                       <p> 
-                        {foreach name="data.blogrollData" item="v" key="k"}
-                        <a href="{$v.cname_link}" target="_blank">{$v.cname}</a> <span>-</span>
-                        {/foreach}
-                        </p>
-                    </div>
-                    {/if}
-            </div>
 		</div>
 	</div>
 </div>
