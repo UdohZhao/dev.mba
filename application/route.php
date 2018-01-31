@@ -17,5 +17,9 @@ return [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
+    'zs/:pid'        =>  ['Message/message',['ext'=>'shtml']],
+    'yx/:pid'        =>  ['Message/message',['ext'=>'shtml']],
+    'ks/:pid'        =>  ['Message/message',['ext'=>'shtml']],
+    'd/:pid/:paid' =>  ['Websitewap/websitewap',['ext'=>'shtml']],
 
 ];

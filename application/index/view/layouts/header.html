@@ -83,11 +83,11 @@
                                     {foreach name="data.programaData" item="v" key="k"}
                                      {if condition="($v.type == 0)"}
                                         {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                    <li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
+                                    <li><a href="/zs/{$vv.id}.shtml" target="_blank">{$vv.cname}</a></li>
                                         {/foreach}
                                      {/if}
                                     {/foreach}
-                                {/if}   
+                                {/if}
                             </ul>
                         </div>
                 </li>

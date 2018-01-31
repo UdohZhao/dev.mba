@@ -12,9 +12,9 @@
 			<div class="oneBox_left col-md-3">
 				<div class="oneBox_title">
 					<span class="oneBox_title_bd">重庆MBA热点关注</span>
-					<a href="/Message/message?type=3" class="rt" target="_blank">更多></a>
+					<a href="/zs/3.shtml" class="rt" target="_blank">更多></a>
 				</div>
-				
+
 				<div class="oneBox_body">
 					{if $data.hotData}
 						{foreach name="data.hotData" item="v" key="k"}
@@ -48,18 +48,18 @@
 								</div>
 					        </div>
 							{/foreach}
-							{/if}       
+							{/if}
 					    </div>
 					    <!-- 轮播（Carousel）导航 -->
-					    <a class="left carousel-control" href="#myCarousels" data-slide="prev">  
-				            <span class="glyphicon glyphicon-chevron-left"></span>  
-				        </a>  
-				        <a class="right carousel-control" href="#myCarousels" data-slide="next">  
-				            <span class="glyphicon glyphicon-chevron-right"></span>  
-				        </a> 
+					    <a class="left carousel-control" href="#myCarousels" data-slide="prev">
+				            <span class="glyphicon glyphicon-chevron-left"></span>
+				        </a>
+				        <a class="right carousel-control" href="#myCarousels" data-slide="next">
+				            <span class="glyphicon glyphicon-chevron-right"></span>
+				        </a>
 				</div>
 			</div>
-			
+
 		</div>
 		<!-- 1L 结束 -->
 
@@ -69,7 +69,7 @@
 			<div class="col-md-3 oneBox_left">
 				<div class="oneBox_title">
 					<span class="oneBox_title_bd">重庆MBA活动预告</span>
-					<a href="/Message/message?type=5" class="rt" target="_blank">更多></a>
+					<a href="/zs/5.shtml" class="rt" target="_blank">更多></a>
 				</div>
 				<div class="oneBox_title_img">
 					<!-- 此处为广告位置 -->
@@ -101,7 +101,7 @@
 				<div class="col-md-12">
 					<div class="oneBox_title">
 						<span class="oneBox_title_bd">招生资讯</span>
-						<a href="/Message/message?type=7" class="rt" target="_blank">更多></a>
+						<a href="/zs/7.shtml" class="rt" target="_blank">更多></a>
 					</div>
 					<div class="oneBox_body " style="margin-bottom: 20px;">
 						<div class="weui-panel__bd">
@@ -114,7 +114,7 @@
 								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
 							</div>
-							{else /}	
+							{else /}
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
 									<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
@@ -130,7 +130,7 @@
 
 					<div class="oneBox_title">
 						<span class="oneBox_title_bd">考试资讯</span>
-						<a href="/Message/message?type=8" class="rt" target="_blank">更多></a>
+						<a href="/ks/8.shtml" class="rt" target="_blank">更多></a>
 					</div>
 
 					<div class="oneBox_body ">
@@ -144,7 +144,7 @@
 								  	<div class="weui-media-box__desc">{$v.tips}</div>
 								</a>
 							</div>
-							{else /}	
+							{else /}
 							<div class="oneBox_body_list">
 									<div class="yd">·</div>
 									<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
@@ -199,11 +199,11 @@
 										{if $data.programaData}
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 1)"}
-					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
+					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}
 										<li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
-							               {/foreach}   
+							               {/foreach}
 							           {/if}
 								        </ul>
 									</div>
@@ -214,11 +214,11 @@
 											{if $data.programaData}
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 1)"}
-					                   {volist name="$v.programaSonData" id="vv" offset="6" length='6'}	
+					                   {volist name="$v.programaSonData" id="vv" offset="6" length='6'}
 										<li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
-							               {/foreach}   
+							               {/foreach}
 							           {/if}
 								        </ul>
 									</div>
@@ -226,10 +226,10 @@
 
 						    </div>
 						    <!-- 轮播（Carousel）导航 -->
-						    <a class="carousel-control left" href="#myCarousela" 
+						    <a class="carousel-control left" href="#myCarousela"
 						        data-slide="prev">&lsaquo;
 						    </a>
-						    <a class="carousel-control right" href="#myCarousela" 
+						    <a class="carousel-control right" href="#myCarousela"
 						        data-slide="next">&rsaquo;
 						    </a>
 					</div>
@@ -274,7 +274,7 @@
 			</div>
 			{/foreach}
                 {/if}
-               {/foreach}   
+               {/foreach}
            {/if}
 		</div>
 	</div>
@@ -314,11 +314,11 @@
 							           	{if $data.programaData}
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 2)"}
-					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
+					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}
 										<li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
-							               {/foreach}   
+							               {/foreach}
 							           {/if}
 							        </ul>
 								</div>
@@ -329,11 +329,11 @@
 							           	{if $data.programaData}
 					               	{foreach name="data.programaData" item="v" key="k"}
 					                {if condition="($v.type == 2)"}
-					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}	
+					                   {volist name="$v.programaSonData" id="vv" offset="0" length='6'}
 										<li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
 										{/volist}
 							                {/if}
-							               {/foreach}   
+							               {/foreach}
 							           {/if}
 							        </ul>
 								</div>
@@ -341,10 +341,10 @@
 
 					    </div>
 					    <!-- 轮播（Carousel）导航 -->
-					    <a class="carousel-control left" href="#myCarousel" 
+					    <a class="carousel-control left" href="#myCarousel"
 					        data-slide="prev">&lsaquo;
 					    </a>
-					    <a class="carousel-control right" href="#myCarousel" 
+					    <a class="carousel-control right" href="#myCarousel"
 					        data-slide="next">&rsaquo;
 					    </a>
 					</div>
@@ -389,7 +389,7 @@
 			</div>
 			{/volist}
                 {/if}
-               {/foreach}   
+               {/foreach}
            {/if}
 		</div>
 	<!-- 4L 结束 -->
