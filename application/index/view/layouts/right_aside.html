@@ -19,7 +19,7 @@
 							{foreach name="data.announcementData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+								<div class="oneBox_body_list_bd"><a href="/d/{$v.pid}/{$v.id}.shtml" target="_blank">{$v.title}</a></div>
 							</div>
 							{/foreach}
 							{/if}
@@ -72,7 +72,7 @@
 
 						<div class="oneBox_title">
 							<span class="oneBox_title_bd">院校推荐</span>
-							<a href="/Message/message?type=6" class="rt" target="_blank">更多></a>
+							<a href="/yxmore/6.shtml" class="rt" target="_blank">更多></a>
 						</div>
 
 						<div class="oneBox_body">
@@ -80,7 +80,7 @@
 							{foreach name="data.recommendData" item="v" key="k"}
 							<div class="oneBox_body_list">
 								<div class="yd">·</div>
-								<div class="oneBox_body_list_bd"><a href="/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" target="_blank">{$v.title}</a></div>
+								<div class="oneBox_body_list_bd"><a href="/d/{$v.pid}/{$v.id}.shtml" target="_blank">{$v.title}</a></div>
 							</div>
 							{/foreach}
 							{/if}

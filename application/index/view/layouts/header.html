@@ -99,7 +99,7 @@
                                     {foreach name="data.programaData" item="v" key="k"}
                                      {if condition="($v.type == 1)"}
                                         {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                    <li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
+                                    <li><a href="/yx/{$vv.id}.shtml" target="_blank">{$vv.cname}</a></li>
                                         {/foreach}
                                      {/if}
                                     {/foreach}
@@ -114,7 +114,7 @@
                                 {foreach name="data.programaData" item="v" key="k"}
                                  {if condition="($v.type == 2)"}
                                     {foreach name="$v.programaSonData" item="vv" key="kk"}
-                                <li><a href="/Message/message?pid={$vv.id}" target="_blank">{$vv.cname}</a></li>
+                                <li><a href="/ks/{$vv.id}.shtml" target="_blank">{$vv.cname}</a></li>
                                     {/foreach}
                                  {/if}
                                 {/foreach}

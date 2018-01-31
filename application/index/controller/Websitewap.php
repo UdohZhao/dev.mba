@@ -26,7 +26,7 @@ class Websitewap extends Base
         $this->data['programa_articleTitle'] = strip_tags(db('programa_article')->where('id',$this->paid)->value('title'));
         // 根据当前栏目文章id查询
         $this->data['programa_articleData'] = db('programa_article')->where('id',$this->paid)->find();
-        // var_dump($this->data['programa_articleData']);
+        // var_dump($this->data['programaCname']);
         // die;
         // 模板变量赋值
         $this->assign('data',$this->data);
