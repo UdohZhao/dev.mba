@@ -1,16 +1,37 @@
 
     <!--  底部样式开始  -->
-    <div class="h10"></div>
-  <div class="container ">
-            <!-- 底部链接  -->
-            <div class="row">
-                    <div  style="border: 0.5px solid #e5e5e5;"></div>
-                <!-- 底部链接 -->
-                {if $data.webstatData}
-                    <p>{$data.webstatData.content}</p>
-                {/if}
-
+    
+<div class="container ">
+    <div class="row third">
+        <div class="col-md-12">
+            <div class="h20"></div>
+            <div class="third_header">
+                <h3 >友情链接</h3>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                    {if $data.blogrollData}
+                    <div class="main_footer_bottom last_span">
+                       <p> 
+                        {foreach name="data.blogrollData" item="v" key="k"}
+                        <a href="{$v.cname_link}" target="_blank">{$v.cname}</a> <span>-</span>
+                        {/foreach}
+                        </p>
+                    </div>
+                    {/if}
+            </div>
+        </div>
+    </div>        
+    <!-- 底部链接  -->
+    <div class="row">
+        <div  style="border: 0.5px solid #e5e5e5;"></div>
+        <div class="h20"></div>
+        <!-- 底部链接 -->
+        {if $data.webstatData}
+            <p>{$data.webstatData.content}</p>
+        {/if}
+    </div>
            
     
     </div>
