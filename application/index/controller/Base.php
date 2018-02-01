@@ -28,7 +28,7 @@ class Base extends Controller
         if (isMobile())
         {
             // 站点关闭跳转提示
-            header('Location:/app');
+            header('Location:/wap');
             die;
         }
         // 初始化构造方法
@@ -112,7 +112,7 @@ class Base extends Controller
 
             // if($this->data['programa_articleData'])
             // {
-            //     foreach ($this->data['programa_articleData'] AS $k => $v) 
+            //     foreach ($this->data['programa_articleData'] AS $k => $v)
             //     {
             //         $this->data['programa_articleData'][$k]['programa_articleDataLst'] = db('programa')->where('pid',$v['id'])->select();
             //         if(data['programa_articleData'][$k]['programa_articleDataLst'])
@@ -125,7 +125,7 @@ class Base extends Controller
             //         $this->assign('data',$this->data);
             //          // 渲染模板输出
             //         return $this->fetch('message/message');
-                    
+
             //     }
 
             // }
