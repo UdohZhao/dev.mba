@@ -8,10 +8,10 @@
         <div class="span6">
             <ul class="breadcrumb">
                 <li>
-                    <a href="/wap/Index/index">首页</a>
+                    <a href="/wap/">首页</a>
                 </li>
                 {if condition="($pid)"}
-                  <li><a href="/wap/Message/message?pid={$pid}">{$data.programaCname}</a></li>
+                  <li><a href="/wap/zs/{$data.programa_articleData.pid}.shtml">{$data.programaCname}</a></li>
                   <li class="active webstyle">{$data.programa_articleTitle}</li>
                   {/if}
             </ul>

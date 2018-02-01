@@ -7,7 +7,7 @@
 	<div class="span6">
             <ul class="breadcrumb">
                 <li>
-                    <a href="/wap/index/index">首页</a>
+                    <a href="/wap/">首页</a>
                 </li>
                 <li class="active">{$data.programaCname}</li>
             </ul>
@@ -31,7 +31,7 @@
 	  	<div class="weui-panel__bd">
 	  		{if $data.programa_articleData}
 	  			{foreach name="data.programa_articleData" item="v" key="k"}
-		    <a href="/wap/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		      	<div class="weui-media-box__bd">
 		        	<h4 class="weui-media-box__title">{$v.title}</h4>
 		      	</div>

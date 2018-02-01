@@ -22,11 +22,11 @@
 	<div class="weui-panel weui-panel_access ">
 	  <div class="weui-panel__hd ">
 	  	<span>招考公告</span>
-	  	<a href="/wap/Message/message?type=4">进入栏目></a>
+	  	<a href="/wap/zsmore/4.shtml">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 	  		{foreach name="data.announcementData" item="v" key="k"}
-		    <a href="/wap/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
@@ -44,11 +44,11 @@
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>院校推荐</span>
-	  	<a href="/wap/Message/message?type=6">进入栏目></a>
+	  	<a href="/wap/yxmore/6.shtml">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.recommendData" item="v" key="k"}
-		    <a href="/wap/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
@@ -66,11 +66,11 @@
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>MBA热点关注</span>
-	  	<a href="/wap/Message/message?type=3">进入栏目></a>
+	  	<a href="/wap/yxmore/3.shtml">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.hotData" item="v" key="k"}
-		    <a href="/wap/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
@@ -92,7 +92,7 @@
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.foreshowData" item="v" key="k"}
-		    <a href="/wap/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
@@ -110,11 +110,11 @@
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>招生咨询</span>
-	  	<a href="/wap/Message/message?type=7">进入栏目></a>
+	  	<a href="/wap/zsmore/7.shtml">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
 		    {foreach name="data.recruitData" item="v" key="k"}
-		    <a href="/wap/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
@@ -132,11 +132,11 @@
 	<div class="weui-panel weui-panel_access">
 	  	<div class="weui-panel__hd">
 	  		<span>考试资讯</span>
-	  		<a href="/wap/Message/message?type=8">进入栏目></a>
+	  		<a href="/wap/ksmore/8.shtml">进入栏目></a>
 	  	</div>
 	  <div class="weui-panel__bd">
 	    {foreach name="data.examData" item="v" key="k"}
-	    <a href="/wap/Websitewap/websitewap?pid={$v.pid}&paid={$v.id}" class="weui-media-box weui-media-box_appmsg">
+	    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		    {if condition="($k eq 0)"}
 	      <div class="weui-media-box__hd">
 	        <img class="weui-media-box__thumb" src="{$v.cover_path}">
