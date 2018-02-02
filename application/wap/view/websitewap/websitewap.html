@@ -20,6 +20,9 @@
             {if $data.programa_articleData}
         	<h2>{$data.programa_articleData.title}</h2>
         	<div class="title-box">
+                <!-- 发布来源 -->
+                <span style="margin-right: 5%;">来源：{$data.programa_articleData.source}</span>
+                <!-- 发布时间 -->
         		<span class="news-time">{$data.programa_articleData.ctime|date="Y-m-d",###}</span>
         	</div>
         	<div class="content-box">

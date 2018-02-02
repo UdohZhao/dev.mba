@@ -19,6 +19,28 @@
 	  <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
 	</div>
 
+	{if $data.recruitData}
+	<div class="weui-panel weui-panel_access">
+	  <div class="weui-panel__hd">
+	  	<span>招生咨询</span>
+	  	<a href="/wap/zsmore/7.shtml">进入栏目></a>
+	  </div>
+	  	<div class="weui-panel__bd">
+		    {foreach name="data.recruitData" item="v" key="k"}
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
+		    	{if condition="($k eq 0)"}
+		      <div class="weui-media-box__hd">
+		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
+		      </div>
+		      {/if}
+		      <div class="weui-media-box__bd">
+		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
+		      </div>
+		    </a>
+		   {/foreach}
+	  	</div>
+	</div>
+	{/if}
 	{if $data.announcementData}
 	<div class="weui-panel weui-panel_access ">
 	  <div class="weui-panel__hd ">
@@ -33,59 +55,13 @@
 		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
 		      </div>
 		      {/if}
-		      <div class="weui-media-box__bd">
 		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
-		      </div>
 		    </a>
 		   {/foreach}
 	  	</div>
 	</div>
 	{/if}
-	{if $data.recommendData}
-	<div class="weui-panel weui-panel_access">
-	  <div class="weui-panel__hd">
-	  	<span>院校推荐</span>
-	  	<a href="/wap/yxmore/6.shtml">进入栏目></a>
-	  </div>
-	  	<div class="weui-panel__bd">
-		    {foreach name="data.recommendData" item="v" key="k"}
-		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
-		    	{if condition="($k eq 0)"}
-		      <div class="weui-media-box__hd">
-		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
-		      </div>
-		      {/if}
-		      <div class="weui-media-box__bd">
-		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
-		      </div>
-		    </a>
-		   {/foreach}
-	  	</div>
-	</div>
-	{/if}
-	{if $data.hotData}
-	<div class="weui-panel weui-panel_access">
-	  <div class="weui-panel__hd">
-	  	<span>MBA热点关注</span>
-	  	<a href="/wap/yxmore/3.shtml">进入栏目></a>
-	  </div>
-	  	<div class="weui-panel__bd">
-		    {foreach name="data.hotData" item="v" key="k"}
-		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
-		    	{if condition="($k eq 0)"}
-		      <div class="weui-media-box__hd">
-		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
-		      </div>
-		      {/if}
-		      <div class="weui-media-box__bd">
-		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
-		      </div>
-		    </a>
-		   {/foreach}
-	  	</div>
-	</div>
-	{/if}
-		{if $data.foreshowData}
+	{if $data.foreshowData}
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
 	  	<span>MBA活动预告</span>
@@ -107,14 +83,15 @@
 	  	</div>
 	</div>
 	{/if}
-	{if $data.recruitData}
+
+	{if $data.hotData}
 	<div class="weui-panel weui-panel_access">
 	  <div class="weui-panel__hd">
-	  	<span>招生咨询</span>
-	  	<a href="/wap/zsmore/7.shtml">进入栏目></a>
+	  	<span>MBA热点关注</span>
+	  	<a href="/wap/yxmore/3.shtml">进入栏目></a>
 	  </div>
 	  	<div class="weui-panel__bd">
-		    {foreach name="data.recruitData" item="v" key="k"}
+		    {foreach name="data.hotData" item="v" key="k"}
 		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
 		    	{if condition="($k eq 0)"}
 		      <div class="weui-media-box__hd">
@@ -149,6 +126,28 @@
 	    </a>
 	   {/foreach}
 	  </div>
+	</div>
+	{/if}
+	{if $data.recommendData}
+	<div class="weui-panel weui-panel_access">
+	  <div class="weui-panel__hd">
+	  	<span>院校推荐</span>
+	  	<a href="/wap/yxmore/6.shtml">进入栏目></a>
+	  </div>
+	  	<div class="weui-panel__bd">
+		    {foreach name="data.recommendData" item="v" key="k"}
+		    <a href="/wap/d/{$v.pid}/{$v.id}.shtml" class="weui-media-box weui-media-box_appmsg">
+		    	{if condition="($k eq 0)"}
+		      <div class="weui-media-box__hd">
+		        <img class="weui-media-box__thumb" src="{$v.cover_path}">
+		      </div>
+		      {/if}
+		      <div class="weui-media-box__bd">
+		        <h4 class="weui-media-box__title whiteSpace">{$v.title}</h4>
+		      </div>
+		    </a>
+		   {/foreach}
+	  	</div>
 	</div>
 	{/if}
 </div>

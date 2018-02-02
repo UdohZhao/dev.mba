@@ -1,6 +1,6 @@
 .content{padding:.5rem;}
 .content h2{text-align: center;}
-.title-box{color: #999;text-align: center;padding-bottom: .5rem;border-bottom: 1px dashed #ddd;}
+.title-box{color: #999;padding-bottom: .5rem;border-bottom: 1px dashed #ddd;}
 .content-box{padding: .5rem 0;	}
 .content-box p{text-indent: 1rem;}
 .webstyle{width: 40%;overflow: hidden;height: 1rem;text-overflow: ellipsis;white-space: nowrap;}

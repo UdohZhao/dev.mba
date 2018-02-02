@@ -22,10 +22,11 @@
 		<div class="article_bd" >
 			<h1>{$data.programa_articleData.title}</h1>
 			<div class="title-box">
+				<!-- 来源 -->
+				 <span style="margin-right:20px;"> 来源 : {$data.programa_articleData.source}</span>
 					<!-- 时间 -->
-				 <span style="margin-right:20px;">{$data.programa_articleData.notice_date}</span>
-				 	<!-- 来源 -->
-				 <span> 来源 : {$data.programa_articleData.source}</span>
+				 <span>{$data.programa_articleData.notice_date}</span>
+				 	
 			</div>
 			<div class="content">
 				{$data.programa_articleData.content}

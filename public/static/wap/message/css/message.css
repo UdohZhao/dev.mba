@@ -6,5 +6,6 @@
 .message  p.weui-media-box__desc span{margin-right: .25rem;}
 .message .weui-panel__ft{text-align: center;}
 .btn_submit{font-size: 14px;background-color: #fff;border:0;}
-.message .weui-media-box__title{overflow: hidden;height: 1rem;}
+.message .weui-media-box__title p{overflow: hidden;height: 1rem;line-height: 1rem;}
 .breadcrumb{margin: 0;}
+p,h4{margin: 0;}
