@@ -12,7 +12,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">@ 列表</h3>
       </div>
-      <form action="/admin/{$ctl}/index" method="post">
+      <form action="/admin/{$ctl}/index?type={$type}" method="post">
         <div class="input-group" style="width: 300px;float: right;margin-right: 30px;">
           <input type="text" class="form-control" name="search" placeholder="请输入搜索关键字">
           <span class="input-group-btn">
@@ -51,7 +51,7 @@
                     {else /}
                     <button type="button" class="btn btn-primary btn-xs" onclick="show({$v.id},1,'{$ctl}');">隐藏</button>
                     {/if}
-                    <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},'{$ctl}');">编辑</button>
+                    <button type="button" class="btn btn-primary btn-xs" onclick="edit({$v.id},'{$ctl}',{$type});">编辑</button>
                     <button type="button" class="btn btn-default btn-xs" onclick="del({$v.id},'{$ctl}');">删除</button>
                </td>
             </tr>

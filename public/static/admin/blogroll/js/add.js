@@ -11,7 +11,7 @@ $(function(){
             cname: {
                 validators: {
                     notEmpty: {
-                        message: '友情链接名称不能为空！'
+                        message: '名称不能为空！'
                     }
                 }
             },

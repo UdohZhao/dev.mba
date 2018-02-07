@@ -4,6 +4,7 @@ class Blogroll extends Base
 {
     public $db;
     public $id;
+    public $type;
     /**
      * 构造方法
      */
@@ -11,11 +12,24 @@ class Blogroll extends Base
     {
         $this->db = db('blogroll');
         $this->id = input('?get.id') ? input('get.id') : 0;
+        $this->type = input('?get.type') ? input('get.type') : 0;
         $this->assign('id',$this->id);
+        $this->assign('type',$this->type);
+
         // 控制器
         $this->assign('ctl','Blogroll');
-        $this->assign('ctlName','友情链接管理');
-        $this->assign('active','Blogroll');
+
+        // type·1表示顶部栏目管理
+        if ($this->type == 1)
+        {
+            $this->assign('ctlName','顶部栏目管理');
+            $this->assign('active','topBlogroll');
+        }
+        else
+        {
+            $this->assign('ctlName','友情链接管理');
+            $this->assign('active','Blogroll');
+        }
     }
 
     /**
@@ -23,7 +37,15 @@ class Blogroll extends Base
      */
     public function add()
     {
-        $this->assign('action','Blogroll/add');
+        // type·1表示顶部栏目管理
+        if ($this->type == 1)
+        {
+            $this->assign('action','topBlogroll/add');
+        }
+        else
+        {
+            $this->assign('action','Blogroll/add');
+        }
         // Get
         if ($this->request->isGet())
         {
@@ -79,6 +101,7 @@ class Blogroll extends Base
         $data['cname'] = input('post.cname');
         $data['cname_link'] = input('post.cname_link');
         $data['status'] = 0;
+        $data['type'] = $this->type;
         $data['ctime'] = time();
         return $data;
     }
@@ -88,12 +111,20 @@ class Blogroll extends Base
      */
     public function index()
     {
-        $this->assign('action','Blogroll/index');
+        // type·1表示顶部栏目管理
+        if ($this->type == 1)
+        {
+            $this->assign('action','topBlogroll/index');
+        }
+        else
+        {
+            $this->assign('action','Blogroll/index');
+        }
         // search
         $cname = "%%";
         if (input('?post.search')) $cname = "%".input('post.search')."%";
         // 根据父级id读取文章
-        $data = $this->db->where('cname','like',$cname)->order('ctime desc')->paginate(config('paging'),false,['query' => request()->param()]);
+        $data = $this->db->where('type',$this->type)->where('cname','like',$cname)->order('ctime desc')->paginate(config('paging'),false,['query' => request()->param()]);
         // assign
         $this->assign('data',$data);
         // 渲染模板输出

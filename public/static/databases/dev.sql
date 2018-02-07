@@ -166,6 +166,7 @@ CREATE TABLE `blogroll`(
   `cname` VARCHAR(255) NOT NULL COMMENT '名称',
   `cname_link` VARCHAR(255) NOT NULL COMMENT '链接地址',
   `status` TINYINT(1) UNSIGNED NOT NULL COMMENT '状态{0>展示,1>隐藏}',
+  `type`  TINYINT(1) UNSIGNED NOT NULL COMMENT '类型？0·底部，1·顶部',
   `ctime` INT(10) UNSIGNED NOT NULL COMMENT '时间',
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

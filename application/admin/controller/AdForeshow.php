@@ -15,7 +15,7 @@ class AdForeshow extends Base
         // 控制器
         $this->assign('ctl','AdForeshow');
         $this->assign('ctlName','活动预告广告管理');
-        $this->assign('active','AdForeshow');
+        $this->assign('active','AdTop');
     }
 
     /**

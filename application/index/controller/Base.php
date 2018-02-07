@@ -59,7 +59,9 @@ class Base extends Controller
         // 读取合作伙伴广告
         $this->data['ad_partnerData'] = db('ad_partner')->where('status',0)->order('ctime desc')->select();
         // 读取友情链接
-        $this->data['blogrollData'] = db('blogroll')->where('status',0)->order('ctime desc')->select();
+        $this->data['blogrollData'] = db('blogroll')->where('type',0)->where('status',0)->order('ctime desc')->select();
+        // 读取顶部栏目管理
+        $this->data['topBlogrollData'] = db('blogroll')->where('type',1)->where('status',0)->order('ctime desc')->select();
         // 读取底部信息
         $this->data['webstatData'] = db('webstat')->find();
 

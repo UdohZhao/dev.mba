@@ -15,7 +15,7 @@ class AdLogo extends Base
         // 控制器
         $this->assign('ctl','AdLogo');
         $this->assign('ctlName','Logo管理');
-        $this->assign('active','AdLogo');
+        $this->assign('active','AdTop');
     }
 
     /**
