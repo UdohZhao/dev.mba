@@ -4,14 +4,12 @@
         <div>
           <ul class="site-menu">
             <li class="site-menu-category">导航</li>
-            {if condition="($Think.session.adminUser.type eq 0)"}
-            <li {if condition="($active eq 'Base')"}class="site-menu-item has-sub active"{else /}class="site-menu-item has-sub"{/if}>
+            <!-- <li {if condition="($active eq 'Base')"}class="site-menu-item has-sub active"{else /}class="site-menu-item has-sub"{/if}>
               <a class="animsition-link" href="/admin/Base/search" data-slug="dashboard">
                 <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                 <span class="site-menu-title">快捷通道</span>
               </a>
-            </li>
-            {/if}
+            </li> -->
             <li {if condition="($active eq 'Index')"}class="site-menu-item has-sub active"{else /}class="site-menu-item has-sub"{/if}>
               <a class="animsition-link" href="/admin/Index/index" data-slug="dashboard">
                 <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
