@@ -15,7 +15,7 @@ class Banner extends Base
         // 控制器
         $this->assign('ctl','Banner');
         $this->assign('ctlName','Banner管理');
-        $this->assign('active','Banner');
+        $this->assign('active','AdTop');
     }
 
     /**

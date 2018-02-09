@@ -15,7 +15,7 @@ class QrCodePublic extends Base
         // 控制器
         $this->assign('ctl','QrCodePublic');
         $this->assign('ctlName','公众号二维码管理');
-        $this->assign('active','QrCodePublic');
+        $this->assign('active','AdTop');
     }
 
     /**

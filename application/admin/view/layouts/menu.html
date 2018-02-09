@@ -4,14 +4,12 @@
         <div>
           <ul class="site-menu">
             <li class="site-menu-category">导航</li>
-            {if condition="($Think.session.adminUser.type eq 0)"}
-            <li {if condition="($active eq 'Base')"}class="site-menu-item has-sub active"{else /}class="site-menu-item has-sub"{/if}>
+            <!-- <li {if condition="($active eq 'Base')"}class="site-menu-item has-sub active"{else /}class="site-menu-item has-sub"{/if}>
               <a class="animsition-link" href="/admin/Base/search" data-slug="dashboard">
                 <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                 <span class="site-menu-title">快捷通道</span>
               </a>
-            </li>
-            {/if}
+            </li> -->
             <li {if condition="($active eq 'Index')"}class="site-menu-item has-sub active"{else /}class="site-menu-item has-sub"{/if}>
               <a class="animsition-link" href="/admin/Index/index" data-slug="dashboard">
                 <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
@@ -21,7 +19,7 @@
             <li {if condition="($active eq 'Programa')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
               <a href="javascript:void(0)" data-slug="layout">
                 <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">栏目管理</span>
+                <span class="site-menu-title">内容管理</span>
                 <span class="site-menu-arrow"></span>
               </a>
               <ul class="site-menu-sub">
@@ -63,10 +61,10 @@
                 </li>
               </ul>
             </li>
-            <li {if condition="($active eq 'Banner')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
+            <li {if condition="($active eq 'AdTop')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
               <a href="javascript:void(0)" data-slug="layout">
                 <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">Banner管理</span>
+                <span class="site-menu-title">广告管理</span>
                 <span class="site-menu-arrow"></span>
               </a>
               <ul class="site-menu-sub">
@@ -82,162 +80,90 @@
                     <span class="site-menu-title">Banner列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdForeshow')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">活动预告广告管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
-                <li {if condition="($action eq 'AdForeshow/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
-                  <a class="animsition-link" href="/admin/AdForeshow/add" data-slug="layout-menu-collapsed">
-                    <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加广告</span>
-                  </a>
-                </li>
-                <li {if condition="($action eq 'AdForeshow/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
-                  <a class="animsition-link" href="/admin/AdForeshow/index" data-slug="layout-menu-collapsed">
-                    <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">广告列表</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdAcademy')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">院校推荐广告管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
-                <li {if condition="($action eq 'AdAcademy/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
-                  <a class="animsition-link" href="/admin/AdAcademy/add" data-slug="layout-menu-collapsed">
-                    <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加广告</span>
-                  </a>
-                </li>
-                <li {if condition="($action eq 'AdAcademy/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
-                  <a class="animsition-link" href="/admin/AdAcademy/index" data-slug="layout-menu-collapsed">
-                    <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">广告列表</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdTop')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">顶部广告管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
                 <li {if condition="($action eq 'AdTop/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdTop/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加广告</span>
+                    <span class="site-menu-title">添加顶部广告</span>
                   </a>
                 </li>
                 <li {if condition="($action eq 'AdTop/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdTop/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">广告列表</span>
+                    <span class="site-menu-title">顶部广告列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdInformation')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">资讯热线广告管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
+                <li {if condition="($action eq 'AdForeshow/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
+                  <a class="animsition-link" href="/admin/AdForeshow/add" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">添加活动预告广告</span>
+                  </a>
+                </li>
+                <li {if condition="($action eq 'AdForeshow/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
+                  <a class="animsition-link" href="/admin/AdForeshow/index" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">活动预告广告列表</span>
+                  </a>
+                </li>
+                <li {if condition="($action eq 'AdAcademy/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
+                  <a class="animsition-link" href="/admin/AdAcademy/add" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">添加院校推荐广告</span>
+                  </a>
+                </li>
+                <li {if condition="($action eq 'AdAcademy/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
+                  <a class="animsition-link" href="/admin/AdAcademy/index" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">院校推荐广告列表</span>
+                  </a>
+                </li>
                 <li {if condition="($action eq 'AdInformation/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdInformation/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加广告</span>
+                    <span class="site-menu-title">添加资讯热线广告</span>
                   </a>
                 </li>
                 <li {if condition="($action eq 'AdInformation/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdInformation/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">广告列表</span>
+                    <span class="site-menu-title">资讯热线广告列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdAcademyTop')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">院校发布广告管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
                 <li {if condition="($action eq 'AdAcademyTop/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdAcademyTop/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加广告</span>
+                    <span class="site-menu-title">添加院校发布广告</span>
                   </a>
                 </li>
                 <li {if condition="($action eq 'AdAcademyTop/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdAcademyTop/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">广告列表</span>
+                    <span class="site-menu-title">院校发布广告列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdExamTop')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">考试资讯广告管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
                 <li {if condition="($action eq 'AdExamTop/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdExamTop/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加广告</span>
+                    <span class="site-menu-title">添加考试资讯广告</span>
                   </a>
                 </li>
                 <li {if condition="($action eq 'AdExamTop/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdExamTop/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">广告列表</span>
+                    <span class="site-menu-title">考试资讯广告列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdPartner')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">合作伙伴广告管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
                 <li {if condition="($action eq 'AdPartner/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdPartner/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加广告</span>
+                    <span class="site-menu-title">添加合作伙伴广告</span>
                   </a>
                 </li>
                 <li {if condition="($action eq 'AdPartner/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdPartner/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">广告列表</span>
+                    <span class="site-menu-title">合作伙伴广告列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'AdLogo')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">Logo管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
                 <li {if condition="($action eq 'AdLogo/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/AdLogo/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
@@ -250,46 +176,28 @@
                     <span class="site-menu-title">Logo列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'QrCodePhone')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">手机二维码管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
                 <li {if condition="($action eq 'QrCodePhone/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/QrCodePhone/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加二维码</span>
+                    <span class="site-menu-title">添加手机二维码</span>
                   </a>
                 </li>
                 <li {if condition="($action eq 'QrCodePhone/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/QrCodePhone/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">二维码列表</span>
+                    <span class="site-menu-title">手机二维码列表</span>
                   </a>
                 </li>
-              </ul>
-            </li>
-            <li {if condition="($active eq 'QrCodePublic')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
-              <a href="javascript:void(0)" data-slug="layout">
-                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
-                <span class="site-menu-title">公众号二维码管理</span>
-                <span class="site-menu-arrow"></span>
-              </a>
-              <ul class="site-menu-sub">
                 <li {if condition="($action eq 'QrCodePublic/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/QrCodePublic/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加二维码</span>
+                    <span class="site-menu-title">添加公众号二维码</span>
                   </a>
                 </li>
                 <li {if condition="($action eq 'QrCodePublic/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/QrCodePublic/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">二维码列表</span>
+                    <span class="site-menu-title">公众号二维码列表</span>
                   </a>
                 </li>
               </ul>
@@ -311,6 +219,27 @@
                   <a class="animsition-link" href="/admin/Blogroll/index" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
                     <span class="site-menu-title">友情链接列表</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li {if condition="($active eq 'topBlogroll')"}class="site-menu-item has-sub active open"{else /}class="site-menu-item has-sub"{/if}>
+              <a href="javascript:void(0)" data-slug="layout">
+                <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                <span class="site-menu-title">顶部栏目管理</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li {if condition="($action eq 'topBlogroll/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
+                  <a class="animsition-link" href="/admin/Blogroll/add?type=1" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">添加顶部栏目</span>
+                  </a>
+                </li>
+                <li {if condition="($action eq 'topBlogroll/index')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
+                  <a class="animsition-link" href="/admin/Blogroll/index?type=1" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">顶部栏目列表</span>
                   </a>
                 </li>
               </ul>
@@ -340,7 +269,7 @@
                 <li {if condition="($action eq 'Webstat/add')"}class="site-menu-item active"{else /}class="site-menu-item"{/if}>
                   <a class="animsition-link" href="/admin/Webstat/add" data-slug="layout-menu-collapsed">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">添加底部信息</span>
+                    <span class="site-menu-title">配置底部信息</span>
                   </a>
                 </li>
               </ul>

@@ -15,7 +15,7 @@ class AdAcademy extends Base
         // 控制器
         $this->assign('ctl','AdAcademy');
         $this->assign('ctlName','院校推荐广告管理');
-        $this->assign('active','AdAcademy');
+        $this->assign('active','AdTop');
     }
 
     /**

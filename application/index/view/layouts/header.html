@@ -32,8 +32,9 @@
     <div class="top-nav-wrapper">
         <div class="top-nav-index">
             <div class="top-list top-list_left">
-                <a href="/Base/aboutUs" target="_blank" >关于我们</a>
-                <a href="/Base/sitemap" target="_blank" >网站地图</a>
+                {foreach name="data.topBlogrollData" item="v" key="k"}
+                    <a href="{$v.cname_link}" target="_blank" >{$v.cname}</a>
+                {/foreach}
             </div>
             <div class="top-list textR">
                 <a href="/admin" title="院校登录" target="_blank" style="color: #f00;">院校登录</a>

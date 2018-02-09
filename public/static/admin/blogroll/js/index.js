@@ -58,10 +58,10 @@ function show(id,status,ctl)
 }
 
 // 编辑
-function edit(id,ctl)
+function edit(id,ctl,type)
 {
-  console.log(id,ctl);
-  window.location.href = "/admin/"+ctl+"/add?id="+id;
+  console.log(id,ctl,type);
+  window.location.href = "/admin/"+ctl+"/add?id="+id+"&type="+type;
 }
 
 // 删除图片
