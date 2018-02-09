@@ -4,14 +4,6 @@
     {css href="/static/wap/message/css/message.css" /}
 
 <div class="container">
-	<div class="span6">
-            <ul class="breadcrumb">
-                <li>
-                    <a href="/wap/">首页</a>
-                </li>
-                <li class="active">{$data.programaCname}</li>
-            </ul>
-    </div>
 	<div class="weui-search-bar" id="searchBar">
 		  <form class="weui-search-bar__form" action="/wap/Base/search" method="POST">
 		    <div class="weui-search-bar__box">
@@ -26,7 +18,14 @@
 		  </form>
 		  <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
 	</div>
-
+	<div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/wap/">首页</a>
+                </li>
+                <li class="active">{$data.programaCname}</li>
+            </ul>
+    </div>
 	<div class="weui-panel weui-panel_access message">
 	  	<div class="weui-panel__bd">
 	  		{if $data.programa_articleData}

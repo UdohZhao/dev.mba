@@ -3,4 +3,4 @@
 .left_aside{width: 850px;padding: 10px;border:1px solid #e3e3e3;margin-top: 20px;min-height: 1061px;}
 .article_bd{padding:15px;font-size: 16px;color: #333;}
 .article_bd h1{text-align: center;}
-.article_bd .title-box{margin: 20px 0;color: #999;font-size: 16px;}
+.article_bd .title-box{margin: 20px 0;color: #999;font-size: 16px;padding-bottom: 10px;border-bottom: 1px solid #ddd;}
